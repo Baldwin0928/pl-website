@@ -198,7 +198,7 @@ img {
 .home {
     position: relative;
     height: 50vh;
-    background: url('../img/aboutuspic.jpg') no-repeat center 210%/cover;
+    background: url('../img/fallfair.JPG') no-repeat center 210%/cover;
     z-index: 1;
     background-attachment: fixed;
   }
