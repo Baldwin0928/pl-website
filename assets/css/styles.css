@@ -895,3 +895,26 @@ img {
   }
 }
 
+/* video inside the Recent Success card */
+.highlight-card__video-wrap {
+  margin-top: 1.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+}
+
+/* keep a nice 16:9 ratio */
+.highlight-card__video-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+/* space the button under the video */
+.highlight-card--project .highlight-card__button--below-video {
+  margin-top: 1.5rem;
+  align-self: flex-start; /* keeps it aligned with text, not centered */
+}
+
+
