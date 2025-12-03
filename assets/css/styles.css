@@ -1324,6 +1324,112 @@ img {
     padding: 2rem 0;
 }
 
+/* ===== HERO VIDEO OVERRIDES (for new home section) ===== */
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  background: none; /* override old background image */
+}
+
+.home__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* key line: makes any video size work */
+  z-index: 1;
+}
+
+.home__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 2;
+}
+
+.home__container {
+  position: relative;
+  z-index: 3;
+  padding: 7rem 1.5rem 3rem; /* top padding so it clears the navbar */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.home__content {
+  max-width: 700px;
+}
+
+.home__subtitle {
+  font-size: var(--small-font-size);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.home__title {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.home__tagline {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.home__socials .contact__icons {
+  font-size: 1.7rem;
+  margin: 0 0.35rem;
+  color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.home__socials .contact__icons:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+.home__scroll {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.home__scroll i {
+  font-size: 1.5rem;
+}
+
+/* responsive tweaks for padding */
+@media screen and (min-width: 768px) {
+  .home__container {
+    padding-top: 8rem;
+  }
+}
+
+@media screen and (min-width: 1152px) {
+  .home__container {
+    padding-top: 9rem;
+  }
+}
+
 
 
 
