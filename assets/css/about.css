@@ -197,7 +197,7 @@ img {
 /*=============== HOME ===============*/
 .home {
   position: relative;
-  height: 50vh;
+  height: 100vh;
   background-image: url('../img/fallfair.JPG');
   background-repeat: no-repeat;
   background-size: cover;
