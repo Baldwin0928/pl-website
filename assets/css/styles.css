@@ -1833,5 +1833,171 @@ html {
   }
 }
 
+/* Make the highlight cards a bit taller so both rows fit nicely */
+.highlight-card {
+  min-height: 420px; /* adjust if you want more/less height */
+}
+
+/* ===== LOGO CAROUSEL: TWO ROWS ===== */
+
+.pl-sponsor-logos {
+  margin-top: 2.5rem;
+  padding: 1.4rem 1.3rem;
+  overflow: hidden;
+  position: relative;
+
+  background: #eef2ff;      /* soft grey / bluish pill */
+  border-radius: 28px;      /* more rectangular to fit 2 rows */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* edge fades */
+.pl-sponsor-logos::before,
+.pl-sponsor-logos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pl-sponsor-logos::before {
+  left: 0;
+  background: linear-gradient(to right, #eef2ff, transparent);
+}
+
+.pl-sponsor-logos::after {
+  right: 0;
+  background: linear-gradient(to left, #eef2ff, transparent);
+}
+
+.pl-sponsor-logos__row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* horizontal scrolling behaviour */
+.pl-sponsor-logos__track {
+  width: max-content;
+  animation: pl-logos-scroll 25s linear infinite;
+  white-space: nowrap;
+}
+
+.pl-sponsor-logos__track--reverse {
+  animation-name: pl-logos-scroll-reverse;
+}
+
+/* logo sizing / scaling */
+.pl-sponsor-logos__track img {
+  max-height: 42px; /* <-- change this to scale logos up/down */
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* pause scroll on hover if you want */
+.pl-sponsor-logos:hover .pl-sponsor-logos__track {
+  animation-play-state: paused;
+}
+
+/* keyframes for both directions */
+@keyframes pl-logos-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pl-logos-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ===== LEARN MORE BUTTON – GT GOLD + BLACK ===== */
+
+.pl-btn-learn-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* white fill, GT gold/black animated border */
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(120deg, #b3a369, #000000, #b3a369) border-box; /* Tech Gold + black */
+  border: 2px solid transparent;
+  background-size: 220% 220%;
+  animation: pl-btn-border-move 4s linear infinite;
+
+  color: #111827; /* near-black text */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-size 0.18s ease;
+}
+
+.pl-btn-learn-more i {
+  font-size: 1rem;
+}
+
+.pl-btn-learn-more:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  background-size: 260% 260%;
+}
+
+.pl-btn-learn-more:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* moving GT-colored border */
+@keyframes pl-btn-border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* mobile tweaks */
+@media (max-width: 640px) {
+  .pl-sponsor-logos {
+    padding-inline: 1rem;
+  }
+
+  .pl-sponsor-logos__row {
+    gap: 2rem;
+  }
+
+  .pl-sponsor-logos__track img {
+    max-height: 34px;
+  }
+}
+
+
 
 
