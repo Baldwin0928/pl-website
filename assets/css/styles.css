@@ -1430,6 +1430,36 @@ img {
   }
 }
 
+/* Smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll indicator link */
+.home__scroll-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+}
+
+.home__scroll-link i {
+  font-size: 1.4rem;
+  animation: scroll-bounce 1.4s infinite;
+}
+
+/* Little bounce on the arrow */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+
 
 
 
