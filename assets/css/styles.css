@@ -378,7 +378,7 @@ img {
       rgba(35, 35, 35, 0.7),
       rgba(45, 44, 44, 0.7)
     ),
-    url("../img/ourmission.webp") no-repeat center center/cover;
+    url("../img/ourmission.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   padding: 4rem 1.5rem;
   color: #f9fafb;
