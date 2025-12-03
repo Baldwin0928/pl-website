@@ -194,3 +194,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, { passive: true });
 });
+
+// === Auto-snap from hero to "Our Mission" on first scroll ===
+(function () {
+  const aboutSection = document.querySelector('#about');
+  const header = document.querySelector('.header');
+  let hasSnapped = false;
+
+  if (!aboutSection) return;
+
+  // Helper to get the Y-position of the mission section
+  const getAboutTop = () =>
+    aboutSection.getBoundingClientRect().top + window.pageYOffset;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (hasSnapped) return; // only do this once
+
+      const y = window.pageYOffset || document.documentElement.scrollTop;
+      const aboutTop = getAboutTop();
+
+      // User has left the hero a bit but isn't already close to the section
+      if (y > 40 && y < aboutTop - 200) {
+        hasSnapped = true;
+        const headerOffset = header ? header.offsetHeight : 0;
+
+        window.scrollTo({
+          top: aboutTop - headerOffset,
+          behavior: 'smooth',
+        });
+      }
+    },
+    { passive: true }
+  );
+})();
+

@@ -381,31 +381,35 @@ img {
     url("../img/ourmission.JPG") no-repeat center center/cover;
   background-attachment: fixed;
 
-  /* ⬇️ make the section taller */
-  padding: 5.5rem 1.5rem;   /* was 4rem – more top/bottom space */
-  min-height: 70vh;       /* guarantees the block is nice and tall */
-
+  padding: 4rem 1.5rem;
+  min-height: 70vh;
   color: #f9fafb;
-}
 
+  /* center everything */
+  display: flex;
+  flex-direction: column;   /* title on top, text underneath */
+  align-items: center;      /* horizontal centering */
+  justify-content: center;  /* vertical centering */
+  text-align: center;
+}
 
 .ourmission__title {
   font-size: 2.6rem;
   margin-bottom: 2rem;
   font-weight: 700;
-  text-align: center;
 }
 
 .ourmission__container {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .about__description {
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: center;
 }
+
 
 /*=============== HIGHLIGHT GRID (SPONSORS + PROJECT) ===============*/
 .highlight-grid {
