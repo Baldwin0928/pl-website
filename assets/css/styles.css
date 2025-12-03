@@ -81,6 +81,13 @@ img {
   overflow: hidden;
 }
 
+/* Make the header/nav span wider so menu is truly right-aligned */
+.nav.container {
+  max-width: 1400px;      /* you can bump this up or set to 100% */
+  margin-inline: 2.5rem;  /* controls left/right padding from window edge */
+}
+
+
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
