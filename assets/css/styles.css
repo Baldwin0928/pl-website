@@ -531,19 +531,21 @@ img {
 .pl-sponsor-logos {
   margin-top: 2.5rem;
 
-  /* only vertical padding so logos can touch the left/right edge of the card */
-  padding: 1.25rem 0;
+  /* pull it out to the left/right so it hits the card edges exactly */
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+
+  /* match card’s horizontal padding so content still lines up */
+  padding: 1.25rem 2.5rem;
 
   overflow: hidden;
   position: relative;
-
-  /* same color as the card = no “pill” look */
   background: #ffffff;
-  border-radius: 0;
+  border-radius: 0 0 1rem 1rem; /* follows the card’s corners */
 
   display: flex;
   flex-direction: column;
-  gap: 1.4rem; /* space between the 4 rows */
+  gap: 1.4rem;
 }
 
 
