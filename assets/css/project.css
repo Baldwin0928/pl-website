@@ -199,7 +199,7 @@ img {
 .home {
   position: relative;
   height: 50vh;
-  background: url('../img/projecthead.jpeg') no-repeat center 20%/cover !important;
+  background: url('../img/engineinstall.jpg') no-repeat center 20%/cover !important;
   z-index: 1;
   background-attachment: fixed;
 }
