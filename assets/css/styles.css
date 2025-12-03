@@ -1402,14 +1402,20 @@ html {
 /* ============ "WHO WE ARE" ============ */
 
 .about {
-  background-color: #f4f3ee;   /* light neutral background like MASA */
-  padding: 5rem 1.5rem;
+  position: relative;
+  background-color: #ffffff;     /* bright white */
+  background-image: none;        /* kill old bg image */
+  padding: 6rem 1.5rem;
   display: flex;
   justify-content: center;
 }
 
+.about::before {
+  content: none;                 /* remove dark overlay */
+}
+
 .about__inner {
-  max-width: 800px;            /* narrower than hero */
+  max-width: 800px;              /* narrower than hero */
   text-align: center;
   margin: 0 auto;
 }
@@ -1418,7 +1424,7 @@ html {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: var(--first-color); /* dark blue circle */
+  background-color: #00274c;     /* navy circle */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1433,14 +1439,14 @@ html {
 .about__title {
   font-size: 2.3rem;
   margin-bottom: 1.5rem;
-  color: #222222;
+  color: #111111;
   font-weight: 700;
 }
 
 .about__text {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #444444;
+  line-height: 1.8;
+  color: #333333;
 }
 
 /* Mobile tweaks */
@@ -1454,7 +1460,78 @@ html {
   }
 }
 
+/* ===== SPONSOR CAROUSEL ===== */
 
+.sponsors {
+  background-color: #000000;              /* black like YJSP page */
+  padding: 4rem 1.5rem 5rem;
+  text-align: center;
+}
+
+.sponsors .section__title {
+  color: #f9f9f9;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* grey rounded “pill” banner */
+.sponsors-banner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  background: #202020;                    /* dark grey background */
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* track that moves from right → left */
+.sponsors-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  animation: sponsors-scroll 30s linear infinite;
+}
+
+/* each logo item */
+.sponsor-item img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);                /* make logos pop a bit */
+}
+
+/* make it a bit smaller on mobile */
+@media screen and (max-width: 768px) {
+  .sponsors-banner {
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+  }
+
+  .sponsor-item img {
+    height: 40px;
+  }
+
+  .sponsors .section__title {
+    font-size: 2rem;
+  }
+}
+
+/* scrolling animation – adjust duration for speed */
+@keyframes sponsors-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* keep existing CTA styling but make sure it’s centered under banner */
+.sponsors__cta {
+  margin-top: 3rem;
+  text-align: center;
+}
 
 
 
