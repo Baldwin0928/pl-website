@@ -381,16 +381,17 @@ img {
     url("../img/ourmission.JPG") no-repeat center center/cover;
   background-attachment: fixed;
 
-  /* ⬇️ make the section taller */
-  padding: 5.5rem 1.5rem;   /* was 4rem – more top/bottom space */
-  min-height: 70vh;       /* guarantees the block is nice and tall */
-
+  /* size + centering */
+  padding: 4rem 1.5rem;
+  min-height: 70vh;           /* controls how tall the section is */
+  display: flex;
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering of the inner block */
   color: #f9fafb;
 }
 
-
 .ourmission__title {
-  font-size: 3.5rem;
+  font-size: 2.6rem;
   margin-bottom: 2rem;
   font-weight: 700;
   text-align: center;
@@ -399,13 +400,15 @@ img {
 .ourmission__container {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .about__description {
-  font-size: 2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   text-align: center;
 }
+
 
 /*=============== HIGHLIGHT GRID (SPONSORS + PROJECT) ===============*/
 .highlight-grid {
