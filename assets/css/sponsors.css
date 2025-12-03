@@ -590,3 +590,135 @@ img {
     margin-bottom: 0.75rem;
   }
 }
+
+/* ===== SPONSORS LAYOUT OVERRIDES (MASA-STYLE) ===== */
+/* Put this at the VERY BOTTOM of sponsors.css */
+
+.sponsors {
+  padding: 5rem 1.5rem 5rem;
+  background-color: #ffffff; /* full white background like MASA */
+}
+
+/* Card-style tier blocks */
+.sponsors__tier {
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  margin: 0 auto 3rem;
+  max-width: 1100px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsors__tier:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* Tier titles – keep your colors but unify sizing */
+#sponsor__title1,
+#sponsor__title2,
+#sponsor__title3 {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#sponsor__title1 {
+  color: rgba(212, 160, 3, 0.9);  /* gold-ish */
+}
+
+#sponsor__title2 {
+  color: rgb(126, 124, 124);      /* silver-ish */
+}
+
+#sponsor__title3 {
+  color: #714114;                 /* bronze-ish */
+}
+
+/* Base sponsor list layout */
+.sponsor__list {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+/* 3 logos per row for Gold/Silver */
+.sponsors__tier--gold .sponsor__list,
+.sponsors__tier--silver .sponsor__list {
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+}
+
+/* 4 logos per row for Bronze */
+.sponsors__tier--bronze .sponsor__list {
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+}
+
+/* Shared block styling (overrides old ones) */
+.sponsor__block1,
+.sponsor__block2,
+.sponsor__block3,
+.sponsor__block4 {
+  background-color: transparent;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor__block1:hover,
+.sponsor__block2:hover,
+.sponsor__block3:hover,
+.sponsor__block4:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo look */
+.sponsors__tier img {
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.sponsors__tier img:hover {
+  filter: none;
+}
+
+/* Bigger logos for higher tiers */
+.sponsors__tier--gold img {
+  max-width: 220px;
+}
+
+.sponsors__tier--silver img {
+  max-width: 180px;
+}
+
+.sponsors__tier--bronze img {
+  max-width: 140px;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 900px) {
+  .sponsors__tier--gold .sponsor__list,
+  .sponsors__tier--silver .sponsor__list {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sponsors__tier--gold .sponsor__list,
+  .sponsors__tier--silver .sponsor__list,
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: 1fr;
+  }
+}
