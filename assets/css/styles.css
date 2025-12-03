@@ -386,6 +386,7 @@ img {
 .about__description {
   font-size: 1.1rem;
   line-height: 1.8;
+  text-align: center;
 }
 
 /*=============== HIGHLIGHT GRID (SPONSORS + PROJECT) ===============*/
