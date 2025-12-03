@@ -1399,17 +1399,23 @@ html {
   text-align: center;
 }
 
-/* ============ MASA-STYLE "WHO WE ARE" ============ */
+/* ============ "WHO WE ARE" ============ */
 
 .about {
-  background-color: #ffffff;        /* pure white, bright */
+  position: relative;
+  background-color: #ffffff;     /* bright white */
+  background-image: none;        /* kill old bg image */
   padding: 6rem 1.5rem;
   display: flex;
   justify-content: center;
 }
 
+.about::before {
+  content: none;                 /* remove dark overlay */
+}
+
 .about__inner {
-  max-width: 800px;                 /* narrower than hero */
+  max-width: 800px;              /* narrower than hero */
   text-align: center;
   margin: 0 auto;
 }
@@ -1418,7 +1424,7 @@ html {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: #00274c;        /* strong GT-ish navy, or use var(--first-color) */
+  background-color: #00274c;     /* navy circle */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1433,14 +1439,14 @@ html {
 .about__title {
   font-size: 2.3rem;
   margin-bottom: 1.5rem;
-  color: #111111;                   /* darker for contrast */
+  color: #111111;
   font-weight: 700;
 }
 
 .about__text {
   font-size: 1rem;
   line-height: 1.8;
-  color: #333333;                   /* darker body text */
+  color: #333333;
 }
 
 /* Mobile tweaks */
