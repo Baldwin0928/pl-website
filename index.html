@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/whitebutterfly.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/whitebutterfly.png"
+      type="image/x-icon"
+    />
 
     <!--=============== REMIXICONS ===============-->
     <link
@@ -14,13 +18,14 @@
       crossorigin=""
     />
 
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
+    <!--=============== FONT AWESOME (CONTACT ICONS) ===============-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
     <title>Propulsive Landers @ Georgia Tech</title>
     <link rel="icon" type="image/x-icon" href="assets/img/whitebutterfly.png" />
@@ -29,7 +34,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo">
+        <a href="index.html" class="nav__logo">
           <img src="assets/img/whitebutterfly.png" alt="GTPL" />
         </a>
 
@@ -38,33 +43,27 @@
             <li class="nav__item">
               <a href="index.html" class="nav__link">Home</a>
             </li>
-
             <li class="nav__item">
               <a href="about.html" class="nav__link">About</a>
             </li>
-
             <li class="nav__item">
               <a href="project.html" class="nav__link">Projects</a>
             </li>
-
             <li class="nav__item">
               <a href="sponsors.html" class="nav__link">Sponsors</a>
             </li>
-
             <li class="nav__item">
               <a href="contact.html" class="nav__link">Contact</a>
             </li>
           </ul>
 
-          <!-- <a href="#" class="nav__button">Login</a> -->
-
-          <!-- Close button -->
+          <!-- Close button (mobile) -->
           <div class="nav__close" id="nav-close">
             <i class="ri-close-line"></i>
           </div>
         </div>
 
-        <!-- Toggle button -->
+        <!-- Toggle button (mobile) -->
         <div class="nav__toggle" id="nav-toggle">
           <i class="ri-apps-2-line"></i>
         </div>
@@ -78,7 +77,6 @@
         <!-- Background video -->
         <video class="home__video" autoplay muted loop playsinline>
           <source src="assets/media/video.mp4" type="video/mp4" />
-          <!-- Add a fallback image in CSS if you want -->
         </video>
 
         <!-- Dark overlay -->
@@ -103,38 +101,44 @@
                 href="mailto:outreach@gtpropulsivelanders.org"
                 class="contact__icons"
                 target="_blank"
-                ><i class="ri-mail-fill"></i
-              ></a>
+              >
+                <i class="ri-mail-fill"></i>
+              </a>
               <a
                 href="https://www.linkedin.com/company/propulsive-landers-georgia-tech"
                 target="_blank"
                 class="contact__icons"
-                ><i class="ri-linkedin-fill"></i
-              ></a>
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
               <a
                 href="https://www.instagram.com/propulsivelandersgt/"
                 target="_blank"
                 class="contact__icons"
-                ><i class="ri-instagram-fill"></i
-              ></a>
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
               <a
                 href="https://www.tiktok.com/@propulsive.landers.gt"
                 target="_blank"
                 class="contact__icons"
-                ><i class="ri-tiktok-fill"></i
-              ></a>
+              >
+                <i class="ri-tiktok-fill"></i>
+              </a>
               <a
                 href="https://www.youtube.com/@propulsivelandersgt"
                 target="_blank"
                 class="contact__icons"
-                ><i class="ri-youtube-fill"></i
-              ></a>
+              >
+                <i class="ri-youtube-fill"></i>
+              </a>
               <a
                 href="https://www.flickr.com/photos/201770291@N08/"
                 target="_blank"
                 class="contact__icons"
-                ><i class="ri-flickr-fill"></i
-              ></a>
+              >
+                <i class="ri-flickr-fill"></i>
+              </a>
             </div>
           </div>
 
@@ -148,28 +152,26 @@
         </div>
       </section>
 
-            <!-- Who We Are Section -->
+      <!--==================== WHO WE ARE ====================-->
       <section class="about section" id="about">
-
+        <div class="container about__inner">
           <h2 class="about__title">Who We Are</h2>
-
           <p class="about__text">
-            Propulsive Landers @ Georgia Tech (GTPL) is a student-led team at the
-            Georgia Institute of Technology dedicated to advancing propulsive
-            landing technology. With a focus on hybrid propulsion and control
-            systems, GTPL brings together a talented team of 100 students
-            committed to advancing research and development of propulsive descent
-            technologies.
+            Propulsive Landers @ Georgia Tech (GTPL) is a student-led team at
+            the Georgia Institute of Technology dedicated to advancing
+            propulsive landing technology. With a focus on hybrid propulsion and
+            control systems, GTPL brings together a talented team of 100
+            students committed to advancing research and development of
+            propulsive descent technologies.
           </p>
         </div>
       </section>
 
-
-      <!-- Our Mission Section -->
+      <!--==================== OUR MISSION ====================-->
       <section class="ourmission section">
         <h2 class="ourmission__title">Our Mission</h2>
         <div class="ourmission__container container">
-          <p class="about__description" style="font-size: 1.2rem">
+          <p class="about__description">
             In the coming future, we hope to accomplish our goal of becoming the
             first student team in the world to achieve hovering, vertical
             take-off, and landing (VTOL) of a hybrid rocket. GTPL is dedicated
@@ -179,7 +181,7 @@
         </div>
       </section>
 
-      <!-- Highlights Section (Sponsors + Project) -->
+      <!--==================== HIGHLIGHT GRID ====================-->
       <section class="highlight-grid section">
         <div class="highlight-grid__container container">
           <!-- Card 1: Sponsors -->
@@ -187,87 +189,166 @@
             <span class="highlight-card__eyebrow">Sponsors</span>
             <h3 class="highlight-card__title">Thank you to our Sponsors!</h3>
             <p class="highlight-card__text">
-              Our sponsors make Propulsive Landers possible. Their continued support
-              fuels our hybrid rocket development, testing campaigns, and outreach.
+              Our sponsors make Propulsive Landers possible. Their continued
+              support fuels our hybrid rocket development, testing campaigns,
+              and outreach.
             </p>
 
             <!-- Learn More button with animated edge colors -->
-            <a href="sponsors.html" class="highlight-card__button pl-btn-learn-more">
+            <a
+              href="sponsors.html"
+              class="highlight-card__button pl-btn-learn-more"
+            >
               <span>Learn More</span>
               <i class="ri-arrow-right-line"></i>
             </a>
 
             <!-- Logo carousel with grey overlay -->
             <div class="highlight-card__logos pl-sponsor-logos">
-  <!-- Row 1 -->
-  <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-    <!-- duplicate set for seamless loop -->
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-  </div>
+              <!-- Row 1 -->
+              <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+                <!-- duplicate set -->
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+              </div>
 
-  <!-- Row 2 -->
-  <div class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse">
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-    <!-- duplicate set -->
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-  </div>
+              <!-- Row 2 -->
+              <div
+                class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse"
+              >
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+                <!-- duplicate set -->
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+              </div>
 
-  <!-- Row 3 -->
-  <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-    <!-- duplicate set -->
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-  </div>
+              <!-- Row 3 -->
+              <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+                <!-- duplicate set -->
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+              </div>
 
-  <!-- Row 4 -->
-  <div class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse">
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-    <!-- duplicate set -->
-    <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
-    <img src="assets/img/gold-sponsor1.webp" alt="Gold Sponsor" />
-    <img src="assets/img/EBYTE.webp" alt="Ebyte" />
-    <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
-    <img src="assets/img/valworx.png" alt="Valworx" />
-    <img src="assets/img/automationdirect.webp" alt="AutomationDirect" />
-  </div>
-</div>
-
+              <!-- Row 4 -->
+              <div
+                class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse"
+              >
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+                <!-- duplicate set -->
+                <img
+                  src="assets/img/Dassault.png"
+                  alt="Dassault Systèmes"
+                />
+                <img
+                  src="assets/img/gold-sponsor1.webp"
+                  alt="Gold Sponsor"
+                />
+                <img src="assets/img/EBYTE.webp" alt="Ebyte" />
+                <img src="assets/img/boltdepot.png" alt="Bolt Depot" />
+                <img src="assets/img/valworx.png" alt="Valworx" />
+                <img
+                  src="assets/img/automationdirect.webp"
+                  alt="AutomationDirect"
+                />
+              </div>
+            </div>
           </article>
 
           <!-- Card 2: Project Highlight -->
@@ -275,16 +356,18 @@
             <span class="highlight-card__eyebrow">Vehicle Highlight</span>
             <h3 class="highlight-card__title">Hybrid Lander Prototype</h3>
             <p class="highlight-card__text">
-              Our current focus is a hybrid-propulsion lander capable of hovering and
-              VTOL maneuvers. The vehicle combines a paraffin/N<sub>2</sub>O engine,
-              thrust vector control, and custom avionics to practice propulsive
-              landing here at Georgia Tech.
+              Our current focus is a hybrid-propulsion lander capable of
+              hovering and VTOL maneuvers. The vehicle combines a paraffin/N
+              <sub>2</sub>O engine, thrust vector control, and custom avionics
+              to practice propulsive landing here at Georgia Tech.
             </p>
 
-            <a href="project.html" class="highlight-card__button pl-btn-learn-more">
-            Explore the Project
+            <a
+              href="project.html"
+              class="highlight-card__button pl-btn-learn-more"
+            >
+              Explore the Project
             </a>
-
 
             <div class="highlight-card__image-wrap">
               <img
@@ -297,8 +380,7 @@
         </div>
       </section>
 
-
-      <!-- Contact Section -->
+      <!--==================== CONTACT ====================-->
       <section class="contact section">
         <div class="contact__container container">
           <div class="contact__content">
@@ -313,34 +395,22 @@
               <h2 class="mapsite">Site Map</h2>
               <ul class="site_map__list">
                 <li>
-                  <a
-                    href="about.html"
-                    target="_blank"
-                    class="map_site"
+                  <a href="about.html" target="_blank" class="map_site"
                     >About Us</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="projects.html"
-                    target="_blank"
-                    class="map_site"
+                  <a href="projects.html" target="_blank" class="map_site"
                     >Projects</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="sponsors.html"
-                    target="_blank"
-                    class="map_site"
+                  <a href="sponsors.html" target="_blank" class="map_site"
                     >Sponsors</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="contact.html"
-                    target="_blank"
-                    class="map_site"
+                  <a href="contact.html" target="_blank" class="map_site"
                     >Contact</a
                   >
                 </li>
@@ -373,6 +443,7 @@
                   <img
                     src="assets/img/tiktok_round.png"
                     class="tiktok-icon"
+                    alt="TikTok"
                   />
                 </a>
               </div>
@@ -386,20 +457,10 @@
       </section>
     </main>
 
-    <!--=============== GSAP ===============-->
+    <!--=============== GSAP (optional) ===============-->
     <script src="assets/js/gsap.min.js"></script>
 
-    <!--=============== MAIN JS ===============-->
+    <!--=============== MAIN JS (handles nav toggle, etc.) ===============-->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
