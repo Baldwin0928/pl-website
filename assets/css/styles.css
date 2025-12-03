@@ -173,13 +173,9 @@ img {
 }
 
 /* desktop nav */
-@media screen and (min-width: 1024px) {
-  .header {
-    background-color: transparent;
-  }
-
+@media screen and (min-width: 1023px) {
   .nav {
-    height: calc(var(--header-height) + 1rem);
+    height: calc(var(--header-height) + 2rem);
   }
 
   .nav__toggle,
@@ -187,24 +183,21 @@ img {
     display: none;
   }
 
+  /* menu only as wide as its content, pushed to the right */
   .nav__menu {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    background: none;
-    box-shadow: none;
-    flex-direction: row;
+    width: auto;
+    margin-left: auto;
+    display: flex;
     align-items: center;
-    column-gap: 4.5rem;
   }
 
   .nav__list {
-    margin-left: auto;
     flex-direction: row;
-    column-gap: 4.5rem;
+    column-gap: 3.5rem; /* tweak this spacing if you want them closer/further */
+    margin-left: 0;
   }
 }
+
 
 /*=============== HERO / HOME ===============*/
 .home {
