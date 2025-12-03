@@ -196,12 +196,19 @@ img {
 
 /*=============== HOME ===============*/
 .home {
-    position: relative;
-    height: 50vh;
-    background: url('../img/fallfair.JPG') no-repeat center 210%/cover;
-    z-index: 1;
-    background-attachment: fixed;
-  }
+  position: relative;
+  height: 50vh;
+  background-image: url('../img/fallfair.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* 👇 tweak this to move the image */
+  background-position: center 60%;
+
+  z-index: 1;
+  background-attachment: fixed;
+}
+
   
   .home::before {
     content: "";
