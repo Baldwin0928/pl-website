@@ -230,3 +230,28 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 })();
 
+// ======== Auto "push" past the hero section on first scroll ========
+(function () {
+  const hero = document.querySelector('.home');
+  if (!hero) return; // no hero on this page
+
+  let hasAutoScrolled = false;
+  const triggerOffset = 40; // how much user has to scroll before we take over
+
+  window.addEventListener('scroll', () => {
+    if (hasAutoScrolled) return;
+
+    const heroHeight = hero.offsetHeight;
+    const y = window.scrollY || window.pageYOffset;
+
+    // User started scrolling but is still inside the hero area
+    if (y > triggerOffset && y < heroHeight - 100) {
+      hasAutoScrolled = true;
+      window.scrollTo({
+        top: heroHeight,
+        behavior: 'smooth',
+      });
+    }
+  });
+})();
+
