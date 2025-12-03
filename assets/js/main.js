@@ -152,3 +152,45 @@ document.addEventListener('DOMContentLoaded', function() {
   // Other existing JavaScript code...
   // (Keep your existing code for other functionalities here)
 });
+
+// ===== Small "push" scroll from hero to next section =====
+document.addEventListener('DOMContentLoaded', function () {
+  const homeSection  = document.querySelector('.home');
+  const nextSection  = document.querySelector('#about'); // first section after hero
+  const header       = document.querySelector('.header');
+
+  if (!homeSection || !nextSection) return;
+
+  let autoScrolling = false;
+  let hasSnappedOnce = false; // only do the "push" one time per page load
+
+  window.addEventListener('wheel', function (e) {
+    // already auto scrolling or already did the push
+    if (autoScrolling || hasSnappedOnce) return;
+
+    const scrollY = window.scrollY || window.pageYOffset;
+    const heroHeight = homeSection.offsetHeight;
+
+    // only trigger if:
+    //  - user scrolls DOWN (deltaY > 0)
+    //  - we're still inside the hero section
+    //  - the scroll amount isn't just a tiny wobble
+    if (e.deltaY > 10 && scrollY < heroHeight - 50) {
+      autoScrolling = true;
+      hasSnappedOnce = true;
+
+      const headerOffset = header ? header.offsetHeight : 0;
+      const targetTop = nextSection.offsetTop - headerOffset;
+
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth'
+      });
+
+      // let scrolling finish before we allow anything else
+      setTimeout(function () {
+        autoScrolling = false;
+      }, 1200);
+    }
+  }, { passive: true });
+});
