@@ -1459,6 +1459,60 @@ html {
   50%      { transform: translateY(6px); }
 }
 
+/* ===== MASA-style "Who We Are" section ===== */
+
+.about {
+  background-color: #f4f3ee;         /* light neutral background like MASA */
+  padding: 5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about__inner {
+  max-width: 800px;                  /* narrower than full-width hero */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.about__logo-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--first-color); /* blue circle behind logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.about__logo {
+  width: 42px;
+  height: auto;
+}
+
+.about__title {
+  font-size: 2.3rem;
+  margin-bottom: 1.5rem;
+  color: #222222;
+  font-weight: 700;
+}
+
+.about__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444444;
+}
+
+/* keep it comfy on small screens */
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 4rem 1.25rem;
+  }
+
+  .about__title {
+    font-size: 1.9rem;
+  }
+}
 
 
 
