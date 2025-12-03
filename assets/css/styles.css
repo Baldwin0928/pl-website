@@ -830,80 +830,6 @@ img {
   }
 } */
 
-/* Who We Are Section */
-/* .about__content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.about__text {
-  flex: 1;
-}
-
-.about__image img {
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width:27rem;
-  border-radius: 10px
-}
-
-@media screen and (max-width: 768px) {
-  .about__content {
-     flex-direction: column;
-     text-align: center;
-  }
-
-  .about__image {
-     margin-top: 2rem;
-  }
-} */
-	/* Who We Are Section */
-.about {
-  position: relative;
-  background-image: url('../img/whoweare.webp'); /* Replace with your actual background image */
-  background-size: cover;
-  background-position: center;
-}
-
-.about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Black overlay with 70% opacity */
-  z-index: 1;
-}
-
-.about__content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 3rem 0;
-}
-
-.about__text {
-  flex: 1;
-  font-size: 1.4rem; /* Increased from 1.2rem */
-  line-height: 1.8;
-  color: #ffffff; /* Pure white text */
-}
-
-.about__image img {
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  width: 30rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-}
 
 /* Section Title */
 .section__title {
@@ -1459,17 +1385,31 @@ html {
   50%      { transform: translateY(6px); }
 }
 
-/* ===== MASA-style "Who We Are" section ===== */
+/* ============ GENERAL SECTION STYLING ============ */
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Use this for things like "Our Sponsors" heading */
+.section__title {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ============ "WHO WE ARE" ============ */
 
 .about {
-  background-color: #f4f3ee;         /* light neutral background like MASA */
+  background-color: #f4f3ee;   /* light neutral background like MASA */
   padding: 5rem 1.5rem;
   display: flex;
   justify-content: center;
 }
 
 .about__inner {
-  max-width: 800px;                  /* narrower than full-width hero */
+  max-width: 800px;            /* narrower than hero */
   text-align: center;
   margin: 0 auto;
 }
@@ -1478,7 +1418,7 @@ html {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: var(--first-color); /* blue circle behind logo */
+  background-color: var(--first-color); /* dark blue circle */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1503,7 +1443,7 @@ html {
   color: #444444;
 }
 
-/* keep it comfy on small screens */
+/* Mobile tweaks */
 @media screen and (max-width: 768px) {
   .about {
     padding: 4rem 1.25rem;
