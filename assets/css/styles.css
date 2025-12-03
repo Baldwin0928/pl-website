@@ -381,32 +381,33 @@ img {
     url("../img/ourmission.JPG") no-repeat center center/cover;
   background-attachment: fixed;
 
-  /* size + centering */
   padding: 4rem 1.5rem;
-  min-height: 70vh;           /* controls how tall the section is */
-  display: flex;
-  align-items: center;        /* vertical centering */
-  justify-content: center;    /* horizontal centering of the inner block */
+  min-height: 70vh;
   color: #f9fafb;
+
+  /* center everything */
+  display: flex;
+  flex-direction: column;   /* title on top, text underneath */
+  align-items: center;      /* horizontal centering */
+  justify-content: center;  /* vertical centering */
+  text-align: center;
 }
 
 .ourmission__title {
   font-size: 2.6rem;
   margin-bottom: 2rem;
   font-weight: 700;
-  text-align: center;
 }
 
 .ourmission__container {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
 }
 
 .about__description {
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: center;
 }
 
 
