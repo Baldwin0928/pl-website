@@ -183,8 +183,17 @@ img {
     display: none;
   }
 
-  /* menu only as wide as its content, pushed to the right */
   .nav__menu {
+    /* reset mobile styles */
+    position: static;
+    right: auto;
+    top: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+
+    /* desktop layout: shrink to content and push to the right */
     width: auto;
     margin-left: auto;
     display: flex;
@@ -193,8 +202,12 @@ img {
 
   .nav__list {
     flex-direction: row;
-    column-gap: 3.5rem; /* tweak this spacing if you want them closer/further */
+    column-gap: 3.5rem; /* adjust spacing if you want */
     margin-left: 0;
+  }
+
+  .nav__link {
+    color: #ffffff; /* keep white over the dark header */
   }
 }
 
