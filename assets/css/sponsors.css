@@ -722,3 +722,16 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* === Make sponsor tiers pure white, no gray cards === */
+.sponsors__tier {
+  background-color: #ffffff;  /* same as page */
+  border-radius: 0;
+  padding: 2.5rem 0;          /* remove side padding from the “card” */
+  box-shadow: none;
+}
+
+.sponsors__tier:hover {
+  transform: none;
+  box-shadow: none;
+}
