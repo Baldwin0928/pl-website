@@ -362,9 +362,11 @@ img {
   column-gap: 3.2rem;
 }
 
-/* columns by tier (desktop) */
+/* ↓↓↓ UPDATED: reduce spacing for GOLD tier a little */
 .sponsor-grid--gold {
   grid-template-columns: repeat(4, minmax(160px, 1fr));
+  column-gap: 2.4rem; /* was 3.2rem */
+  row-gap: 2.6rem;    /* was 3.0rem */
 }
 
 .sponsor-grid--silver {
@@ -429,6 +431,8 @@ img {
 
   .sponsor-grid--gold {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
+    column-gap: 2.0rem; /* tighter on mobile */
+    row-gap: 2.2rem;    /* tighter on mobile */
   }
 
   .sponsor-grid--silver {
