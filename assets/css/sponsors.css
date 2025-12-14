@@ -316,122 +316,229 @@ img {
   }
 }
 
-/*=============== SPONSOR TIERS (MASA-STYLE) ===============*/
+/*=============== SPONSORS (MASA-INSPIRED) ===============*/
 .sponsors {
-  padding: 4rem 1.5rem 5rem;
-  background-color: #ffffff;
+  padding: 4.5rem 1.5rem 5rem;
+  background-color: #f3f4f6; /* very light gray backdrop */
 }
 
+/* White “section blocks” on light gray */
 .sponsors__tier {
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  padding: 2.5rem 2rem;
-  margin: 0 auto 3rem;
-  max-width: 1100px;
+  max-width: 1120px;
+  margin: 0 auto 2.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 2.25rem 1.75rem 2.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
-.sponsors__tier:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-}
-
+/* Tier titles */
+#sponsor__title0,
 #sponsor__title1,
 #sponsor__title2,
 #sponsor__title3 {
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1.65rem;
+  margin-bottom: 1.75rem;
+  text-transform: none; /* MASA feels less shouty */
+  letter-spacing: 0.02em;
+  color: #111827;
 }
 
-#sponsor__title1 {
-  color: #b8860b; /* gold */
+#sponsor__title1 { color: rgba(212, 160, 3, 0.95); } /* gold */
+#sponsor__title2 { color: #6b7280; }                 /* silver */
+#sponsor__title3 { color: #714114; }                 /* bronze */
+
+/* ===== Platinum featured card ===== */
+.platinum__card {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-#sponsor__title2 {
-  color: #6b7280; /* silver */
+.platinum__logo {
+  flex: 0 0 44%;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.25rem;
 }
 
-#sponsor__title3 {
-  color: #8b4513; /* bronze */
+.platinum__logo a {
+  width: 100%;
+  max-width: 420px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 18px;
 }
 
-/* base list layout */
+.platinum__content {
+  flex: 1;
+  padding: 2.25rem 2.25rem;
+  text-align: left;
+}
+
+.platinum__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.platinum__name {
+  font-size: 1.6rem;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.platinum__desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 1.35rem;
+  max-width: 34rem;
+}
+
+.platinum__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid #111827;
+  color: #111827;
+  font-weight: 700;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.platinum__btn:hover {
+  background-color: #111827;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ===== Sponsor grids ===== */
 .sponsor__list {
   display: grid;
   justify-items: center;
   align-items: center;
-  column-gap: 5rem;
-  row-gap: 3rem;
+  column-gap: 2rem;
+  row-gap: 1.35rem;
 }
 
-/* 3 per row for gold/silver */
-.sponsors__tier--gold .sponsor__list,
+/* MASA-like: Gold 4, Silver 5, Bronze 6 per row */
+.sponsors__tier--gold .sponsor__list {
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+}
+
 .sponsors__tier--silver .sponsor__list {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
 }
 
-/* 4 per row for bronze */
 .sponsors__tier--bronze .sponsor__list {
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
 }
 
-/* shared block styling */
-.sponsor__block1,
-.sponsor__block2,
-.sponsor__block3,
-.sponsor__block4 {
-  background-color: transparent;
-  border-radius: 1rem;
-  padding: 0.75rem;
+/* Uniform tiles + bigger logos */
+.sponsor__block {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sponsor__block1:hover,
-.sponsor__block2:hover,
-.sponsor__block3:hover,
-.sponsor__block4:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+.sponsor__block a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  padding: 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-/* grayscale + hover pop */
-.sponsors__tier img {
-  filter: grayscale(20%);
-  transition: filter 0.3s ease;
+.sponsor__block a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.10);
+  border-color: #d1d5db;
 }
 
-.sponsors__tier img:hover {
-  filter: none;
+/* Disabled tiles */
+.sponsor__block a.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.96;
 }
 
-/* tier logo sizes */
-.sponsors__tier--gold img {
-  max-width: 220px;
+/* Tier-specific tile heights (bigger + more visible) */
+.sponsors__tier--gold .sponsor__block a { height: 135px; }
+.sponsors__tier--silver .sponsor__block a { height: 120px; }
+.sponsors__tier--bronze .sponsor__block a { height: 110px; }
+
+/* The key scaling rule: consistent look without cropping */
+.sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 280px;     /* bigger than before */
+  max-height: 100%;
+  object-fit: contain;
+  filter: none;         /* more visible by default */
 }
 
-.sponsors__tier--silver img {
-  max-width: 180px;
+/* Responsive: step down columns cleanly */
+@media screen and (max-width: 1200px) {
+  .sponsors__tier--gold .sponsor__list {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+  .sponsors__tier--silver .sponsor__list {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+  }
 }
 
-.sponsors__tier--bronze img {
-  max-width: 140px;
-}
-
-/* responsive logo grids */
 @media screen and (max-width: 900px) {
   .sponsors__tier--gold .sponsor__list,
-  .sponsors__tier--silver .sponsor__list {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  .sponsors__tier--silver .sponsor__list,
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
 
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  .platinum__card {
+    flex-direction: column;
+  }
+
+  .platinum__content {
+    text-align: left;
+  }
+
+  .platinum__logo {
+    flex: none;
   }
 }
 
@@ -440,6 +547,18 @@ img {
   .sponsors__tier--silver .sponsor__list,
   .sponsors__tier--bronze .sponsor__list {
     grid-template-columns: 1fr;
+  }
+
+  .sponsors__tier {
+    padding: 2rem 1.25rem 2.25rem;
+  }
+
+  .platinum__content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .platinum__logo {
+    padding: 1.75rem 1.25rem;
   }
 }
 
@@ -508,8 +627,7 @@ img {
   color: #111827;
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-size 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-size 0.15s ease;
 }
 
 .footer-btn:hover {
@@ -541,8 +659,7 @@ img {
   justify-content: center;
   color: #111827;
   font-size: 1.2rem;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    transform 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .footer-social:hover {
@@ -589,149 +706,4 @@ img {
   .footer-cta__heading {
     margin-bottom: 0.75rem;
   }
-}
-
-/* ===== SPONSORS LAYOUT OVERRIDES (MASA-STYLE) ===== */
-/* Put this at the VERY BOTTOM of sponsors.css */
-
-.sponsors {
-  padding: 5rem 1.5rem 5rem;
-  background-color: #ffffff; /* full white background like MASA */
-}
-
-/* Card-style tier blocks */
-.sponsors__tier {
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  padding: 2.5rem 2rem;
-  margin: 0 auto 3rem;
-  max-width: 1100px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sponsors__tier:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-}
-
-/* Tier titles – keep your colors but unify sizing */
-#sponsor__title1,
-#sponsor__title2,
-#sponsor__title3 {
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-#sponsor__title1 {
-  color: rgba(212, 160, 3, 0.9);  /* gold-ish */
-}
-
-#sponsor__title2 {
-  color: rgb(126, 124, 124);      /* silver-ish */
-}
-
-#sponsor__title3 {
-  color: #714114;                 /* bronze-ish */
-}
-
-/* Base sponsor list layout */
-.sponsor__list {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  column-gap: 5rem;
-  row-gap: 3rem;
-}
-
-/* 3 logos per row for Gold/Silver */
-.sponsors__tier--gold .sponsor__list,
-.sponsors__tier--silver .sponsor__list {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
-}
-
-/* 4 logos per row for Bronze */
-.sponsors__tier--bronze .sponsor__list {
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-}
-
-/* Shared block styling (overrides old ones) */
-.sponsor__block1,
-.sponsor__block2,
-.sponsor__block3,
-.sponsor__block4 {
-  background-color: transparent;
-  border-radius: 1rem;
-  padding: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sponsor__block1:hover,
-.sponsor__block2:hover,
-.sponsor__block3:hover,
-.sponsor__block4:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-
-/* Logo look */
-.sponsors__tier img {
-  filter: grayscale(20%);
-  transition: filter 0.3s ease;
-  display: block;
-}
-
-.sponsors__tier img:hover {
-  filter: none;
-}
-
-/* Bigger logos for higher tiers */
-.sponsors__tier--gold img {
-  max-width: 220px;
-}
-
-.sponsors__tier--silver img {
-  max-width: 180px;
-}
-
-.sponsors__tier--bronze img {
-  max-width: 140px;
-}
-
-/* Responsive tweaks */
-@media screen and (max-width: 900px) {
-  .sponsors__tier--gold .sponsor__list,
-  .sponsors__tier--silver .sponsor__list {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-  }
-
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .sponsors__tier--gold .sponsor__list,
-  .sponsors__tier--silver .sponsor__list,
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* === Make sponsor tiers pure white, no gray cards === */
-.sponsors__tier {
-  background-color: #ffffff;  /* same as page */
-  border-radius: 0;
-  padding: 2.5rem 0;          /* remove side padding from the “card” */
-  box-shadow: none;
-}
-
-.sponsors__tier:hover {
-  transform: none;
-  box-shadow: none;
 }
