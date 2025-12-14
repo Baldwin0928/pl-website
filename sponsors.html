@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="shortcut icon"
-      href="assets/img/logo.jpg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
@@ -87,8 +83,10 @@
                 href="assets/files/sponsorship_package.pdf"
                 class="home__button"
                 target="_blank"
-                >Sponsorship Package</a
+                rel="noopener noreferrer"
               >
+                Sponsorship Package
+              </a>
             </div>
           </div>
 
@@ -103,31 +101,107 @@
 
       <!--==================== SPONSOR TIERS ====================-->
       <section class="sponsors">
+        <!-- Platinum -->
+        <div class="sponsors__tier sponsors__tier--platinum">
+          <h2 id="sponsor__title0">Platinum Sponsors</h2>
+          <div class="sponsor__list">
+            <div class="sponsor__block">
+              <a
+                href="https://sga.gatech.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/img/sga.svg"
+                  alt="Georgia Tech SGA — Platinum Sponsor"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Gold -->
         <div class="sponsors__tier sponsors__tier--gold">
           <h2 id="sponsor__title1">Gold Sponsors</h2>
           <div class="sponsor__list">
-            <div class="sponsor__block1">
-              <a href="https://www.3ds.com/" target="_blank">
+            <div class="sponsor__block">
+              <a
+                href="https://www.altium.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/Dassault.png"
-                  alt="Dassault Systèmes — Gold Sponsor"
+                  src="assets/img/altiumblk.svg"
+                  alt="Altium — Gold Sponsor"
                 />
               </a>
             </div>
-            <div class="sponsor__block1">
-              <a href="https://www.valworx.com/" target="_blank">
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.valworx.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/valworx.png"
+                  src="assets/img/valworx.svg"
                   alt="Valworx — Gold Sponsor"
                 />
               </a>
             </div>
-            <div class="sponsor__block1">
-              <a href="https://www.automationdirect.com/" target="_blank">
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.automationdirect.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/automationdirect.webp"
+                  src="assets/img/adc.svg"
                   alt="AutomationDirect — Gold Sponsor"
+                />
+              </a>
+            </div>
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.solidworks.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/img/solidworks.svg"
+                  alt="SOLIDWORKS — Gold Sponsor"
+                />
+              </a>
+            </div>
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.ansys.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="assets/img/ansys.svg" alt="ANSYS — Gold Sponsor" />
+              </a>
+            </div>
+
+            <!-- No confirmed URL provided: keep tile, disable click -->
+            <div class="sponsor__block">
+              <a class="is-disabled" href="#" aria-label="GT Student Foundation">
+                <img
+                  src="assets/img/gtsf.svg"
+                  alt="GT Student Foundation — Gold Sponsor"
+                />
+              </a>
+            </div>
+
+            <!-- No confirmed URL provided: keep tile, disable click -->
+            <div class="sponsor__block">
+              <a class="is-disabled" href="#" aria-label="Woodruff Foundation">
+                <img
+                  src="assets/img/woodruff.svg"
+                  alt="Woodruff — Gold Sponsor"
                 />
               </a>
             </div>
@@ -138,15 +212,31 @@
         <div class="sponsors__tier sponsors__tier--silver">
           <h2 id="sponsor__title2">Silver Sponsors</h2>
           <div class="sponsor__list">
-            <div class="sponsor__block2">
-              <a href="https://boltdepot.com" target="_blank">
+            <div class="sponsor__block">
+              <a
+                href="https://boltdepot.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/boltdepot.png"
+                  src="assets/img/boltdepot.svg"
                   alt="Bolt Depot — Silver Sponsor"
                 />
               </a>
             </div>
-            <!-- add more silver sponsors here when you have them -->
+
+            <div class="sponsor__block">
+              <a
+                href="https://graphitestore.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/img/graphitestore.svg"
+                  alt="GraphiteStore — Silver Sponsor"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -154,23 +244,70 @@
         <div class="sponsors__tier sponsors__tier--bronze">
           <h2 id="sponsor__title3">Bronze Sponsors</h2>
           <div class="sponsor__list">
-            <div class="sponsor__block3">
-              <a href="https://www.pcbway.com/" target="_blank">
+            <div class="sponsor__block">
+              <a
+                href="https://www.pcbway.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/gold-sponsor1.webp"
+                  src="assets/img/pcbway.svg"
                   alt="PCBWay — Bronze Sponsor"
                 />
               </a>
             </div>
-            <div class="sponsor__block3">
-              <a href="https://www.cdebyte.com/" target="_blank">
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.xometry.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="assets/img/EBYTE.webp"
-                  alt="Ebyte — Bronze Sponsor"
+                  src="assets/img/xometry.svg"
+                  alt="Xometry — Bronze Sponsor"
                 />
               </a>
             </div>
-            <!-- when you add 2 more bronze sponsors, they will fill out the 4-wide row -->
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.meanwell.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/img/meanwell.svg"
+                  alt="Mean Well — Bronze Sponsor"
+                />
+              </a>
+            </div>
+
+            <div class="sponsor__block">
+              <a
+                href="https://www.rockwestcomposites.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/img/rockwest.svg"
+                  alt="Rock West Composites — Bronze Sponsor"
+                />
+              </a>
+            </div>
+
+            <!-- File exists; tier from your sheet is Bronze -->
+            <div class="sponsor__block">
+              <a
+                href="https://www.ansys.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ANSYS (additional listing if needed)"
+                style="display:none;"
+              >
+                <!-- intentionally hidden placeholder (remove if unused) -->
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -194,6 +331,7 @@
                 href="https://gofund.me/0b95802f7"
                 class="footer-btn"
                 target="_blank"
+                rel="noopener noreferrer"
                 >Donate</a
               >
               <a href="sponsors.html" class="footer-btn">Become a Sponsor</a>
@@ -205,6 +343,7 @@
           <a
             href="https://www.youtube.com/@propulsivelandersgt"
             target="_blank"
+            rel="noopener noreferrer"
             class="footer-social"
           >
             <i class="ri-youtube-fill"></i>
@@ -212,6 +351,7 @@
           <a
             href="https://www.instagram.com/propulsivelandersgt/"
             target="_blank"
+            rel="noopener noreferrer"
             class="footer-social"
           >
             <i class="ri-instagram-fill"></i>
@@ -219,11 +359,17 @@
           <a
             href="https://www.linkedin.com/company/propulsive-landers-georgia-tech"
             target="_blank"
+            rel="noopener noreferrer"
             class="footer-social"
           >
             <i class="ri-linkedin-fill"></i>
           </a>
-          <a href="https://propulsivelandersgt.com" target="_blank" class="footer-social">
+          <a
+            href="https://propulsivelandersgt.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social"
+          >
             <i class="ri-global-line"></i>
           </a>
         </div>
