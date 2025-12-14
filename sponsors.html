@@ -32,19 +32,15 @@
             <li class="nav__item">
               <a href="index.html" class="nav__link">Home</a>
             </li>
-
             <li class="nav__item">
               <a href="about.html" class="nav__link">About</a>
             </li>
-
             <li class="nav__item">
               <a href="project.html" class="nav__link">Projects</a>
             </li>
-
             <li class="nav__item">
               <a href="sponsors.html" class="nav__link">Sponsors</a>
             </li>
-
             <li class="nav__item">
               <a href="contact.html" class="nav__link">Contact</a>
             </li>
@@ -69,29 +65,28 @@
       <!--==================== PLATINUM ====================-->
       <section class="platinum-band">
         <div class="platinum-band__inner">
-          <h2 class="tier-title">Platinum Sponsors</h2>
+          <h2 class="tier-title tier-title--platinum">Platinum Sponsors</h2>
 
-          <div class="platinum__card">
-            <div class="platinum__logo">
-              <a href="https://sga.gatech.edu/" target="_blank" rel="noopener">
-                <img
-                  src="assets/img/sga.png"
-                  alt="Georgia Tech SGA — Platinum Sponsor"
-                />
-              </a>
+          <div class="platinum-card">
+            <div class="platinum-card__media">
+              <!-- swapped from sga.svg to a 1024x575 png -->
+              <img
+                src="assets/img/sga.png"
+                alt="Georgia Tech SGA — Platinum Sponsor"
+              />
             </div>
 
-            <div class="platinum__content">
-              <div class="platinum__eyebrow">PLATINUM SPONSOR</div>
-              <h3 class="platinum__name">Georgia Tech SGA</h3>
-              <p class="platinum__text">
+            <div class="platinum-card__content">
+              <div class="platinum-card__eyebrow">PLATINUM SPONSOR</div>
+              <h3 class="platinum-card__name">Georgia Tech SGA</h3>
+              <p class="platinum-card__text">
                 Our Platinum Sponsors provide foundational support that
                 accelerates testing, student development, and rapid iteration
                 across our program.
               </p>
 
               <a
-                class="footer-btn footer-btn--inline"
+                class="footer-btn"
                 href="https://sga.gatech.edu/"
                 target="_blank"
                 rel="noopener"
@@ -103,25 +98,38 @@
       </section>
 
       <!--==================== SPONSOR TIERS ====================-->
-      <section class="sponsors">
-        <!-- Gold -->
-        <div class="sponsors__tier sponsors__tier--gold">
-          <h2 class="tier-title">Gold Sponsors</h2>
-          <div class="sponsor__list">
-            <div class="sponsor__block">
-              <a href="https://www.altium.com/" target="_blank" rel="noopener">
-                <img src="assets/img/altiumblk.svg" alt="Altium — Gold Sponsor" />
-              </a>
-            </div>
-
-            <div class="sponsor__block">
-              <a href="https://www.valworx.com/" target="_blank" rel="noopener">
-                <img src="assets/img/valworx.svg" alt="Valworx — Gold Sponsor" />
-              </a>
-            </div>
-
-            <div class="sponsor__block">
+      <section class="sponsors-tiers">
+        <div class="sponsors-tiers__inner">
+          <!-- Gold -->
+          <section class="sponsors-tier sponsors-tier--gold">
+            <h2 class="tier-title">Gold Sponsors</h2>
+            <div class="sponsor-grid sponsor-grid--gold">
               <a
+                class="sponsor-logo"
+                href="https://www.altium.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="assets/img/altiumblk.svg"
+                  alt="Altium — Gold Sponsor"
+                />
+              </a>
+
+              <a
+                class="sponsor-logo"
+                href="https://www.valworx.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="assets/img/valworx.svg"
+                  alt="Valworx — Gold Sponsor"
+                />
+              </a>
+
+              <a
+                class="sponsor-logo"
                 href="https://www.automationdirect.com/"
                 target="_blank"
                 rel="noopener"
@@ -131,29 +139,30 @@
                   alt="AutomationDirect — Gold Sponsor"
                 />
               </a>
-            </div>
 
-            <div class="sponsor__block">
               <a
+                class="sponsor-logo"
                 href="https://www.solidworks.com/"
                 target="_blank"
                 rel="noopener"
               >
                 <img
                   src="assets/img/solidworks.svg"
-                  alt="SolidWorks — Gold Sponsor"
+                  alt="Solidworks — Gold Sponsor"
                 />
               </a>
-            </div>
 
-            <div class="sponsor__block">
-              <a href="https://www.ansys.com/" target="_blank" rel="noopener">
+              <a
+                class="sponsor-logo"
+                href="https://www.ansys.com/"
+                target="_blank"
+                rel="noopener"
+              >
                 <img src="assets/img/ansys.svg" alt="ANSYS — Gold Sponsor" />
               </a>
-            </div>
 
-            <div class="sponsor__block">
               <a
+                class="sponsor-logo"
                 href="https://www.gtalumni.org/student-programs/georgia-tech-student-foundation/default.html"
                 target="_blank"
                 rel="noopener"
@@ -163,10 +172,9 @@
                   alt="Georgia Tech Student Foundation — Gold Sponsor"
                 />
               </a>
-            </div>
 
-            <div class="sponsor__block">
               <a
+                class="sponsor-logo"
                 href="https://www.me.gatech.edu/"
                 target="_blank"
                 rel="noopener"
@@ -177,55 +185,68 @@
                 />
               </a>
             </div>
-          </div>
-        </div>
+          </section>
 
-        <!-- Silver -->
-        <div class="sponsors__tier sponsors__tier--silver">
-          <h2 class="tier-title">Silver Sponsors</h2>
-          <div class="sponsor__list">
-            <div class="sponsor__block">
-              <a href="https://boltdepot.com" target="_blank" rel="noopener">
+          <!-- Silver -->
+          <section class="sponsors-tier sponsors-tier--silver">
+            <h2 class="tier-title">Silver Sponsors</h2>
+            <div class="sponsor-grid sponsor-grid--silver">
+              <a
+                class="sponsor-logo"
+                href="https://boltdepot.com/"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   src="assets/img/boltdepot.svg"
                   alt="Bolt Depot — Silver Sponsor"
                 />
               </a>
-            </div>
 
-            <div class="sponsor__block">
               <a
-                href="https://www.graphitestore.com/"
+                class="sponsor-logo"
+                href="https://graphitestore.com/"
                 target="_blank"
                 rel="noopener"
               >
                 <img
                   src="assets/img/graphitestore.svg"
-                  alt="GraphiteStore — Silver Sponsor"
+                  alt="Graphitestore — Silver Sponsor"
                 />
               </a>
             </div>
-          </div>
-        </div>
+          </section>
 
-        <!-- Bronze -->
-        <div class="sponsors__tier sponsors__tier--bronze">
-          <h2 class="tier-title">Bronze Sponsors</h2>
-          <div class="sponsor__list">
-            <div class="sponsor__block">
-              <a href="https://www.pcbway.com/" target="_blank" rel="noopener">
-                <img src="assets/img/pcbway.svg" alt="PCBWay — Bronze Sponsor" />
-              </a>
-            </div>
-
-            <div class="sponsor__block">
-              <a href="https://www.xometry.com/" target="_blank" rel="noopener">
-                <img src="assets/img/xometry.svg" alt="Xometry — Bronze Sponsor" />
-              </a>
-            </div>
-
-            <div class="sponsor__block">
+          <!-- Bronze -->
+          <section class="sponsors-tier sponsors-tier--bronze">
+            <h2 class="tier-title">Bronze Sponsors</h2>
+            <div class="sponsor-grid sponsor-grid--bronze">
               <a
+                class="sponsor-logo"
+                href="https://www.pcbway.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="assets/img/pcbway.svg"
+                  alt="PCBWay — Bronze Sponsor"
+                />
+              </a>
+
+              <a
+                class="sponsor-logo"
+                href="https://www.xometry.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="assets/img/xometry.svg"
+                  alt="Xometry — Bronze Sponsor"
+                />
+              </a>
+
+              <a
+                class="sponsor-logo"
                 href="https://www.meanwell.com/"
                 target="_blank"
                 rel="noopener"
@@ -235,10 +256,9 @@
                   alt="Mean Well — Bronze Sponsor"
                 />
               </a>
-            </div>
 
-            <div class="sponsor__block">
               <a
+                class="sponsor-logo"
                 href="https://www.rockwestcomposites.com/"
                 target="_blank"
                 rel="noopener"
@@ -249,12 +269,12 @@
                 />
               </a>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
-      <!--==================== INTRO TEXT + IMAGE (MOVED DOWN) ====================-->
-      <section class="sponsors-intro sponsors-intro--bottom">
+      <!--==================== INTRO TEXT + IMAGE (MOVED BELOW BRONZE) ====================-->
+      <section class="sponsors-intro">
         <div class="sponsors-intro__container">
           <div class="sponsors-intro__text">
             <h1>Your Contribution Matters</h1>
@@ -317,32 +337,32 @@
           <a
             href="https://www.youtube.com/@propulsivelandersgt"
             target="_blank"
-            class="footer-social"
             rel="noopener"
+            class="footer-social"
           >
             <i class="ri-youtube-fill"></i>
           </a>
           <a
             href="https://www.instagram.com/propulsivelandersgt/"
             target="_blank"
-            class="footer-social"
             rel="noopener"
+            class="footer-social"
           >
             <i class="ri-instagram-fill"></i>
           </a>
           <a
             href="https://www.linkedin.com/company/propulsive-landers-georgia-tech"
             target="_blank"
-            class="footer-social"
             rel="noopener"
+            class="footer-social"
           >
             <i class="ri-linkedin-fill"></i>
           </a>
           <a
             href="https://propulsivelandersgt.com"
             target="_blank"
-            class="footer-social"
             rel="noopener"
+            class="footer-social"
           >
             <i class="ri-global-line"></i>
           </a>
