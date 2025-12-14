@@ -394,13 +394,13 @@ img {
 
 /* size tuning: Gold > Silver > Bronze (bigger across the board) */
 .sponsors-tier--gold img {
-  max-width: 300px;
-  max-height: 112px;
+  max-width: 350px;
+  max-height: 130.6px;
 }
 
 .sponsors-tier--silver img {
-  max-width: 270px;
-  max-height: 100px;
+  max-width: 300px;
+  max-height: 111px;
 }
 
 .sponsors-tier--bronze img {
