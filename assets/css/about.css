@@ -1108,3 +1108,58 @@ img {
 .team__section + .team__section {
   background-color: #f8f9fa;
 }
+
+/* ===== Sponsor logo carousel (Index) ===== */
+.pl-sponsor-logos {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* optional: subtle overlay like your “grey overlay” comment */
+.pl-sponsor-logos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+
+.pl-sponsor-logos__row {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 0.9rem 0;
+  width: max-content; /* critical for marquee */
+}
+
+.pl-sponsor-logos__track {
+  animation: plMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.pl-sponsor-logos__track--reverse {
+  animation-direction: reverse;
+}
+
+.pl-sponsor-logos img {
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: grayscale(100%) brightness(1.15);
+}
+
+@keyframes plMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* because we duplicated the set */
+}
+
+@media screen and (max-width: 768px) {
+  .pl-sponsor-logos img {
+    height: 38px;
+    max-width: 160px;
+  }
+}
+
