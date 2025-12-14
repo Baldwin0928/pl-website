@@ -316,20 +316,22 @@ img {
   }
 }
 
-/*=============== SPONSOR TIERS ===============*/
+/*=============== SPONSORS (MASA-INSPIRED) ===============*/
 .sponsors {
-  padding: 5rem 1.5rem 5rem;
-  background-color: #ffffff;
+  padding: 4.5rem 1.5rem 5rem;
+  background-color: #f3f4f6; /* very light gray backdrop */
 }
 
-/* Pure white tier blocks (no card hover lift) */
+/* White “section blocks” on light gray */
 .sponsors__tier {
+  max-width: 1120px;
+  margin: 0 auto 2.75rem;
   background-color: #ffffff;
-  border-radius: 0;
-  padding: 2.5rem 0;
-  margin: 0 auto 2.5rem;
-  max-width: 1100px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 2.25rem 1.75rem 2.5rem;
   text-align: center;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
 /* Tier titles */
@@ -337,52 +339,127 @@ img {
 #sponsor__title1,
 #sponsor__title2,
 #sponsor__title3 {
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1.65rem;
+  margin-bottom: 1.75rem;
+  text-transform: none; /* MASA feels less shouty */
+  letter-spacing: 0.02em;
+  color: #111827;
 }
 
-#sponsor__title0 {
-  color: #111827; /* platinum: clean black */
+#sponsor__title1 { color: rgba(212, 160, 3, 0.95); } /* gold */
+#sponsor__title2 { color: #6b7280; }                 /* silver */
+#sponsor__title3 { color: #714114; }                 /* bronze */
+
+/* ===== Platinum featured card ===== */
+.platinum__card {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-#sponsor__title1 {
-  color: rgba(212, 160, 3, 0.9); /* gold */
+.platinum__logo {
+  flex: 0 0 44%;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.25rem;
 }
 
-#sponsor__title2 {
-  color: rgb(126, 124, 124); /* silver */
+.platinum__logo a {
+  width: 100%;
+  max-width: 420px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 18px;
 }
 
-#sponsor__title3 {
-  color: #714114; /* bronze */
+.platinum__content {
+  flex: 1;
+  padding: 2.25rem 2.25rem;
+  text-align: left;
 }
 
-/* Base sponsor list layout */
+.platinum__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.platinum__name {
+  font-size: 1.6rem;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.platinum__desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 1.35rem;
+  max-width: 34rem;
+}
+
+.platinum__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid #111827;
+  color: #111827;
+  font-weight: 700;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.platinum__btn:hover {
+  background-color: #111827;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ===== Sponsor grids ===== */
 .sponsor__list {
   display: grid;
   justify-items: center;
   align-items: center;
-  column-gap: 3rem;
-  row-gap: 1.5rem;
+  column-gap: 2rem;
+  row-gap: 1.35rem;
 }
 
-/* Columns per tier */
-.sponsors__tier--platinum .sponsor__list {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
+/* MASA-like: Gold 4, Silver 5, Bronze 6 per row */
+.sponsors__tier--gold .sponsor__list {
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
 }
 
-.sponsors__tier--gold .sponsor__list,
 .sponsors__tier--silver .sponsor__list {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
 }
 
 .sponsors__tier--bronze .sponsor__list {
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
 }
 
-/* ===== Uniform logo tiles ===== */
+/* Uniform tiles + bigger logos */
 .sponsor__block {
   width: 100%;
   display: flex;
@@ -401,75 +478,87 @@ img {
   border-radius: 14px;
 
   padding: 18px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    border-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-/* Disabled tiles (no known URL yet) */
-.sponsor__block a.is-disabled {
-  pointer-events: none;
-  cursor: default;
-  opacity: 0.95;
-}
-
-/* Tier-specific tile heights */
-.sponsors__tier--platinum .sponsor__block a {
-  height: 130px;
-}
-
-.sponsors__tier--gold .sponsor__block a {
-  height: 120px;
-}
-
-.sponsors__tier--silver .sponsor__block a {
-  height: 105px;
-}
-
-.sponsors__tier--bronze .sponsor__block a {
-  height: 90px;
-}
-
-/* The actual logo scaling (key!) */
-.sponsors__tier img {
-  width: 100%;
-  height: 100%;
-  max-width: 240px;
-  max-height: 100%;
-  object-fit: contain;
-  filter: grayscale(20%);
-  transition: filter 0.2s ease;
-}
-
-.sponsors__tier img:hover {
-  filter: none;
-}
-
-/* Tile hover */
 .sponsor__block a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.10);
   border-color: #d1d5db;
 }
 
-/* Responsive logo grids */
-@media screen and (max-width: 900px) {
-  .sponsors__tier--platinum .sponsor__list,
-  .sponsors__tier--gold .sponsor__list,
+/* Disabled tiles */
+.sponsor__block a.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.96;
+}
+
+/* Tier-specific tile heights (bigger + more visible) */
+.sponsors__tier--gold .sponsor__block a { height: 135px; }
+.sponsors__tier--silver .sponsor__block a { height: 120px; }
+.sponsors__tier--bronze .sponsor__block a { height: 110px; }
+
+/* The key scaling rule: consistent look without cropping */
+.sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 280px;     /* bigger than before */
+  max-height: 100%;
+  object-fit: contain;
+  filter: none;         /* more visible by default */
+}
+
+/* Responsive: step down columns cleanly */
+@media screen and (max-width: 1200px) {
+  .sponsors__tier--gold .sponsor__list {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
   .sponsors__tier--silver .sponsor__list {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sponsors__tier--gold .sponsor__list,
+  .sponsors__tier--silver .sponsor__list,
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
 
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  .platinum__card {
+    flex-direction: column;
+  }
+
+  .platinum__content {
+    text-align: left;
+  }
+
+  .platinum__logo {
+    flex: none;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .sponsors__tier--platinum .sponsor__list,
   .sponsors__tier--gold .sponsor__list,
   .sponsors__tier--silver .sponsor__list,
   .sponsors__tier--bronze .sponsor__list {
     grid-template-columns: 1fr;
+  }
+
+  .sponsors__tier {
+    padding: 2rem 1.25rem 2.25rem;
+  }
+
+  .platinum__content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .platinum__logo {
+    padding: 1.75rem 1.25rem;
   }
 }
 
@@ -538,8 +627,7 @@ img {
   color: #111827;
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-size 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-size 0.15s ease;
 }
 
 .footer-btn:hover {
@@ -571,8 +659,7 @@ img {
   justify-content: center;
   color: #111827;
   font-size: 1.2rem;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    transform 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .footer-social:hover {
