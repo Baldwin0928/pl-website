@@ -235,7 +235,268 @@ img {
   }
 }
 
-/*=============== INTRO SECTION ===============*/
+/*=============== TOP BAR BUTTON (remove white gap) ===============*/
+.sponsors-topbar {
+  background-color: #ffffff;
+  padding: 1.75rem 1.5rem 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* optional minor tweak so it reads like a header action */
+.sponsors-topbar__btn {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/*=============== SPONSORS ===============*/
+.sponsors {
+  padding: 0 1.5rem 4.5rem; /* <-- removes the big white space */
+  background-color: #ffffff;
+}
+
+/* shared tier title (inherit font + black) */
+.tier__title {
+  font-family: inherit;
+  color: #111827;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 2.25rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* tier wrappers */
+.sponsors__tier {
+  max-width: 1120px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  background: transparent;
+}
+
+/* ===== Platinum full-width band ===== */
+.platinum-band {
+  width: 100%;
+  background-color: #eeeeea; 
+  padding: 3.25rem 1.5rem 3.75rem;
+  margin: 0 auto 4rem;
+}
+
+.platinum-band__inner {
+  max-width: 1240px; 
+  margin-inline: auto;
+  text-align: center;
+}
+
+.platinum__card {
+  display: flex;
+  gap: 2.25rem;
+  align-items: stretch;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1240px; /* <-- stretch it */
+  margin: 0 auto;
+
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
+}
+
+.platinum__logo {
+  flex: 0 0 46%;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+/* keep the featured “logo frame” but make it bigger */
+.platinum__logo a {
+  width: 100%;
+  max-width: 520px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.platinum__content {
+  flex: 1;
+  padding: 2.5rem 2.75rem;
+  text-align: left;
+}
+
+.platinum__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.platinum__name {
+  font-size: 1.9rem;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.platinum__desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 1.35rem;
+  max-width: 40rem;
+}
+
+/* the platinum button uses footer-btn class; just nudge sizing */
+.platinum__btn.footer-btn {
+  padding: 0.6rem 1.6rem;
+  font-size: 0.9rem;
+}
+
+/* ===== sponsor grids ===== */
+.sponsor__list {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  column-gap: 2.2rem;
+  row-gap: 2rem;
+}
+
+/* Gold 4, Silver 5, Bronze 6 */
+.sponsors__tier--gold .sponsor__list {
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+}
+
+.sponsors__tier--silver .sponsor__list {
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+}
+
+.sponsors__tier--bronze .sponsor__list {
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
+}
+
+/* no outlines/tiles */
+.sponsor__block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor__block a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+/* alignment heights */
+.sponsors__tier--gold .sponsor__block a { height: 155px; }
+.sponsors__tier--silver .sponsor__block a { height: 170px; }
+.sponsors__tier--bronze .sponsor__block a { height: 160px; }
+
+/* logo sizing: gold slightly bigger, silver/bronze more */
+.sponsors__tier--gold .sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 360px;
+  object-fit: contain;
+}
+
+.sponsors__tier--silver .sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 440px;
+  object-fit: contain;
+}
+
+.sponsors__tier--bronze .sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  object-fit: contain;
+}
+
+.sponsor__block a:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.sponsor__block a.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.95;
+}
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+  .sponsors__tier--gold .sponsor__list {
+    grid-template-columns: repeat(3, minmax(170px, 1fr));
+  }
+  .sponsors__tier--silver .sponsor__list {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sponsors__tier--gold .sponsor__list,
+  .sponsors__tier--silver .sponsor__list,
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+  }
+
+  .platinum__card {
+    flex-direction: column;
+  }
+
+  .platinum__logo {
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sponsors__tier--gold .sponsor__list,
+  .sponsors__tier--silver .sponsor__list,
+  .sponsors__tier--bronze .sponsor__list {
+    grid-template-columns: 1fr;
+  }
+
+  .platinum-band {
+    padding: 2.5rem 1.25rem 2.75rem;
+  }
+
+  .platinum__content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .platinum__logo {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .platinum__logo a {
+    height: 210px;
+  }
+}
+
+/*=============== INTRO SECTION (moved below bronze) ===============*/
 .sponsors-intro {
   padding: 4rem 1.5rem 3rem;
   background-color: #f9fafb;
@@ -313,252 +574,6 @@ img {
 
   .sponsors-intro__image {
     max-width: 320px;
-  }
-}
-
-/*=============== SPONSORS (MASA-INSPIRED) ===============*/
-.sponsors {
-  padding: 4.5rem 1.5rem 5rem;
-  background-color: #f3f4f6; /* very light gray backdrop */
-}
-
-/* White “section blocks” on light gray */
-.sponsors__tier {
-  max-width: 1120px;
-  margin: 0 auto 2.75rem;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 18px;
-  padding: 2.25rem 1.75rem 2.5rem;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
-}
-
-/* Tier titles */
-#sponsor__title0,
-#sponsor__title1,
-#sponsor__title2,
-#sponsor__title3 {
-  font-size: 1.65rem;
-  margin-bottom: 1.75rem;
-  text-transform: none; /* MASA feels less shouty */
-  letter-spacing: 0.02em;
-  color: #111827;
-}
-
-#sponsor__title1 { color: rgba(212, 160, 3, 0.95); } /* gold */
-#sponsor__title2 { color: #6b7280; }                 /* silver */
-#sponsor__title3 { color: #714114; }                 /* bronze */
-
-/* ===== Platinum featured card ===== */
-.platinum__card {
-  display: flex;
-  gap: 2rem;
-  align-items: stretch;
-  justify-content: space-between;
-
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  overflow: hidden;
-
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.platinum__logo {
-  flex: 0 0 44%;
-  background: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2.25rem;
-}
-
-.platinum__logo a {
-  width: 100%;
-  max-width: 420px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-
-  padding: 18px;
-}
-
-.platinum__content {
-  flex: 1;
-  padding: 2.25rem 2.25rem;
-  text-align: left;
-}
-
-.platinum__kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  color: #6b7280;
-  font-weight: 700;
-  margin-bottom: 0.65rem;
-}
-
-.platinum__name {
-  font-size: 1.6rem;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.platinum__desc {
-  font-size: 0.98rem;
-  line-height: 1.75;
-  color: #4b5563;
-  margin-bottom: 1.35rem;
-  max-width: 34rem;
-}
-
-.platinum__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  border: 2px solid #111827;
-  color: #111827;
-  font-weight: 700;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-
-.platinum__btn:hover {
-  background-color: #111827;
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-/* ===== Sponsor grids ===== */
-.sponsor__list {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  column-gap: 2rem;
-  row-gap: 1.35rem;
-}
-
-/* MASA-like: Gold 4, Silver 5, Bronze 6 per row */
-.sponsors__tier--gold .sponsor__list {
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
-}
-
-.sponsors__tier--silver .sponsor__list {
-  grid-template-columns: repeat(5, minmax(140px, 1fr));
-}
-
-.sponsors__tier--bronze .sponsor__list {
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
-}
-
-/* Uniform tiles + bigger logos */
-.sponsor__block {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sponsor__block a {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-
-  padding: 18px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
-
-.sponsor__block a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.10);
-  border-color: #d1d5db;
-}
-
-/* Disabled tiles */
-.sponsor__block a.is-disabled {
-  pointer-events: none;
-  cursor: default;
-  opacity: 0.96;
-}
-
-/* Tier-specific tile heights (bigger + more visible) */
-.sponsors__tier--gold .sponsor__block a { height: 135px; }
-.sponsors__tier--silver .sponsor__block a { height: 120px; }
-.sponsors__tier--bronze .sponsor__block a { height: 110px; }
-
-/* The key scaling rule: consistent look without cropping */
-.sponsor__block img {
-  width: 100%;
-  height: 100%;
-  max-width: 280px;     /* bigger than before */
-  max-height: 100%;
-  object-fit: contain;
-  filter: none;         /* more visible by default */
-}
-
-/* Responsive: step down columns cleanly */
-@media screen and (max-width: 1200px) {
-  .sponsors__tier--gold .sponsor__list {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-  }
-  .sponsors__tier--silver .sponsor__list {
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
-  }
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(3, minmax(140px, 1fr));
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .sponsors__tier--gold .sponsor__list,
-  .sponsors__tier--silver .sponsor__list,
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-  }
-
-  .platinum__card {
-    flex-direction: column;
-  }
-
-  .platinum__content {
-    text-align: left;
-  }
-
-  .platinum__logo {
-    flex: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .sponsors__tier--gold .sponsor__list,
-  .sponsors__tier--silver .sponsor__list,
-  .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: 1fr;
-  }
-
-  .sponsors__tier {
-    padding: 2rem 1.25rem 2.25rem;
-  }
-
-  .platinum__content {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .platinum__logo {
-    padding: 1.75rem 1.25rem;
   }
 }
 
