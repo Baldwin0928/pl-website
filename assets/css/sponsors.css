@@ -235,34 +235,20 @@ img {
   }
 }
 
-/*=============== TOP BAR BUTTON (remove white gap) ===============*/
-.sponsors-topbar {
-  background-color: #ffffff;
-  padding: 1.75rem 1.5rem 0.75rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* optional minor tweak so it reads like a header action */
-.sponsors-topbar__btn {
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
 /*=============== SPONSORS ===============*/
+/* FULL-WIDTH so platinum band has NO white edges */
 .sponsors {
-  padding: 0 1.5rem 4.5rem; /* <-- removes the big white space */
+  padding: 0 0 4.5rem; /* no left/right padding = no white margins */
   background-color: #ffffff;
 }
 
-/* shared tier title (inherit font + black) */
+/* shared tier title */
 .tier__title {
   font-family: inherit;
   color: #111827;
   font-weight: 800;
   font-size: 2rem;
   margin-bottom: 2.25rem;
-  letter-spacing: 0;
   text-transform: none;
 }
 
@@ -272,19 +258,21 @@ img {
   margin: 0 auto 4rem;
   text-align: center;
   background: transparent;
+  padding-inline: 1.5rem; /* keep content aligned without creating band gaps */
 }
 
-/* ===== Platinum full-width band ===== */
+/* ===== Platinum full-width band ( background) ===== */
 .platinum-band {
   width: 100%;
-  background-color: #eeeeea; 
-  padding: 3.25rem 1.5rem 3.75rem;
-  margin: 0 auto 4rem;
+  background-color: #eeeeea; /*  color */
+  padding: 3.25rem 0 3.75rem; /* no side padding -> edge-to-edge */
+  margin: 0 auto 4rem; /* no gap from hero besides this section itself */
 }
 
 .platinum-band__inner {
-  max-width: 1240px; 
+  max-width: 1240px;
   margin-inline: auto;
+  padding-inline: 1.5rem; /* inner padding (content) while background hits edges */
   text-align: center;
 }
 
@@ -300,7 +288,7 @@ img {
   overflow: hidden;
 
   width: 100%;
-  max-width: 1240px; /* <-- stretch it */
+  max-width: 1240px;
   margin: 0 auto;
 
   box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
@@ -315,7 +303,6 @@ img {
   padding: 2.5rem;
 }
 
-/* keep the featured “logo frame” but make it bigger */
 .platinum__logo a {
   width: 100%;
   max-width: 520px;
@@ -358,7 +345,6 @@ img {
   max-width: 40rem;
 }
 
-/* the platinum button uses footer-btn class; just nudge sizing */
 .platinum__btn.footer-btn {
   padding: 0.6rem 1.6rem;
   font-size: 0.9rem;
@@ -373,7 +359,6 @@ img {
   row-gap: 2rem;
 }
 
-/* Gold 4, Silver 5, Bronze 6 */
 .sponsors__tier--gold .sponsor__list {
   grid-template-columns: repeat(4, minmax(160px, 1fr));
 }
@@ -386,7 +371,7 @@ img {
   grid-template-columns: repeat(6, minmax(130px, 1fr));
 }
 
-/* no outlines/tiles */
+/* no tiles/outlines */
 .sponsor__block {
   width: 100%;
   display: flex;
@@ -406,12 +391,10 @@ img {
   transition: transform 0.15s ease;
 }
 
-/* alignment heights */
 .sponsors__tier--gold .sponsor__block a { height: 155px; }
 .sponsors__tier--silver .sponsor__block a { height: 170px; }
 .sponsors__tier--bronze .sponsor__block a { height: 160px; }
 
-/* logo sizing: gold slightly bigger, silver/bronze more */
 .sponsors__tier--gold .sponsor__block img {
   width: 100%;
   height: 100%;
@@ -480,7 +463,11 @@ img {
   }
 
   .platinum-band {
-    padding: 2.5rem 1.25rem 2.75rem;
+    padding: 2.5rem 0 2.75rem;
+  }
+
+  .platinum-band__inner {
+    padding-inline: 1.25rem;
   }
 
   .platinum__content {
@@ -496,7 +483,7 @@ img {
   }
 }
 
-/*=============== INTRO SECTION (moved below bronze) ===============*/
+/*=============== INTRO SECTION (below bronze) ===============*/
 .sponsors-intro {
   padding: 4rem 1.5rem 3rem;
   background-color: #f9fafb;
@@ -565,7 +552,6 @@ img {
   margin-inline: auto;
 }
 
-/* intro responsive */
 @media screen and (max-width: 768px) {
   .sponsors-intro__container {
     flex-direction: column;
@@ -622,7 +608,6 @@ img {
   gap: 0.8rem;
 }
 
-/* buttons */
 .footer-btn {
   position: relative;
   display: inline-flex;
@@ -656,7 +641,6 @@ img {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-/* socials row */
 .footer-cta__socials {
   margin-top: 2.75rem;
   display: flex;
@@ -683,7 +667,6 @@ img {
   transform: translateY(-1px);
 }
 
-/* brand + copyright */
 .footer-cta__bottom {
   margin-top: 2rem;
   text-align: center;
@@ -700,14 +683,12 @@ img {
   margin-bottom: 0.25rem;
 }
 
-/* thin gradient strip at very bottom */
 .footer-gradient-strip {
   width: 100%;
   height: 6px;
   background: linear-gradient(90deg, #ffd600, #000000, #ffd600);
 }
 
-/* responsive footer layout */
 @media screen and (max-width: 768px) {
   .footer-cta__container {
     flex-direction: column;
