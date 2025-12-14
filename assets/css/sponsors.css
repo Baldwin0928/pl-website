@@ -316,22 +316,29 @@ img {
   }
 }
 
-/*=============== SPONSORS (MASA-INSPIRED) ===============*/
+/*=============== SPONSORS ===============*/
 .sponsors {
   padding: 4.5rem 1.5rem 5rem;
-  background-color: #f3f4f6; /* very light gray backdrop */
+  background-color: #ffffff; /* white everywhere */
 }
 
-/* White “section blocks” on light gray */
+/* Tiers are simple/white like before */
 .sponsors__tier {
   max-width: 1120px;
-  margin: 0 auto 2.75rem;
+  margin: 0 auto 3rem;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+  box-shadow: none;
+}
+
+/* Only Platinum section has light gray background */
+.sponsors__tier--platinum {
+  background-color: #f3f4f6;
   border-radius: 18px;
   padding: 2.25rem 1.75rem 2.5rem;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
 /* Tier titles */
@@ -339,16 +346,15 @@ img {
 #sponsor__title1,
 #sponsor__title2,
 #sponsor__title3 {
-  font-size: 1.65rem;
-  margin-bottom: 1.75rem;
-  text-transform: none; /* MASA feels less shouty */
+  font-size: 1.8rem; /* slightly bigger */
+  margin-bottom: 2rem;
   letter-spacing: 0.02em;
   color: #111827;
 }
 
-#sponsor__title1 { color: rgba(212, 160, 3, 0.95); } /* gold */
-#sponsor__title2 { color: #6b7280; }                 /* silver */
-#sponsor__title3 { color: #714114; }                 /* bronze */
+#sponsor__title1 { color: rgba(212, 160, 3, 0.95); }
+#sponsor__title2 { color: #6b7280; }
+#sponsor__title3 { color: #714114; }
 
 /* ===== Platinum featured card ===== */
 .platinum__card {
@@ -364,6 +370,7 @@ img {
 
   max-width: 980px;
   margin: 0 auto;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
 .platinum__logo {
@@ -377,8 +384,8 @@ img {
 
 .platinum__logo a {
   width: 100%;
-  max-width: 420px;
-  height: 160px;
+  max-width: 440px;
+  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -386,7 +393,6 @@ img {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-
   padding: 18px;
 }
 
@@ -405,13 +411,13 @@ img {
 }
 
 .platinum__name {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: #111827;
   margin-bottom: 0.75rem;
 }
 
 .platinum__desc {
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   line-height: 1.75;
   color: #4b5563;
   margin-bottom: 1.35rem;
@@ -423,7 +429,7 @@ img {
   align-items: center;
   gap: 0.35rem;
 
-  padding: 0.55rem 1.1rem;
+  padding: 0.6rem 1.15rem;
   border-radius: 999px;
   border: 2px solid #111827;
   color: #111827;
@@ -442,24 +448,24 @@ img {
   display: grid;
   justify-items: center;
   align-items: center;
-  column-gap: 2rem;
-  row-gap: 1.35rem;
+  column-gap: 2.2rem;
+  row-gap: 1.75rem;
 }
 
 /* MASA-like: Gold 4, Silver 5, Bronze 6 per row */
 .sponsors__tier--gold .sponsor__list {
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
 }
 
 .sponsors__tier--silver .sponsor__list {
-  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
 }
 
 .sponsors__tier--bronze .sponsor__list {
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
 }
 
-/* Uniform tiles + bigger logos */
+/* Sponsor blocks: NO box, NO border, just consistent alignment space */
 .sponsor__block {
   width: 100%;
   display: flex;
@@ -467,58 +473,58 @@ img {
   justify-content: center;
 }
 
+/* Keep a consistent “invisible frame” for alignment */
 .sponsor__block a {
   width: 100%;
+  height: 150px;              /* bigger */
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 
-  padding: 18px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  box-shadow: none;
+  transition: transform 0.15s ease;
 }
 
+.sponsors__tier--silver .sponsor__block a { height: 140px; }
+.sponsors__tier--bronze .sponsor__block a { height: 130px; }
+
+/* The key scaling: bigger logos, still proportionate */
+.sponsor__block img {
+  width: 100%;
+  height: 100%;
+  max-width: 340px;  /* bigger than before */
+  max-height: 100%;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Subtle hover (no tile outline) */
 .sponsor__block a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.10);
-  border-color: #d1d5db;
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* Disabled tiles */
 .sponsor__block a.is-disabled {
   pointer-events: none;
   cursor: default;
-  opacity: 0.96;
+  opacity: 0.95;
 }
 
-/* Tier-specific tile heights (bigger + more visible) */
-.sponsors__tier--gold .sponsor__block a { height: 135px; }
-.sponsors__tier--silver .sponsor__block a { height: 120px; }
-.sponsors__tier--bronze .sponsor__block a { height: 110px; }
-
-/* The key scaling rule: consistent look without cropping */
-.sponsor__block img {
-  width: 100%;
-  height: 100%;
-  max-width: 280px;     /* bigger than before */
-  max-height: 100%;
-  object-fit: contain;
-  filter: none;         /* more visible by default */
-}
-
-/* Responsive: step down columns cleanly */
+/* Responsive: step down columns */
 @media screen and (max-width: 1200px) {
   .sponsors__tier--gold .sponsor__list {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, minmax(170px, 1fr));
   }
   .sponsors__tier--silver .sponsor__list {
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
   }
   .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
   }
 }
 
@@ -526,19 +532,11 @@ img {
   .sponsors__tier--gold .sponsor__list,
   .sponsors__tier--silver .sponsor__list,
   .sponsors__tier--bronze .sponsor__list {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
   }
 
   .platinum__card {
     flex-direction: column;
-  }
-
-  .platinum__content {
-    text-align: left;
-  }
-
-  .platinum__logo {
-    flex: none;
   }
 }
 
@@ -549,7 +547,7 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .sponsors__tier {
+  .sponsors__tier--platinum {
     padding: 2rem 1.25rem 2.25rem;
   }
 
