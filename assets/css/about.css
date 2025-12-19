@@ -166,6 +166,24 @@ img {
   color: var(--title-color);
 }
 
+.nav__link.active {
+  color: var(--title-color);
+  position: relative;
+}
+
+@media screen and (min-width: 1023px) {
+  .nav__link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffd600, #ffffff, #ffd600);
+    opacity: 0.9;
+  }
+}
+
 .nav__close {
   position: absolute;
   top: 0.75rem;
@@ -216,36 +234,50 @@ img {
   }
 }
 
-/*=============== HOME / HERO (VIDEO) ===============*/
+/*=============== HERO (ABOUT PAGE FIX) ===============*/
+/* Your old hero assumed a video + overlay. This page has no video, so we give it a real background. */
 .home {
   position: relative;
-  height: 100vh;
-  min-height: 640px;
   overflow: hidden;
+  min-height: 360px;
+  height: 52vh;
+  display: grid;
+  place-items: center;
+
+  /* optional image + gradient overlay */
+  background:
+    linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+    radial-gradient(circle at 20% 20%, rgba(255,145,77,0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(30,58,95,0.38), transparent 55%),
+    #0b1220;
+
+  background-size: cover;
+  background-position: center;
 }
 
+/* Keep these for compatibility if you later add a video */
 .home__video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: none; /* About page does not use video */
 }
 
 .home__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.62);
+  display: none; /* handled by background gradient above */
 }
 
 .home__container {
   position: relative;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  text-align: center;
   z-index: 1;
-  padding-top: calc(var(--header-height) + 1.5rem);
+  text-align: center;
+  padding-top: calc(var(--header-height) + 3.25rem);
+  padding-bottom: 2.25rem;
 }
 
 .home__content {
@@ -257,66 +289,13 @@ img {
   color: var(--title-color);
   letter-spacing: -0.02em;
   line-height: 1.05;
-  margin-bottom: 1.1rem;
 }
 
 .home__tagline {
+  margin-top: 0.85rem;
   color: var(--text-color);
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.6rem;
-}
-
-/* socials */
-.home__socials {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.contact__icons {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.6px solid rgba(255, 255, 255, 0.26);
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.18);
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-}
-
-.contact__icons:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* scroll indicator */
-.home__scroll {
-  position: absolute;
-  bottom: 1.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.home__scroll-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.86);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.home__scroll-link:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
 }
 
 /* hero responsive */
@@ -335,192 +314,102 @@ img {
   }
 }
 
-/*=============== OUR MISSION ===============*/
-.ourmission {
+/*=============== TEAM SECTION (MISSING BEFORE) ===============*/
+.team__section {
   background: #ffffff;
+  padding: 4.5rem 0;
 }
 
-.ourmission__inner {
+.team__container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section__title {
   text-align: center;
-}
-
-.ourmission__title {
-  font-size: 2.6rem;
-  color: #111827;
-  margin-bottom: 1.25rem;
+  font-size: 2.15rem;
+  line-height: 1.15;
   letter-spacing: -0.02em;
+  color: #111827;
+  margin-bottom: 2rem;
 }
 
-.ourmission__description {
-  max-width: 920px;
-  margin: 0 auto;
-  font-size: 1.02rem;
-  line-height: 1.85;
-  color: #4b5563;
-}
-
-@media screen and (max-width: 768px) {
-  .ourmission__title {
-    font-size: 2.1rem;
-  }
-}
-
-/*=============== HIGHLIGHT GRID ===============*/
-.highlight-grid {
-  background: #f9fafb;
-}
-
-.highlight-grid__container {
+.team__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem;
-  align-items: start;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
-.highlight-card {
+.team__member {
+  display: flex;
+  gap: 1.15rem;
   background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 18px;
-  padding: 1.85rem 1.85rem 1.6rem;
+  padding: 1.25rem;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.member__photo {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
   border: 1px solid #eef2f7;
 }
 
-.highlight-card__eyebrow {
-  display: inline-block;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #6b7280;
-  margin-bottom: 0.8rem;
+.member__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.highlight-card__title {
-  font-size: 1.55rem;
-  line-height: 1.25;
+.member__info {
+  min-width: 0;
+}
+
+.member__name {
+  font-size: 1.25rem;
+  font-weight: 800;
   color: #111827;
-  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
 }
 
-.highlight-card__text {
-  font-size: 0.98rem;
+.member__role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.65rem;
+}
+
+.member__bio {
+  font-size: 0.95rem;
   line-height: 1.75;
   color: #4b5563;
-  margin-bottom: 1.2rem;
 }
 
-.highlight-card__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.65rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.pl-btn-learn-more {
-  background: #111827;
-  color: #ffffff;
-  border: 2px solid #111827;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-}
-
-.pl-btn-learn-more:hover {
-  transform: translateY(-1px);
-  background: #ffffff;
-  color: #111827;
-}
-
-.highlight-card__button--below-video {
-  margin-top: 1rem;
-}
-
-/* responsive highlight grid */
+/* Team responsive */
 @media screen and (max-width: 980px) {
-  .highlight-grid__container {
+  .team__grid {
     grid-template-columns: 1fr;
   }
-  .highlight-card__title {
-    font-size: 1.45rem;
+}
+
+@media screen and (max-width: 520px) {
+  .team__member {
+    flex-direction: column;
   }
-}
 
-/*=============== INDEX LOGO CAROUSEL ===============*/
-.pl-sponsor-logos {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  margin-top: 1.25rem;
-  background: #0b1220;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.pl-sponsor-logos::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.22);
-  pointer-events: none;
-}
-
-.pl-sponsor-logos__row {
-  display: flex;
-  align-items: center;
-  gap: 2.25rem;
-  padding: 0.9rem 1rem;
-  width: max-content;
-}
-
-.pl-sponsor-logos__track {
-  animation: plMarquee 28s linear infinite;
-  will-change: transform;
-}
-
-.pl-sponsor-logos__track--reverse {
-  animation-direction: reverse;
-}
-
-.pl-sponsor-logos img {
-  height: 44px;
-  width: auto;
-  max-width: 190px;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: grayscale(100%) brightness(1.15);
-}
-
-@keyframes plMarquee {
-  from {
-    transform: translateX(0);
+  .member__photo {
+    width: 100%;
+    height: 220px;
+    flex: none;
   }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .pl-sponsor-logos img {
-    height: 38px;
-    max-width: 160px;
-  }
-}
-
-/*=============== VIDEO WRAP ===============*/
-.highlight-card__video-wrap {
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #0b1220;
-  border: 1px solid #e5e7eb;
-}
-
-.highlight-card__video-wrap iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
 }
 
 /*=============== FOOTER CTA ===============*/
