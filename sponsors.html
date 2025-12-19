@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon" />
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/whitebutterfly.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/img/whitebutterfly.png" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
@@ -24,7 +31,7 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="index.html" class="nav__logo">
-          <img src="assets/img/logo.jpg" alt="GTPL Logo" />
+          <img src="assets/img/whitebutterfly.png" alt="GTPL" />
         </a>
 
         <div class="nav__menu" id="nav-menu">
@@ -36,7 +43,8 @@
               <a href="about.html" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-              <a href="project.html" class="nav__link">Projects</a>
+              <!-- text says Media but file stays project.html -->
+              <a href="project.html" class="nav__link">Media</a>
             </li>
             <li class="nav__item">
               <a href="sponsors.html" class="nav__link">Sponsors</a>
@@ -45,8 +53,14 @@
               <a href="contact.html" class="nav__link">Contact</a>
             </li>
           </ul>
+
+          <!-- Close button (mobile) -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
         </div>
 
+        <!-- Toggle button (mobile) -->
         <div class="nav__toggle" id="nav-toggle">
           <i class="ri-apps-2-line"></i>
         </div>
@@ -69,7 +83,6 @@
 
           <div class="platinum-card">
             <div class="platinum-card__media">
-              <!-- swapped from sga.svg to a 1024x575 png -->
               <img
                 src="assets/img/sga.png"
                 alt="Georgia Tech SGA — Platinum Sponsor"
@@ -273,7 +286,7 @@
         </div>
       </section>
 
-      <!--==================== INTRO TEXT + IMAGE (MOVED BELOW BRONZE) ====================-->
+      <!--==================== INTRO TEXT + IMAGE ====================-->
       <section class="sponsors-intro">
         <div class="sponsors-intro__container">
           <div class="sponsors-intro__text">
