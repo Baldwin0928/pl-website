@@ -220,3 +220,29 @@ body {
   }
 }
 
+/* ===== HERO (About) ===== */
+.home {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  height: 52vh;
+  display: grid;
+  place-items: center;
+
+  /* ADDED: hero image layer (replace filename/path as needed) */
+  background:
+    /* dark overlay for readability */
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    /* hero photo */
+    url("../img/about.JPG"),
+    /* optional accents you already had */
+    radial-gradient(circle at 20% 20%, rgba(255, 145, 77, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(30, 58, 95, 0.38), transparent 55%),
+    #0b1220;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
