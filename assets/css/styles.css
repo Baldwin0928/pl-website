@@ -980,3 +980,34 @@ img {
   position: relative;
   z-index: 3;
 }
+
+.home__subtitle{
+  margin-top: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.85);
+}
+
+.home__subtitle .type{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255,255,255,.85);
+  padding-right: .3rem;
+
+  /* typing */
+  width: 0ch;
+  animation:
+    typing 2.2s steps(28, end) forwards,
+    caret .75s steps(1, end) infinite;
+}
+
+/* adjust 28 to your character count if you want it perfect */
+@keyframes typing { to { width: 28ch; } }
+@keyframes caret { 50% { border-color: transparent; } }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .home__subtitle .type{ animation: none; width: auto; border-right: none; }
+}
+
