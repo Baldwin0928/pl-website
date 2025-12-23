@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Tuning knobs: "slow" reveal but not endless black
   const baseOpacity = 0.18; // unrevealed grey
   const bumpPx = 14;        // how much it rises
-  const revealWindow = 0.18; // slower + uses more of the stage so less dead black
+  const revealWindow = 0.12; // slower + uses more of the stage so less dead black
 
   function clamp01(x) {
     return Math.max(0, Math.min(1, x));
@@ -315,6 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", onScroll);
   update();
 })();
+
 
 
 
