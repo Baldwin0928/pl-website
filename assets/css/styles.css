@@ -1043,3 +1043,25 @@ img {
     border-right: none;
   }
 }
+
+.home__tagline .type{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  border-right: 2px solid rgba(255,255,255,.85);
+  padding-right: .35rem;
+
+  width: 0ch;
+  animation:
+    gtplTyping 2.2s steps(28, end) forwards,
+    gtplCaret .75s steps(1, end) 3 forwards; /* caret blinks 3 times then stops */
+}
+
+@keyframes gtplTyping { to { width: 28ch; } }
+
+@keyframes gtplCaret {
+  0%, 49% { border-right-color: rgba(255,255,255,.85); }
+  50%, 100% { border-right-color: transparent; }
+}
+
