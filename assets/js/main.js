@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
      - START_IN_VIEW bigger => starts earlier (when section enters viewport)
      - END_IN_VIEW smaller  => finishes later (slower overall)
   */
-  const START_IN_VIEW = 0.85; // start when section top hits 85% of viewport height (EARLY)
+  const START_IN_VIEW = 0.95; // start when section top hits 85% of viewport height (EARLY)
   const END_IN_VIEW = 0.15;   // finish when section top hits 15% (SLOW, more scroll distance)
   const BUMP_PX = 12;         // how much the word "bumps" up while appearing
   const BASE_OPACITY = 0.14;  // dim grey start (clean, no glow)
@@ -280,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", onScroll);
   onScroll(); // initial
 })();
+
 
 
 
