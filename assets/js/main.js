@@ -174,150 +174,112 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* ===================== SCROLL REVEAL QUOTE ===================== */
-(function initScrollRevealQuote() {
-  const section = document.getElementById("scroll-quote");
-  const textEl = document.getElementById("scroll-quote-text");
-  if (!section || !textEl) return;
+/* ===================== SCROLL QUOTE (early start + slower reveal) ===================== */
+(() => {
+  const section = document.querySelector(".scroll-quote");
+  if (!section) return;
 
-  // Respect reduced-motion
-  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const textEl = section.querySelector(".scroll-quote__text");
+  const authorEl = section.querySelector(".scroll-quote__author");
+  if (!textEl) return;
 
-  // Split text into word spans (preserve spaces)
-  const raw = textEl.textContent.trim();
-  const parts = raw.split(/(\s+)/); // keep spaces as tokens
-  textEl.textContent = "";
+  // If quote text isn't already split into spans, split it automatically
+  const hasSpans = textEl.querySelector(".scroll-quote__word");
+  if (!hasSpans) {
+    const raw = (textEl.textContent || "").trim().replace(/\s+/g, " ");
+    textEl.textContent = "";
 
-  const wordSpans = [];
-  parts.forEach((token) => {
-    if (token.trim() === "") {
-      textEl.appendChild(document.createTextNode(token));
-      return;
-    }
-    const span = document.createElement("span");
-    span.className = "scroll-quote__word";
-    span.textContent = token;
-    textEl.appendChild(span);
-    wordSpans.push(span);
+    const parts = raw.split(" ");
+    parts.forEach((w, idx) => {
+      const span = document.createElement("span");
+      span.className = "scroll-quote__word";
+      span.textContent = w + (idx === parts.length - 1 ? "" : " ");
+      // ensure transforms work even if your CSS forgets display:inline-block
+      span.style.display = "inline-block";
+      span.style.willChange = "transform, opacity";
+      span.style.opacity = "0.16";
+      span.style.transform = "translate3d(0, 10px, 0)";
+      textEl.appendChild(span);
+    });
+  }
+
+  const words = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
+  // Also enforce inline-block for existing spans
+  words.forEach((w) => {
+    w.style.display = "inline-block";
+    w.style.willChange = "transform, opacity";
   });
 
-  if (reduceMotion) {
-    wordSpans.forEach((w) => w.classList.add("is-on"));
-    return;
-  }
+  const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+  /* TUNING (THIS is the "start" behavior you were asking for)
+     - START_IN_VIEW bigger => starts earlier (when section enters viewport)
+     - END_IN_VIEW smaller  => finishes later (slower overall)
+  */
+  const START_IN_VIEW = 0.85; // start when section top hits 85% of viewport height (EARLY)
+  const END_IN_VIEW = 0.15;   // finish when section top hits 15% (SLOW, more scroll distance)
+  const BUMP_PX = 12;         // how much the word "bumps" up while appearing
+  const BASE_OPACITY = 0.14;  // dim grey start (clean, no glow)
 
   let ticking = false;
 
-  function clamp01(x) {
-    return Math.max(0, Math.min(1, x));
-  }
-
-  function update() {
-    ticking = false;
-
+  function render() {
     const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight || 1;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
 
-    // Progress through the section's scrollable range:
-    // when top hits top -> 0, when bottom hits bottom -> 1
-    const total = rect.height - vh;
-    const scrolled = -rect.top;
-    const p = clamp01(total <= 0 ? 1 : scrolled / total);
+    const startY = vh * START_IN_VIEW;
+    const endY = vh * END_IN_VIEW;
 
-    const count = Math.floor(p * (wordSpans.length + 2)); // +2 gives a nicer finish
-    for (let i = 0; i < wordSpans.length; i++) {
-      wordSpans[i].classList.toggle("is-on", i < count);
-    }
-  }
+    // progress 0..1 across the scroll window
+    let p = (startY - rect.top) / (startY - endY);
+    p = clamp(p, 0, 1);
 
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(update);
-    }
-  }
+    const n = words.length || 1;
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  update();
-})();
+    for (let i = 0; i < words.length; i++) {
+      const a = i / n;
+      const b = (i + 1) / n;
 
-// ===== Scroll-reveal quote: word-by-word bump + fade (clean) =====
-(function () {
-  const stage = document.querySelector(".scroll-quote__stage");
-  const textEl = document.getElementById("scroll-quote-text");
-  const authorEl = document.querySelector(".scroll-quote__author");
-  if (!stage || !textEl) return;
+      let t = (p - a) / (b - a);
+      t = clamp(t, 0, 1);
+      t = easeOutCubic(t);
 
-  // Wrap each word in a span so we can animate individually
-  const raw = textEl.textContent.trim();
-  const words = raw.split(/\s+/);
+      const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
+      const y = BUMP_PX * (1 - t);
 
-  textEl.innerHTML = words
-    .map((w) => `<span class="scroll-quote__word">${w}</span>`)
-    .join(" ");
-
-  const wordEls = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
-  const N = wordEls.length;
-
-  // Tuning knobs: "slow" reveal but not endless black
-  const baseOpacity = 0.18; // unrevealed grey
-  const bumpPx = 14;        // how much it rises
-  const revealWindow = 0.12; // slower + uses more of the stage so less dead black
-
-  function clamp01(x) {
-    return Math.max(0, Math.min(1, x));
-  }
-
-  function lerp(a, b, t) {
-    return a + (b - a) * t;
-  }
-
-  function update() {
-    const r = stage.getBoundingClientRect();
-    const stageTop = r.top;
-    const stageH = r.height;
-
-    // 0..1 progress through the stage while sticky holds the text
-    const progress = clamp01((0 - stageTop) / (stageH - window.innerHeight));
-
-    for (let i = 0; i < N; i++) {
-      const start = i / N;
-      const t = clamp01((progress - start) / revealWindow);
-
-      const op = lerp(baseOpacity, 1, t);
-      const y = lerp(bumpPx, 0, t);
-
-      wordEls[i].style.opacity = op.toFixed(3);
-      wordEls[i].style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+      words[i].style.opacity = opacity.toFixed(3);
+      words[i].style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
     }
 
+    // Author reveals near the end (same clean bump)
     if (authorEl) {
-      // Author appears near the end
-      const tA = clamp01((progress - 0.82) / 0.18);
-      authorEl.style.opacity = lerp(0.18, 1, tA).toFixed(3);
-      authorEl.style.transform = `translate3d(0, ${lerp(10, 0, tA).toFixed(2)}px, 0)`;
+      let t = (p - 0.78) / 0.22; // start late, finish at end
+      t = clamp(t, 0, 1);
+      t = easeOutCubic(t);
+
+      const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
+      const y = BUMP_PX * (1 - t);
+
+      authorEl.style.opacity = opacity.toFixed(3);
+      authorEl.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+      authorEl.style.willChange = "transform, opacity";
     }
+
+    ticking = false;
   }
 
-  let ticking = false;
   function onScroll() {
     if (!ticking) {
       ticking = true;
-      requestAnimationFrame(() => {
-        update();
-        ticking = false;
-      });
+      requestAnimationFrame(render);
     }
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
-  update();
+  onScroll(); // initial
 })();
-
-
-
 
 
 
