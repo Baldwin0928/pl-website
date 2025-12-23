@@ -1,171 +1,247 @@
+<!-- contact.html — updated to use the SAME header + footer as sponsors/index -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Propulsive Landers @ Georgia Tech</title>
-    
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
-    
-    <!-- Remixicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/contact.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">
-                <img src="assets/img/logo.jpg" alt="GTPL">
-            </a>
-            
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="about.html" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="project.html" class="nav__link">Projects</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="sponsors.html" class="nav__link">Sponsors</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="contact.html" class="nav__link active">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav__close" id="nav-close">
-                    <i class="ri-close-line"></i>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="ri-apps-2-line"></i>
-            </div>
-        </nav>
+    <title>Contact — Propulsive Landers @ Georgia Tech</title>
+
+    <!-- Favicon (match other pages) -->
+    <link
+      rel="shortcut icon"
+      href="assets/img/whitebutterfly.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/img/whitebutterfly.png" />
+
+    <!-- Remixicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/css/contact.css" />
+  </head>
+
+  <body>
+    <!-- ==================== HEADER (MATCH INDEX/SPONSORS) ==================== -->
+    <header class="header" id="header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a href="index.html" class="nav__logo" aria-label="GTPL Home">
+          <img src="assets/img/whitebutterfly.png" alt="GTPL" />
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="project.html" class="nav__link">Media</a>
+            </li>
+            <li class="nav__item">
+              <a href="sponsors.html" class="nav__link">Sponsors</a>
+            </li>
+            <li class="nav__item">
+              <a href="contact.html" class="nav__link active">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nav__close" id="nav-close" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+          <i class="ri-apps-2-line"></i>
+        </div>
+      </nav>
     </header>
 
     <main class="main">
-        <!-- Hero Section -->
-        <section class="home">
-            <div class="home__container container">
-                <h1 class="home__title">Contact Us</h1>
-                <p class="home__description">Our Home Base</p>
-            </div>
-        </section>
+      <!-- ==================== HERO ==================== -->
+      <section class="home">
+        <div class="home__container container">
+          <h1 class="home__title">Contact Us</h1>
+          <p class="home__description">Our Home Base</p>
+        </div>
+      </section>
 
-        <!-- Contact Information Section -->
-        <!-- Contact Information Section -->
-        <section class="contact-info-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Contact Cards -->
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <i class="ri-map-pin-line"></i>  <!-- Changed from fa fa-map-marker -->
-                            <h3>Our Address</h3>
-                            <p>North Avenue NW,<br>Atlanta, GA 30332,<br>United States</p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <i class="fa fa-envelope"></i>
-                            <h3>Email Us</h3>
-                            <p><a href="mailto:outreach@gtpropulsivelanders.org">outreach@gtpropulsivelanders.org</a></p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <i class="ri-user-follow-line"></i>
-                            <h3>Follow Us</h3>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/company/propulsive-landers-georgia-tech" target="_blank" class="fa fa-linkedin"></a>
-                                <a href="https://www.instagram.com/propulsivelandersgt/" target="_blank" class="fa fa-instagram"></a>
-                                <a href="https://www.tiktok.com/@propulsive.landers.gt" target="_blank">
-                                    <img src="assets/img/tiktok_round.png" alt="TikTok" class="tiktok-icon">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+      <!-- ==================== CONTACT INFO ==================== -->
+      <section class="contact-info-section">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Cards -->
+            <div class="info-cards">
+              <div class="info-card">
+                <i class="ri-map-pin-line"></i>
+                <h3>Our Address</h3>
+                <p>
+                  North Avenue NW,<br />Atlanta, GA 30332,<br />United States
+                </p>
+              </div>
 
-                    <!-- Map -->
-                    <!-- Map with pin and directions -->
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6632.842205893844!2d-84.39885992450594!3d33.775622232286445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5048aebc34fe3%3A0xb52ad03e3ad8c50f!2sGeorgia%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1729765053810!5m2!1sen!2sus"
-                            width="600" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        
-                        <!-- Directions button -->
-                        <div class="directions">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Georgia+Institute+of+Technology,+North+Avenue,+Atlanta,+GA+30332,+USA" target="_blank" class="get-directions">
-                                Get Directions
-                            </a>
-                        </div>
-                    </div>
+              <div class="info-card">
+                <i class="fa fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>
+                  <a href="mailto:outreach@gtpropulsivelanders.org"
+                    >outreach@gtpropulsivelanders.org</a
+                  >
+                </p>
+              </div>
 
-                    <!-- <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.9432466427582!2d-84.39870468521129!3d33.77452798068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5048a0000000f%3A0x8b37e3aeeb86bb1a!2sGeorgia%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1680943934019!5m2!1sen!2sus"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div> -->
+              <div class="info-card">
+                <i class="ri-user-follow-line"></i>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://www.linkedin.com/company/propulsive-landers-georgia-tech"
+                    target="_blank"
+                    rel="noopener"
+                    class="fa fa-linkedin"
+                    aria-label="LinkedIn"
+                  ></a>
+                  <a
+                    href="https://www.instagram.com/propulsivelandersgt/"
+                    target="_blank"
+                    rel="noopener"
+                    class="fa fa-instagram"
+                    aria-label="Instagram"
+                  ></a>
+                  <a
+                    href="https://www.tiktok.com/@propulsive.landers.gt"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="TikTok"
+                  >
+                    <img
+                      src="assets/img/tiktok_round.png"
+                      alt="TikTok"
+                      class="tiktok-icon"
+                    />
+                  </a>
                 </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Footer Contact Section -->
-        <section class="contact">
-            <div class="contact__container container">
-                <div class="contact__content">
-                    <div class="contact__location">
-                        <h2 class="wheretofind">Where To Find Us</h2>
-                        <p>Georgia Institute of Technology</p>
-                        <p>North Avenue</p>
-                        <p>Atlanta, GA 30332</p>
-                    </div>
-                    
-                    <div class="site_map">
-                        <h2 class="mapsite">Site Map</h2>
-                        <ul class="site_map__list">
-                            <li><a href="about.html" class="map_site">About Us</a></li>
-                            <li><a href="projects.html" class="map_site">Projects</a></li>
-                            <li><a href="sponsors.html" class="map_site">Sponsors</a></li>
-                            <li><a href="contact.html" class="map_site">Contact</a></li>
-                        </ul>
-                    </div>
+            <!-- Map -->
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6632.842205893844!2d-84.39885992450594!3d33.775622232286445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5048aebc34fe3%3A0xb52ad03e3ad8c50f!2sGeorgia%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1729765053810!5m2!1sen!2sus"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Georgia Tech Map"
+              ></iframe>
 
-                    <div class="contact__socials">
-                        <h2 class="socialcontact">Our Socials</h2>
-                        <div class="social__icons">
-                            <a href="mailto:outreach@gtpropulsivelanders.org" class="fa fa-envelope"></a>
-                            <a href="https://www.linkedin.com/company/propulsive-landers-georgia-tech" class="fa fa-linkedin"></a>
-                            <a href="https://www.instagram.com/propulsivelandersgt/" class="fa fa-instagram"></a>
-                            <a href="https://www.tiktok.com/@propulsive.landers.gt" class="social-icon tiktok">
-                                <img src="assets/img/tiktok_round.png" class="tiktok-icon" alt="TikTok">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="gtpl-heading">GTPL</h3>
+              <div class="directions">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Georgia+Institute+of+Technology,+North+Avenue,+Atlanta,+GA+30332,+USA"
+                  target="_blank"
+                  rel="noopener"
+                  class="get-directions"
+                >
+                  Get Directions
+                </a>
+              </div>
             </div>
-            <p class="copyright">Copyright 2024 © All rights Reserved. GTPL.</p>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FOOTER (MATCH SPONSORS) ==================== -->
+      <section class="footer-cta">
+        <div class="footer-cta__container container">
+          <div class="footer-cta__left">
+            <h3 class="footer-cta__heading">Help GTPL launch to new heights!</h3>
+          </div>
+
+          <div class="footer-cta__right">
+            <p class="footer-cta__text">
+              Landing a rocket is hard. That’s why we’re always looking for
+              donors, corporate sponsors, and talented engineering students from
+              Georgia Tech. Join us, and help us make history.
+            </p>
+
+            <div class="footer-cta__buttons">
+              <a
+                href="https://gofund.me/0b95802f7"
+                class="footer-btn"
+                target="_blank"
+                rel="noopener"
+                >Donate</a
+              >
+              <a href="sponsors.html" class="footer-btn">Become a Sponsor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-cta__socials">
+          <a
+            href="https://www.youtube.com/@propulsivelandersgt"
+            target="_blank"
+            rel="noopener"
+            class="footer-social"
+          >
+            <i class="ri-youtube-fill"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/propulsivelandersgt/"
+            target="_blank"
+            rel="noopener"
+            class="footer-social"
+          >
+            <i class="ri-instagram-fill"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/propulsive-landers-georgia-tech"
+            target="_blank"
+            rel="noopener"
+            class="footer-social"
+          >
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="https://propulsivelandersgt.com"
+            target="_blank"
+            rel="noopener"
+            class="footer-social"
+          >
+            <i class="ri-global-line"></i>
+          </a>
+        </div>
+
+        <div class="footer-cta__bottom">
+          <span class="footer-cta__brand">GTPL</span>
+          <span class="footer-cta__copyright">
+            Copyright 2024 © All rights Reserved. GTPL.
+          </span>
+        </div>
+      </section>
+
+      <div class="footer-gradient-strip"></div>
     </main>
 
     <!-- Scripts -->
-    <script src="assets/js/gsap.min.js"></script>
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
