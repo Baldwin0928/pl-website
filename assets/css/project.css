@@ -1,16 +1,47 @@
-/* =========================
-   PROJECT (MEDIA) PAGE CSS
-   Keeps current look; header is handled by styles.css
-   ========================= */
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/* Only override variables this page needs (to keep black theme) */
+/*=============== VARIABLES CSS ===============*/
 :root {
+  --header-height: 3.5rem;
+
+  /* Colors */
+  --first-color: #1e3a5f;
+  --first-color-alt: #2c4b7a;
+  --second-color: #ff914d;
+  --second-color-alt: #ff7a32;
+
   --title-color: #ffffff;
   --text-color: #d9d9d9;
   --body-color: #000000;
+
+  /* Font */
+  --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /* Weight */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /* z index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
 }
 
-/* =============== BASE =============== */
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -40,24 +71,164 @@ img {
   border-radius: 10px;
 }
 
-.main {
-  overflow: hidden;
-}
-
-/* Keep your existing “container feel” for page content,
-   but DON’T override the header container from styles.css */
-.main .container {
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 
 @media screen and (min-width: 1152px) {
-  .main .container {
+  .container {
     margin-inline: auto;
   }
 }
 
-/* =============== HOME / HERO =============== */
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV (About-style, self-contained) ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: transparent;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+    backdrop-filter 0.25s ease;
+}
+
+/* Support multiple JS scroll class names */
+.header.bg-header,
+.header.navbar--scrolled,
+.header.header--scrolled {
+  background-color: rgba(11, 18, 32, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__logo img {
+  width: 60px;
+  height: 54px;
+}
+
+/* Mobile buttons */
+.nav__toggle,
+.nav__close {
+  background-color: var(--first-color-alt);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* Links */
+.nav__link {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: #ffffff;
+}
+
+.nav__link.active {
+  color: #ffffff;
+  position: relative;
+}
+
+/* Mobile menu */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #0b1220;
+    width: 80%;
+    height: 100%;
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.35);
+    padding: 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    transition: right 0.35s ease;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .nav__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1.5rem;
+  }
+}
+
+/* Show menu (main.js toggles this) */
+.show-menu {
+  right: 0;
+}
+
+/* Desktop menu */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 4.5rem;
+  }
+
+  .nav__list {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 4.5rem;
+  }
+
+  .nav__link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffd600, #ffffff, #ffd600);
+    opacity: 0.9;
+  }
+}
+
+/*=============== HOME (background photo + overlay) ===============*/
 .home {
   position: relative;
   height: 50vh;
@@ -69,66 +240,20 @@ img {
 .home::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
   opacity: 0.9;
 }
 
-.home__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-}
-
-.home__content {
-  text-align: center;
-}
-
-/* Your existing spacing tweaks */
-.home__title {
-  font-size: var(--biggest-font-size);
-  color: var(--title-color);
-  margin-bottom: 0rem;
-  margin-top: 4rem;
-  padding-top: 1rem;
-}
-
-.home__description {
-  line-height: 150%;
-  font-size: var(--normal-font-size);
-  margin-bottom: 2rem;
-  color: var(--text-color);
-  margin-top: -2rem;
-}
-
-@media screen and (min-width: 1152px) {
-  .home__title {
-    letter-spacing: -3px;
-    margin-bottom: 0rem;
-    padding-top: 2rem;
-  }
-
-  .home__description {
-    font-size: var(--h3-font-size);
-    margin-bottom: 3rem;
-    margin-top: -2rem;
-  }
-}
-
-/* =============== MEDIA HERO (your centered hero) =============== */
+/*=============== MEDIA HERO (centered) ===============*/
 .media-hero {
   min-height: 75vh;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   padding-top: calc(var(--header-height) + 1.5rem);
   padding-bottom: 3rem;
 }
@@ -140,15 +265,17 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  height: auto;
 }
 
 .media-hero .home__title {
   font-size: clamp(2.4rem, 4vw, 3.4rem);
   letter-spacing: 0.04em;
   margin: 0;
+  color: var(--title-color);
 }
 
-/* Tagline + press line */
+/* tagline + press */
 .home__tagline,
 .home__press {
   max-width: 640px;
@@ -163,7 +290,7 @@ img {
   text-underline-offset: 2px;
 }
 
-/* Social icon pill under hero */
+/* icon pill */
 .media-hero__icons {
   margin-top: 1.4rem;
   padding: 0.5rem 1.4rem;
@@ -189,7 +316,7 @@ img {
   color: #111827;
   font-size: 1.25rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background 0.15s ease, color 0.15s ease;
+    background 0.15s ease;
 }
 
 .media-hero__icon:hover {
@@ -199,17 +326,7 @@ img {
     linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
 }
 
-/* Ensure any earlier desktop rules won't override this hero */
-@media screen and (min-width: 767px) {
-  .media-hero {
-    display: flex !important;
-  }
-  .media-hero .home__container {
-    display: flex !important;
-    grid-template-columns: none !important;
-  }
-}
-
+/* Small screens */
 @media screen and (max-width: 600px) {
   .media-hero {
     min-height: 70vh;
@@ -227,7 +344,7 @@ img {
   }
 }
 
-/* =============== MEDIA GRID =============== */
+/*=============== MEDIA GRID (cards) ===============*/
 .media-grid {
   background-color: #f3f4f6;
   padding: 4rem 0 5rem;
@@ -246,6 +363,7 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 280px;
+
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -311,7 +429,7 @@ img {
   }
 }
 
-/* =============== FOOTER CTA =============== */
+/*=============== FOOTER CTA ===============*/
 .footer-cta {
   background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;
@@ -382,11 +500,6 @@ img {
   transform: translateY(-1px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
   background-size: 260% 260%;
-}
-
-.footer-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .footer-cta__socials {
