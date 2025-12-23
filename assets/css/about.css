@@ -1,241 +1,11 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --header-height: 3.5rem;
-
-  --first-color: #1e3a5f;
-  --first-color-alt: #2c4b7a;
-  --second-color: #ff914d;
-  --second-color-alt: #ff7a32;
-
-  --title-color: #ffffff;
-  --text-color: #d9d9d9;
-  --body-color: #ffffff;
-
-  --body-font: "Montserrat", sans-serif;
-  --biggest-font-size: 2rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  --font-bold: 700;
-
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-/*========== Responsive typography ==========*/
-@media screen and (min-width: 1152px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-  }
-}
-
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+/* About-only overrides (do NOT redefine .header/.nav/.container here) */
 
 body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
-  background-color: var(--body-color);
+  background: #ffffff;
   color: #111827;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.section {
-  padding: 4.5rem 0;
-}
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
-.main {
-  overflow: hidden;
-}
-
-/*=============== HEADER & NAV ===============*/
-.header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: transparent;
-  transition: background-color 0.25s ease;
-}
-
-.header.navbar--scrolled {
-  background-color: #000000;
-}
-
-.nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__logo,
-.nav__toggle,
-.nav__close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav__logo img {
-  width: 60px;
-  height: 54px;
-}
-
-.nav__toggle,
-.nav__close {
-  background-color: var(--first-color-alt);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  font-size: 1.25rem;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-/* Navigation for mobile devices */
-@media screen and (max-width: 1023px) {
-  .nav__menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background-color: var(--first-color);
-    width: 80%;
-    height: 100%;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
-    padding: 6rem 3rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2.5rem;
-    transition: right 0.4s;
-  }
-}
-
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2.5rem;
-}
-
-.nav__link {
-  color: var(--text-color);
-  font-weight: var(--font-semi-bold);
-  transition: color 0.25s ease;
-}
-
-.nav__link:hover {
-  color: var(--title-color);
-}
-
-.nav__link.active {
-  color: var(--title-color);
-  position: relative;
-}
-
-@media screen and (min-width: 1023px) {
-  .nav__link.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #ffd600, #ffffff, #ffd600);
-    opacity: 0.9;
-  }
-}
-
-.nav__close {
-  position: absolute;
-  top: 0.75rem;
-  right: 1.5rem;
-}
-
-/* Show menu */
-.show-menu {
-  right: 0;
-}
-
-/* Desktop nav */
-@media screen and (min-width: 1023px) {
-  .header {
-    position: fixed;
-  }
-
-  .nav {
-    height: calc(var(--header-height) + 2rem);
-  }
-
-  .nav__toggle,
-  .nav__close {
-    display: none;
-  }
-
-  .nav__menu {
-    position: static;
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-  }
-
-  .nav__list {
-    margin-left: auto;
-    flex-direction: row;
-    column-gap: 4.5rem;
-  }
-}
-
-@media screen and (min-width: 1152px) {
-  .container {
-    margin-inline: auto;
-  }
-}
-
-/*=============== HERO (ABOUT PAGE FIX) ===============*/
-/* Your old hero assumed a video + overlay. This page has no video, so we give it a real background. */
+/* ===== HERO (About) ===== */
 .home {
   position: relative;
   overflow: hidden;
@@ -244,32 +14,14 @@ img {
   display: grid;
   place-items: center;
 
-  /* optional image + gradient overlay */
   background:
-    linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
-    radial-gradient(circle at 20% 20%, rgba(255,145,77,0.18), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(30,58,95,0.38), transparent 55%),
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    radial-gradient(circle at 20% 20%, rgba(255, 145, 77, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(30, 58, 95, 0.38), transparent 55%),
     #0b1220;
 
   background-size: cover;
   background-position: center;
-}
-
-/* Keep these for compatibility if you later add a video */
-.home__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none; /* About page does not use video */
-}
-
-.home__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.62);
-  display: none; /* handled by background gradient above */
 }
 
 .home__container {
@@ -285,36 +37,22 @@ img {
 }
 
 .home__title {
-  font-size: var(--biggest-font-size);
-  color: var(--title-color);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #ffffff;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
 .home__tagline {
   margin-top: 0.85rem;
-  color: var(--text-color);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
   line-height: 1.6;
+  max-width: 46rem;
+  margin-inline: auto;
 }
 
-/* hero responsive */
-@media screen and (min-width: 1152px) {
-  .home__title {
-    letter-spacing: -0.03em;
-  }
-  .home__tagline {
-    font-size: 1.05rem;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .home__title {
-    font-size: 1.85rem;
-  }
-}
-
-/*=============== TEAM SECTION (MISSING BEFORE) ===============*/
+/* ===== TEAM SECTION ===== */
 .team__section {
   background: #ffffff;
   padding: 4.5rem 0;
@@ -328,7 +66,7 @@ img {
 
 .section__title {
   text-align: center;
-  font-size: 2.15rem;
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #111827;
@@ -393,7 +131,7 @@ img {
   color: #4b5563;
 }
 
-/* Team responsive */
+/* Responsive */
 @media screen and (max-width: 980px) {
   .team__grid {
     grid-template-columns: 1fr;
@@ -409,148 +147,5 @@ img {
     width: 100%;
     height: 220px;
     flex: none;
-  }
-}
-
-/*=============== FOOTER CTA ===============*/
-.footer-cta {
-  background-color: #ffffff;
-  padding: 3.5rem 1.5rem 2.75rem;
-  color: #111827;
-  border-top: 1px solid #e5e7eb;
-}
-
-.footer-cta__container {
-  max-width: 1120px;
-  margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2.5rem;
-}
-
-.footer-cta__left {
-  flex: 0 0 240px;
-}
-
-.footer-cta__right {
-  flex: 1;
-}
-
-.footer-cta__heading {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.footer-cta__text {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #4b5563;
-  max-width: 34rem;
-  margin-bottom: 1.6rem;
-}
-
-.footer-cta__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.footer-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1.9rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
-
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
-  border: 2px solid transparent;
-  background-size: 220% 220%;
-  color: #111827;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-size 0.15s ease;
-}
-
-.footer-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-  background-size: 260% 260%;
-}
-
-.footer-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-.footer-cta__socials {
-  margin-top: 2.75rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.9rem;
-}
-
-.footer-social {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1.8px solid #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #111827;
-  font-size: 1.2rem;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    transform 0.15s ease;
-}
-
-.footer-social:hover {
-  background-color: #111827;
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.footer-cta__bottom {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-.footer-cta__brand {
-  display: block;
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-
-.footer-gradient-strip {
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, #ffd600, #000000, #ffd600);
-}
-
-@media screen and (max-width: 768px) {
-  .footer-cta__container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-cta__left {
-    flex: none;
-  }
-
-  .footer-cta__heading {
-    margin-bottom: 0.75rem;
   }
 }
