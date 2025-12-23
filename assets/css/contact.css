@@ -569,3 +569,40 @@ img {
     height: 360px;
   }
 }
+
+/* ================= ICON COLORS (CONTACT PAGE) ================= */
+
+/* Main card icons (pin / envelope / follow) */
+.info-card i {
+  color: var(--second-color); /* GTPL orange */
+}
+
+/* Optional: make each card icon slightly different */
+.info-cards .info-card:nth-child(1) i { color: var(--second-color); }   /* Address */
+.info-cards .info-card:nth-child(2) i { color: var(--first-color); }    /* Email */
+.info-cards .info-card:nth-child(3) i { color: var(--second-color-alt); } /* Follow */
+
+/* Follow icons (brand colors) */
+.social-links .fa {
+  color: #111827; /* fallback */
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-links .fa-linkedin { color: #0A66C2; }
+.social-links .fa-instagram { color: #E1306C; }
+
+/* If you later switch TikTok to a font icon, you can use this */
+.social-links .fa-tiktok { color: #000000; }
+
+.social-links a:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* TikTok image — keep it crisp + consistent */
+.social-links .tiktok-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
