@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // TUNING
   const START_BEFORE_SECTION_VH = 0.70; // start when you're a bit before the quote section
-  const END_BEFORE_MISSION_VH = 0.35;   // finish right before Our Mission shows (smaller => later)
+  const END_BEFORE_MISSION_VH = 0.50;   // finish right before Our Mission shows (smaller => later)
   const BUMP_PX = 12;
   const BASE_OPACITY = 0.14;
 
@@ -237,5 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
+
 
 
