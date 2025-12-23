@@ -174,37 +174,33 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* ===================== SCROLL QUOTE (early start + slower reveal) ===================== */
+/* ===================== SCROLL QUOTE (end tied to #about so no dead zone) ===================== */
 (() => {
   const section = document.querySelector(".scroll-quote");
   if (!section) return;
 
+  const mission = document.querySelector("#about"); // Our Mission section
   const textEl = section.querySelector(".scroll-quote__text");
   const authorEl = section.querySelector(".scroll-quote__author");
   if (!textEl) return;
 
-  // If quote text isn't already split into spans, split it automatically
-  const hasSpans = textEl.querySelector(".scroll-quote__word");
-  if (!hasSpans) {
+  // Split into spans if needed
+  if (!textEl.querySelector(".scroll-quote__word")) {
     const raw = (textEl.textContent || "").trim().replace(/\s+/g, " ");
     textEl.textContent = "";
-
-    const parts = raw.split(" ");
-    parts.forEach((w, idx) => {
+    raw.split(" ").forEach((w, idx, arr) => {
       const span = document.createElement("span");
       span.className = "scroll-quote__word";
-      span.textContent = w + (idx === parts.length - 1 ? "" : " ");
-      // ensure transforms work even if your CSS forgets display:inline-block
+      span.textContent = w + (idx === arr.length - 1 ? "" : " ");
       span.style.display = "inline-block";
       span.style.willChange = "transform, opacity";
-      span.style.opacity = "0.16";
-      span.style.transform = "translate3d(0, 10px, 0)";
+      span.style.opacity = "0.14";
+      span.style.transform = "translate3d(0, 12px, 0)";
       textEl.appendChild(span);
     });
   }
 
   const words = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
-  // Also enforce inline-block for existing spans
   words.forEach((w) => {
     w.style.display = "inline-block";
     w.style.willChange = "transform, opacity";
@@ -213,36 +209,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
-  /* TUNING (THIS is the "start" behavior you were asking for)
-     - START_IN_VIEW bigger => starts earlier (when section enters viewport)
-     - END_IN_VIEW smaller  => finishes later (slower overall)
-  */
-  const START_IN_VIEW = 0.95; // start when section top hits 85% of viewport height (EARLY)
-  const END_IN_VIEW = 0.15;   // finish when section top hits 15% (SLOW, more scroll distance)
-  const BUMP_PX = 12;         // how much the word "bumps" up while appearing
-  const BASE_OPACITY = 0.14;  // dim grey start (clean, no glow)
+  // TUNING
+  const START_BEFORE_SECTION_VH = 0.70; // start when you're a bit before the quote section
+  const END_BEFORE_MISSION_VH = 0.20;   // finish right before Our Mission shows (smaller => later)
+  const BUMP_PX = 12;
+  const BASE_OPACITY = 0.14;
 
   let ticking = false;
 
-  function render() {
-    const rect = section.getBoundingClientRect();
+  function getProgress() {
     const vh = window.innerHeight || document.documentElement.clientHeight;
+    const y = window.scrollY || window.pageYOffset;
 
-    const startY = vh * START_IN_VIEW;
-    const endY = vh * END_IN_VIEW;
+    const sectionTop = section.offsetTop;
+    const missionTop = mission ? mission.offsetTop : (sectionTop + section.offsetHeight);
 
-    // progress 0..1 across the scroll window
-    let p = (startY - rect.top) / (startY - endY);
-    p = clamp(p, 0, 1);
+    // Start earlier (before section top), end near mission entering viewport
+    const start = sectionTop - vh * START_BEFORE_SECTION_VH;
+    const end = missionTop - vh * END_BEFORE_MISSION_VH;
 
+    const denom = Math.max(1, end - start);
+    return clamp((y - start) / denom, 0, 1);
+  }
+
+  function render() {
+    const p = getProgress();
     const n = words.length || 1;
 
     for (let i = 0; i < words.length; i++) {
       const a = i / n;
       const b = (i + 1) / n;
 
-      let t = (p - a) / (b - a);
-      t = clamp(t, 0, 1);
+      let t = clamp((p - a) / (b - a), 0, 1);
       t = easeOutCubic(t);
 
       const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
@@ -252,10 +250,11 @@ document.addEventListener("DOMContentLoaded", function () {
       words[i].style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
     }
 
-    // Author reveals near the end (same clean bump)
+    // Author: same font as quote (you said you want exactly that)
     if (authorEl) {
-      let t = (p - 0.78) / 0.22; // start late, finish at end
-      t = clamp(t, 0, 1);
+      authorEl.style.font = "inherit";
+
+      let t = clamp((p - 0.82) / 0.18, 0, 1);
       t = easeOutCubic(t);
 
       const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
@@ -278,9 +277,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
-  onScroll(); // initial
+  onScroll();
 })();
-
-
-
-
