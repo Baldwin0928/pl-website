@@ -20,47 +20,43 @@
 <body>
    <!--==================== HEADER ====================-->
    <header class="header" id="header">
-      <nav class="nav container">
-         <a href="index.html" class="nav__logo">
-            <img src="assets/img/whitebutterfly.png" alt="GTPL">
-         </a>
-         
-         <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
+  <nav class="nav container" aria-label="Primary navigation">
+    <a href="index.html" class="nav__logo" aria-label="GTPL Home">
+      <img src="assets/img/whitebutterfly.png" alt="GTPL" />
+    </a>
 
-               <li class="nav__item">
-                  <a href="index.html" class="nav__link">Home</a>
-               </li>
-               
-               <li class="nav__item">
-                  <a href="about.html" class="nav__link">About</a>
-               </li>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+        <li class="nav__item">
+          <a href="project.html" class="nav__link active">Media</a>
+        </li>
+        <li class="nav__item">
+          <a href="sponsors.html" class="nav__link">Sponsors</a>
+        </li>
+        <li class="nav__item">
+          <a href="contact.html" class="nav__link">Contact</a>
+        </li>
+      </ul>
 
-               <li class="nav__item">
-                  <a href="project.html" class="nav__link active">Media</a>
-               </li>
+      <!-- OPTIONAL: keep if you want consistent CTA across site -->
+      <!-- <a href="join.html" class="nav__cta">Join Us</a> -->
 
-               <li class="nav__item">
-                  <a href="sponsors.html" class="nav__link">Sponsors</a>
-               </li>
+      <div class="nav__close" id="nav-close" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </div>
+    </div>
 
-               <li class="nav__item">
-                  <a href="contact.html" class="nav__link">Contact</a>
-               </li>
-            </ul>
-
-            <!-- Close button -->
-            <div class="nav__close" id="nav-close">
-               <i class="ri-close-line"></i>
-            </div>
-         </div>
-
-         <!-- Toggle button -->
-         <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-apps-2-line"></i>
-         </div>
-      </nav>
-   </header>
+    <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+      <i class="ri-apps-2-line"></i>
+    </div>
+  </nav>
+</header>
 
    <!--==================== MAIN ====================-->
    <main class="main">
