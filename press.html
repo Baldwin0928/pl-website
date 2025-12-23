@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="shortcut icon" href="assets/img/whitebutterfly.png" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="assets/img/whitebutterfly.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+      crossorigin=""
+    />
+
+    <!-- Use your site-wide stylesheet so header/footer match -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Optional: page-specific overrides (create this file in step 2) -->
+    <link rel="stylesheet" href="assets/css/press.css" />
+
+    <title>Press Releases — Propulsive Landers @ Georgia Tech</title>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a href="index.html" class="nav__logo" aria-label="GTPL Home">
+          <img src="assets/img/whitebutterfly.png" alt="GTPL" />
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="project.html" class="nav__link">Media</a></li>
+            <li class="nav__item"><a href="sponsors.html" class="nav__link">Sponsors</a></li>
+            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="press.html" class="nav__link active">Press</a></li>
+          </ul>
+
+          <a href="join.html" class="nav__cta">Join Us</a>
+
+          <div class="nav__close" id="nav-close" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+          <i class="ri-apps-2-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- HERO -->
+      <section class="press-hero">
+        <div class="press-hero__container container">
+          <h1 class="press-hero__title">Press Releases</h1>
+          <p class="press-hero__subtitle">Official announcements and team milestones.</p>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="press section">
+        <div class="press__container container">
+          <div class="press__header">
+            <h2 class="press__h2">Latest</h2>
+            <p class="press__lead">
+              Add entries below as you publish announcements. Each card can link to a PDF, a news article,
+              or a full page post.
+            </p>
+          </div>
+
+          <div class="press__grid">
+            <!-- CARD -->
+            <article class="press-card">
+              <div class="press-card__meta">
+                <span class="press-card__date">Nov 9, 2025</span>
+                <span class="press-card__tag">Milestone</span>
+              </div>
+              <h3 class="press-card__title">Georgia Tech’s First Hybrid Rocket Engine Hotfire</h3>
+              <p class="press-card__text">
+                Propulsive Landers achieved the first hybrid engine hotfire in Georgia Tech’s history, marking
+                the start of our engine validation campaign toward tethered hovers.
+              </p>
+              <div class="press-card__actions">
+                <a class="press-card__btn" href="project.html">View Media</a>
+                <!-- Optional: link to a PDF if you add one -->
+                <!-- <a class="press-card__btn press-card__btn--ghost" href="assets/press/gtpl_hotfire_press_release.pdf" target="_blank" rel="noopener">Read PDF</a> -->
+              </div>
+            </article>
+
+            <!-- DUPLICATE THIS CARD FOR NEW RELEASES -->
+            <article class="press-card press-card--empty">
+              <div class="press-card__meta">
+                <span class="press-card__date">Coming soon</span>
+                <span class="press-card__tag">Press</span>
+              </div>
+              <h3 class="press-card__title">New press release</h3>
+              <p class="press-card__text">
+                Duplicate this card and replace the title, date, and link.
+              </p>
+              <div class="press-card__actions">
+                <a class="press-card__btn press-card__btn--ghost" href="#">Add link</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer (matches your current style) -->
+      <section class="footer-cta">
+        <div class="footer-cta__container container">
+          <div class="footer-cta__left">
+            <h3 class="footer-cta__heading">Help GTPL launch to new heights!</h3>
+          </div>
+
+          <div class="footer-cta__right">
+            <p class="footer-cta__text">
+              Landing a rocket is hard. That’s why we’re always looking for donors, corporate sponsors,
+              and talented engineering students from Georgia Tech. Join us, and help us make history.
+            </p>
+
+            <div class="footer-cta__buttons">
+              <a href="https://gofund.me/0b95802f7" class="footer-btn" target="_blank" rel="noopener">Donate</a>
+              <a href="sponsors.html" class="footer-btn">Become a Sponsor</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-cta__socials">
+          <a href="https://www.youtube.com/@propulsivelandersgt" target="_blank" rel="noopener" class="footer-social">
+            <i class="ri-youtube-fill"></i>
+          </a>
+          <a href="https://www.instagram.com/propulsivelandersgt/" target="_blank" rel="noopener" class="footer-social">
+            <i class="ri-instagram-fill"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/propulsive-landers-georgia-tech" target="_blank" rel="noopener" class="footer-social">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a href="https://propulsivelandersgt.com" target="_blank" rel="noopener" class="footer-social">
+            <i class="ri-global-line"></i>
+          </a>
+        </div>
+
+        <div class="footer-cta__bottom">
+          <span class="footer-cta__brand">GTPL</span>
+          <span class="footer-cta__copyright">Copyright 2024 © All rights Reserved. GTPL.</span>
+        </div>
+      </section>
+
+      <div class="footer-gradient-strip"></div>
+    </main>
+
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
