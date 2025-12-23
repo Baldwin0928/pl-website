@@ -899,3 +899,18 @@ img {
   position: relative;
   z-index: 2;
 }
+
+/* EXACT: author uses the SAME font as the quote */
+.scroll-quote__author{
+  font-family: HelveticaNeueDisplay, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 110%;
+  text-align: center;
+
+  /* keep your author sizing separate (their site is smaller) */
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.22;
+}
