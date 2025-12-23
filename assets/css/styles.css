@@ -1011,3 +1011,35 @@ img {
   .home__subtitle .type{ animation: none; width: auto; border-right: none; }
 }
 
+/* ================= TYPEWRITER (OPTION A) ================= */
+
+/* Apply to your actual markup: <p class="home__tagline"><span class="type">...</span></p> */
+.home__tagline .type{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  /* caret */
+  border-right: 2px solid rgba(255,255,255,.85);
+  padding-right: .35rem;
+
+  /* typing reveal */
+  width: 0ch;
+  animation:
+    gtplTyping 2.2s steps(28, end) forwards,
+    gtplCaret .75s steps(1, end) infinite;
+}
+
+/* 28ch should roughly match your character count.
+   If your line gets cut off early, increase it (ex: 32ch). */
+@keyframes gtplTyping { to { width: 28ch; } }
+@keyframes gtplCaret { 50% { border-color: transparent; } }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .home__tagline .type{
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
+}
