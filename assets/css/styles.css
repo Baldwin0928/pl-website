@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
-  --header-height: 4.25rem;
+  --header-height: 5.25rem;
 
-  --nav-bg: #6f8fa6;
-  --nav-bg-scrolled: #5f7f97;
+  /* dark semi-transparent "glass" nav */
+  --nav-bg: rgba(10, 10, 10, 0.55);
+  --nav-bg-scrolled: rgba(10, 10, 10, 0.78);
+  --nav-border: rgba(255, 255, 255, 0.12);
 
   --first-color: #1e3a5f;
   --first-color-alt: #2c4b7a;
@@ -81,27 +83,36 @@ img {
   overflow: hidden;
 }
 
+/* ===================== HEADER / NAV ===================== */
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: var(--z-fixed);
+
   background: var(--nav-bg);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  border-bottom: 1px solid var(--nav-border);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .header.navbar--scrolled {
   background: var(--nav-bg-scrolled);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45);
 }
 
 .nav {
   height: var(--header-height);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .nav__logo {
@@ -112,8 +123,8 @@ img {
 }
 
 .nav__logo img {
-  width: 64px;
-  height: 56px;
+  width: 68px;
+  height: 58px;
   object-fit: contain;
 }
 
@@ -139,7 +150,11 @@ img {
   width: min(360px, 86%);
   height: 100%;
   padding: 6rem 2.5rem 2.5rem;
-  background-color: var(--first-color);
+
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
@@ -165,49 +180,40 @@ img {
 }
 
 .nav__link {
-  color: #ffffff;
-  font-weight: var(--font-semi-bold);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: color 0.2s ease, opacity 0.2s ease;
-  opacity: 0.92;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  opacity: 1;
 }
 
 .nav__link:hover {
-  color: var(--gt-gold);
-  opacity: 1;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .nav__link.active {
-  color: var(--gt-gold);
-  opacity: 1;
+  color: #ffffff;
+  position: relative;
 }
 
-.nav__cta {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5rem;
-  padding: 0 1.15rem;
+.nav__link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 34px;
+  height: 2px;
+  background: var(--gt-gold);
+  transform: translateX(-50%);
   border-radius: 999px;
-  border: 1.8px solid rgba(255, 214, 0, 0.75);
-  color: var(--gt-gold);
-  font-weight: var(--font-bold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
-.nav__cta:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 214, 0, 0.14);
-}
-
-.nav__cta:active {
-  transform: translateY(0);
+/* Hide "Join Us" button globally */
+.nav__cta {
+  display: none !important;
 }
 
 @media screen and (min-width: 1023px) {
@@ -235,29 +241,25 @@ img {
     justify-content: center;
     row-gap: 0;
     z-index: auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .nav__list {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    column-gap: 2.4rem;
+    column-gap: 2.8rem;
     row-gap: 0;
   }
 
   .nav__link {
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-    opacity: 0.95;
-  }
-
-  .nav__cta {
-    margin-top: 0;
-    justify-self: end;
-    border-color: rgba(255, 214, 0, 0.9);
-    background: transparent;
+    font-size: 0.92rem;
+    letter-spacing: 0.22em;
   }
 }
+
+/* ===================== HERO ===================== */
 
 .home {
   position: relative;
@@ -361,6 +363,8 @@ img {
   }
 }
 
+/* ===================== OUR MISSION ===================== */
+
 .ourmission {
   position: relative;
   background: linear-gradient(to bottom, rgba(35, 35, 35, 0.7), rgba(45, 44, 44, 0.7)),
@@ -392,6 +396,8 @@ img {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
+/* ===================== HIGHLIGHT GRID ===================== */
 
 .highlight-grid {
   background-color: #f7f7f7;
@@ -459,7 +465,8 @@ img {
   font-size: 0.95rem;
   text-decoration: none;
   cursor: pointer;
-  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
   border: 2px solid transparent;
   background-size: 220% 220%;
   animation: pl-btn-border-move 4s linear infinite;
@@ -588,6 +595,8 @@ img {
   align-self: flex-start;
 }
 
+/* ===================== FOOTER CTA ===================== */
+
 .footer-cta {
   background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;
@@ -642,7 +651,8 @@ img {
   font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
-  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
   border: 2px solid transparent;
   background-size: 220% 220%;
   color: #111827;
