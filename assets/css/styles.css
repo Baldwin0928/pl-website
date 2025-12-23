@@ -742,7 +742,7 @@ img {
 
 .scroll-quote__stage {
   /* SHORTER: controls how long the reveal lasts */
-  height: 130vh; /* try 120vh if you want even tighter */
+  height: 110vh; /* try 120vh if you want even tighter */
 }
 
 .scroll-quote__sticky {
