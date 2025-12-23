@@ -4,37 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--=============== FAVICON ===============-->
-    <link
-      rel="shortcut icon"
-      href="assets/img/whitebutterfly.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/img/whitebutterfly.png" type="image/x-icon" />
     <link rel="icon" type="image/x-icon" href="assets/img/whitebutterfly.png" />
 
-    <!--=============== REMIXICONS ===============-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
       crossorigin=""
     />
 
-    <!--=============== FONT AWESOME (optional) ===============-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <title>Propulsive Landers @ Georgia Tech</title>
   </head>
 
   <body>
-    <!--==================== HEADER ====================-->
     <header class="header" id="header">
-      <nav class="nav container">
+      <nav class="nav container" aria-label="Primary navigation">
         <a href="index.html" class="nav__logo" aria-label="GTPL Home">
           <img src="assets/img/whitebutterfly.png" alt="GTPL" />
         </a>
@@ -42,13 +33,12 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="index.html" class="nav__link">Home</a>
+              <a href="index.html" class="nav__link active">Home</a>
             </li>
             <li class="nav__item">
               <a href="about.html" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-              <!-- label changed, file stays the same -->
               <a href="project.html" class="nav__link">Media</a>
             </li>
             <li class="nav__item">
@@ -59,32 +49,27 @@
             </li>
           </ul>
 
-          <!-- Close button (mobile) -->
+          <a href="join.html" class="nav__cta">Join Us</a>
+
           <div class="nav__close" id="nav-close" aria-label="Close menu">
             <i class="ri-close-line"></i>
           </div>
         </div>
 
-        <!-- Toggle button (mobile) -->
         <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
           <i class="ri-apps-2-line"></i>
         </div>
       </nav>
     </header>
 
-    <!--==================== MAIN ====================-->
     <main class="main">
-      <!--==================== HOME / HERO ====================-->
       <section class="home">
-        <!-- Background video -->
         <video class="home__video" autoplay muted loop playsinline>
           <source src="assets/media/video.mp4" type="video/mp4" />
         </video>
 
-        <!-- Dark overlay -->
         <div class="home__overlay"></div>
 
-        <!-- Content -->
         <div class="home__container container">
           <div class="home__content">
             <h1 class="home__title">
@@ -152,7 +137,6 @@
             </div>
           </div>
 
-          <!-- Scroll-down indicator -->
           <div class="home__scroll">
             <a href="#about" class="home__scroll-link" aria-label="Scroll to Our Mission">
               <span>Scroll</span>
@@ -162,34 +146,30 @@
         </div>
       </section>
 
-      <!--==================== OUR MISSION ====================-->
       <section id="about" class="ourmission section">
         <div class="ourmission__inner">
           <h2 class="ourmission__title">Our Mission</h2>
 
           <div class="ourmission__container container">
             <p class="ourmission__description">
-              Propulsive Landers @ Georgia Tech (GTPL) is a student-led team at
-              the Georgia Institute of Technology working to develop autonomous
-              systems that power a self-landing rocket. Our mission is to become
-              the first student team in the world to achieve vertical take-off,
+              Propulsive Landers @ Georgia Tech (GTPL) is a student-led team at the Georgia Institute of
+              Technology working to develop autonomous systems that power a self-landing rocket. Our
+              mission is to become the first student team in the world to achieve vertical take-off,
               and landing of a hybrid rocket.
             </p>
           </div>
         </div>
       </section>
 
-      <!--==================== HIGHLIGHT GRID ====================-->
       <section class="highlight-grid section">
         <div class="highlight-grid__container container">
-          <!-- Card 1: Sponsors -->
           <article class="highlight-card highlight-card--sponsors">
             <span class="highlight-card__eyebrow">Sponsors</span>
             <h3 class="highlight-card__title">Thank you to our Sponsors!</h3>
             <p class="highlight-card__text">
-              The work that we do today would be impossible without our sponsors.
-              Here, we recognize the partners who stand behind us and believe in our
-              mission to make student-built propulsive landings a reality.
+              The work that we do today would be impossible without our sponsors. Here, we recognize
+              the partners who stand behind us and believe in our mission to make student-built
+              propulsive landings a reality.
             </p>
 
             <a href="sponsors.html" class="highlight-card__button pl-btn-learn-more">
@@ -197,10 +177,8 @@
               <i class="ri-arrow-right-line"></i>
             </a>
 
-            <!-- UPDATED: shuffled sponsor/logo carousel -->
             <div class="highlight-card__logos pl-sponsor-logos" aria-label="Sponsor logo carousel">
-              <!-- Row 1 -->
-              <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
+              <div class="pl-sponsor-logos__row">
                 <img src="assets/img/ansys.svg" alt="ANSYS" />
                 <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
                 <img src="assets/img/adc.svg" alt="AutomationDirect" />
@@ -217,7 +195,6 @@
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
                 <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
 
-                <!-- duplicate set -->
                 <img src="assets/img/ansys.svg" alt="ANSYS" />
                 <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
                 <img src="assets/img/adc.svg" alt="AutomationDirect" />
@@ -235,8 +212,7 @@
                 <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
               </div>
 
-              <!-- Row 2 -->
-              <div class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse">
+              <div class="pl-sponsor-logos__row">
                 <img src="assets/img/pcbway.svg" alt="PCBWay" />
                 <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
                 <img src="assets/img/altiumblk.svg" alt="Altium" />
@@ -253,7 +229,6 @@
                 <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
 
-                <!-- duplicate set -->
                 <img src="assets/img/pcbway.svg" alt="PCBWay" />
                 <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
                 <img src="assets/img/altiumblk.svg" alt="Altium" />
@@ -271,8 +246,7 @@
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
               </div>
 
-              <!-- Row 3 -->
-              <div class="pl-sponsor-logos__row pl-sponsor-logos__track">
+              <div class="pl-sponsor-logos__row">
                 <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
                 <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
                 <img src="assets/img/altiumblk.svg" alt="Altium" />
@@ -289,7 +263,6 @@
                 <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
 
-                <!-- duplicate set -->
                 <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
                 <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
                 <img src="assets/img/altiumblk.svg" alt="Altium" />
@@ -307,8 +280,7 @@
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
               </div>
 
-              <!-- Row 4 -->
-              <div class="pl-sponsor-logos__row pl-sponsor-logos__track pl-sponsor-logos__track--reverse">
+              <div class="pl-sponsor-logos__row">
                 <img src="assets/img/graphitestore.svg" alt="GraphiteStore" />
                 <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
                 <img src="assets/img/meanwell.svg" alt="Mean Well" />
@@ -325,7 +297,6 @@
                 <img src="assets/img/EBYTE.webp" alt="Ebyte" />
                 <img src="assets/img/Dassault.png" alt="Dassault Systèmes" />
 
-                <!-- duplicate set -->
                 <img src="assets/img/graphitestore.svg" alt="GraphiteStore" />
                 <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
                 <img src="assets/img/meanwell.svg" alt="Mean Well" />
@@ -345,17 +316,13 @@
             </div>
           </article>
 
-          <!-- Card 2: Recent Success -->
           <article class="highlight-card highlight-card--project">
             <span class="highlight-card__eyebrow">Recent Success</span>
-            <h3 class="highlight-card__title">
-              Hotfire of Georgia Tech's First Hybrid Rocket Engine
-            </h3>
+            <h3 class="highlight-card__title">Hotfire of Georgia Tech's First Hybrid Rocket Engine</h3>
             <p class="highlight-card__text">
-              As of November 9, 2025, Propulsive Landers became the first
-              team in Georgia Tech's history to hotfire a hybrid rocket engine.
-              This marks the beginning of our engine validation campaign as we
-              prepare for tether hovers in Spring and Fall of 2026.
+              As of November 9, 2025, Propulsive Landers became the first team in Georgia Tech's
+              history to hotfire a hybrid rocket engine. This marks the beginning of our engine
+              validation campaign as we prepare for tether hovers in Spring and Fall of 2026.
             </p>
 
             <div class="highlight-card__video-wrap">
@@ -368,17 +335,13 @@
               ></iframe>
             </div>
 
-            <a
-              href="project.html"
-              class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
-            >
+            <a href="project.html" class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video">
               Explore the Project
             </a>
           </article>
         </div>
       </section>
 
-      <!--==================== FOOTER CTA ====================-->
       <section class="footer-cta">
         <div class="footer-cta__container container">
           <div class="footer-cta__left">
@@ -387,39 +350,22 @@
 
           <div class="footer-cta__right">
             <p class="footer-cta__text">
-              Landing a rocket is hard. That’s why we’re always looking for donors, corporate
-              sponsors, and talented engineering students from Georgia Tech.
-              Join us, and help us make history.
+              Landing a rocket is hard. That’s why we’re always looking for donors, corporate sponsors,
+              and talented engineering students from Georgia Tech. Join us, and help us make history.
             </p>
 
             <div class="footer-cta__buttons">
-              <a
-                href="https://gofund.me/0b95802f7"
-                class="footer-btn"
-                target="_blank"
-                rel="noopener"
-                >Donate</a
-              >
+              <a href="https://gofund.me/0b95802f7" class="footer-btn" target="_blank" rel="noopener">Donate</a>
               <a href="sponsors.html" class="footer-btn">Become a Sponsor</a>
             </div>
           </div>
         </div>
 
         <div class="footer-cta__socials">
-          <a
-            href="https://www.youtube.com/@propulsivelandersgt"
-            target="_blank"
-            rel="noopener"
-            class="footer-social"
-          >
+          <a href="https://www.youtube.com/@propulsivelandersgt" target="_blank" rel="noopener" class="footer-social">
             <i class="ri-youtube-fill"></i>
           </a>
-          <a
-            href="https://www.instagram.com/propulsivelandersgt/"
-            target="_blank"
-            rel="noopener"
-            class="footer-social"
-          >
+          <a href="https://www.instagram.com/propulsivelandersgt/" target="_blank" rel="noopener" class="footer-social">
             <i class="ri-instagram-fill"></i>
           </a>
           <a
@@ -430,31 +376,21 @@
           >
             <i class="ri-linkedin-fill"></i>
           </a>
-          <a
-            href="https://propulsivelandersgt.com"
-            target="_blank"
-            rel="noopener"
-            class="footer-social"
-          >
+          <a href="https://propulsivelandersgt.com" target="_blank" rel="noopener" class="footer-social">
             <i class="ri-global-line"></i>
           </a>
         </div>
 
         <div class="footer-cta__bottom">
           <span class="footer-cta__brand">GTPL</span>
-          <span class="footer-cta__copyright">
-            Copyright 2024 © All rights Reserved. GTPL.
-          </span>
+          <span class="footer-cta__copyright">Copyright 2024 © All rights Reserved. GTPL.</span>
         </div>
       </section>
 
       <div class="footer-gradient-strip"></div>
     </main>
 
-    <!--=============== GSAP (optional) ===============-->
     <script src="assets/js/gsap.min.js"></script>
-
-    <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

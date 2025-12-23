@@ -1,14 +1,15 @@
-/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/*=============== ROOT VARIABLES ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 4.25rem;
+
+  --nav-bg: #6f8fa6;
+  --nav-bg-scrolled: #5f7f97;
 
   --first-color: #1e3a5f;
   --first-color-alt: #2c4b7a;
-  --second-color: #ff914d;
-  --second-color-alt: #ff7a32;
+
+  --gt-gold: #ffd600;
 
   --title-color: #ffffff;
   --text-color: #d9d9d9;
@@ -35,7 +36,6 @@
   }
 }
 
-/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -67,10 +67,10 @@ img {
   display: block;
 }
 
-/*=============== REUSABLE ===============*/
 .container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 .section {
@@ -81,108 +81,140 @@ img {
   overflow: hidden;
 }
 
-/* Make the header/nav span wider so menu is truly right-aligned */
-.nav.container {
-  max-width: 1400px;      /* you can bump this up or set to 100% */
-  margin-inline: 2.5rem;  /* controls left/right padding from window edge */
-}
-
-
-/*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: var(--z-fixed);
-  background-color: transparent;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: var(--nav-bg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .header.navbar--scrolled {
-  background-color: #000000;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+  background: var(--nav-bg-scrolled);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
 }
 
 .nav {
   height: var(--header-height);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .nav__logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
 }
 
 .nav__logo img {
-  width: 60px;
-  height: 54px;
+  width: 64px;
+  height: 56px;
+  object-fit: contain;
 }
 
-/* mobile menu default hidden off-screen */
+.nav__toggle,
+.nav__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .nav__menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 80%;
+  width: min(360px, 86%);
   height: 100%;
-  padding: 6rem 3rem;
+  padding: 6rem 2.5rem 2.5rem;
   background-color: var(--first-color);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
-  transition: right 0.4s;
+  row-gap: 2.2rem;
+  transition: right 0.35s ease;
+  z-index: calc(var(--z-fixed) + 1);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+}
+
+.show-menu {
+  right: 0;
 }
 
 .nav__list {
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
+  row-gap: 1.5rem;
 }
 
 .nav__link {
   color: #ffffff;
   font-weight: var(--font-semi-bold);
-  transition: color 0.3s;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.92;
 }
 
 .nav__link:hover {
-  color: var(--second-color);
+  color: var(--gt-gold);
+  opacity: 1;
 }
 
-.nav__toggle,
-.nav__close {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--first-color-alt);
-  color: #ffffff;
-  display: flex;
+.nav__link.active {
+  color: var(--gt-gold);
+  opacity: 1;
+}
+
+.nav__cta {
+  margin-top: auto;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  cursor: pointer;
+  height: 2.5rem;
+  padding: 0 1.15rem;
+  border-radius: 999px;
+  border: 1.8px solid rgba(255, 214, 0, 0.75);
+  color: var(--gt-gold);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
-.nav__close {
-  position: absolute;
-  top: 0.75rem;
-  right: 1.5rem;
+.nav__cta:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 214, 0, 0.14);
 }
 
-/* show menu (added via JS) */
-.show-menu {
-  right: 0;
+.nav__cta:active {
+  transform: translateY(0);
 }
 
-/* desktop nav */
 @media screen and (min-width: 1023px) {
   .nav {
-    height: calc(var(--header-height) + 2rem);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem;
   }
 
   .nav__toggle,
@@ -191,35 +223,42 @@ img {
   }
 
   .nav__menu {
-    /* reset mobile styles */
     position: static;
-    right: auto;
-    top: auto;
+    width: auto;
     height: auto;
     padding: 0;
     background: transparent;
     box-shadow: none;
-
-    /* desktop layout: shrink to content and push to the right */
-    width: auto;
-    margin-left: auto;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    row-gap: 0;
+    z-index: auto;
   }
 
   .nav__list {
     flex-direction: row;
-    column-gap: 3.5rem; /* adjust spacing if you want */
-    margin-left: 0;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2.4rem;
+    row-gap: 0;
   }
 
   .nav__link {
-    color: #ffffff; /* keep white over the dark header */
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    opacity: 0.95;
+  }
+
+  .nav__cta {
+    margin-top: 0;
+    justify-self: end;
+    border-color: rgba(255, 214, 0, 0.9);
+    background: transparent;
   }
 }
 
-
-/*=============== HERO / HOME ===============*/
 .home {
   position: relative;
   min-height: 100vh;
@@ -244,18 +283,14 @@ img {
 .home__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.7)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7));
   z-index: 2;
 }
 
 .home__container {
   position: relative;
   z-index: 3;
-  padding: 7rem 1.5rem 3rem;
+  padding: calc(var(--header-height) + 3rem) 1.5rem 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -265,13 +300,6 @@ img {
 
 .home__content {
   max-width: 700px;
-}
-
-.home__subtitle {
-  font-size: var(--small-font-size);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
 }
 
 .home__title {
@@ -304,7 +332,7 @@ img {
   flex-direction: column;
   align-items: center;
   font-size: 0.8rem;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .home__scroll-link {
@@ -333,63 +361,18 @@ img {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .home__container {
-    padding-top: 8rem;
-  }
-}
-
-@media screen and (min-width: 1152px) {
-  .home__container {
-    padding-top: 9rem;
-  }
-}
-
-/*=============== WHO WE ARE ===============*/
-.about {
-  background-color: #ffffff;
-  padding: 6rem 1.5rem;
-  color: #111111;
-}
-
-.about__inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about__title {
-  font-size: 2.3rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-
-.about__text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #333333;
-}
-
-/*=============== OUR MISSION ===============*/
 .ourmission {
   position: relative;
-  background: linear-gradient(
-      to bottom,
-      rgba(35, 35, 35, 0.7),
-      rgba(45, 44, 44, 0.7)
-    ),
+  background: linear-gradient(to bottom, rgba(35, 35, 35, 0.7), rgba(45, 44, 44, 0.7)),
     url("../img/ourmission.JPG") no-repeat center center/cover;
   background-attachment: fixed;
-
   padding: 4rem 1.5rem;
   min-height: 70vh;
   color: #f9fafb;
-
-  /* center everything */
   display: flex;
-  flex-direction: column;   /* title on top, text underneath */
-  align-items: center;      /* horizontal centering */
-  justify-content: center;  /* vertical centering */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -405,13 +388,11 @@ img {
   margin: 0 auto;
 }
 
-.about__description {
+.ourmission__description {
   font-size: 1.1rem;
   line-height: 1.8;
 }
 
-
-/*=============== HIGHLIGHT GRID (SPONSORS + PROJECT) ===============*/
 .highlight-grid {
   background-color: #f7f7f7;
   padding: 4.5rem 1.5rem;
@@ -456,7 +437,6 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* shared base button style */
 .highlight-card__button {
   display: inline-flex;
   align-items: center;
@@ -468,7 +448,6 @@ img {
   cursor: pointer;
 }
 
-/*=============== GT GOLD ANIMATED BORDER BUTTON ===============*/
 .pl-btn-learn-more {
   position: relative;
   display: inline-flex;
@@ -480,18 +459,13 @@ img {
   font-size: 0.95rem;
   text-decoration: none;
   cursor: pointer;
-
-  /* white fill, bright yellow + black animated border */
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
   border: 2px solid transparent;
   background-size: 220% 220%;
   animation: pl-btn-border-move 4s linear infinite;
-
   color: #111827;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    background-size 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-size 0.18s ease;
 }
 
 .pl-btn-learn-more i {
@@ -521,66 +495,28 @@ img {
   }
 }
 
-/* project image */
-.highlight-card__image-wrap {
-  margin-top: 2rem;
-}
-
-.highlight-card__image {
-  width: 100%;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 0.75rem;
-}
-
-/* responsive highlight grid */
-@media screen and (max-width: 900px) {
-  .highlight-grid__container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .highlight-card {
-    padding: 1.75rem 1.5rem;
-  }
-  .highlight-card__title {
-    font-size: 1.3rem;
-  }
-}
-
-/*=============== SPONSOR LOGO CAROUSEL (4 ROWS) ===============*/
 .pl-sponsor-logos {
   margin-top: 2.5rem;
-
-  /* pull it out to the left/right so it hits the card edges exactly */
   margin-left: -2.5rem;
   margin-right: -2.5rem;
-
-  /* match card’s horizontal padding so content still lines up */
   padding: 1.25rem 2.5rem;
-
   overflow: hidden;
   position: relative;
   background: #ffffff;
-  border-radius: 0 0 1rem 1rem; /* follows the card’s corners */
-
+  border-radius: 0 0 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
 }
 
-
-/* each row is a long strip that scrolls */
 .pl-sponsor-logos__row {
   display: flex;
   align-items: center;
-  gap: 3rem;                    /* horizontal spacing between logos */
+  gap: 3rem;
   width: max-content;
   animation: pl-logos-scroll 30s linear infinite;
 }
 
-/* different speeds for each row – all same direction */
 .pl-sponsor-logos__row:nth-child(2) {
   animation-duration: 36s;
 }
@@ -593,7 +529,6 @@ img {
   animation-duration: 45s;
 }
 
-/* logo sizing */
 .pl-sponsor-logos__row img {
   max-height: 42px;
   width: auto;
@@ -602,12 +537,10 @@ img {
   object-fit: contain;
 }
 
-/* pause on hover if you want */
 .pl-sponsor-logos:hover .pl-sponsor-logos__row {
   animation-play-state: paused;
 }
 
-/* one direction, continuous scroll */
 @keyframes pl-logos-scroll {
   0% {
     transform: translateX(0);
@@ -617,7 +550,12 @@ img {
   }
 }
 
-/* mobile tweaks */
+@media (max-width: 900px) {
+  .highlight-grid__container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .pl-sponsor-logos {
     padding-inline: 1.1rem;
@@ -631,154 +569,27 @@ img {
   }
 }
 
-/*=============== CONTACT SECTION ===============*/
-.contact {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 4rem 0 2rem;
-}
-
-.contact__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
-}
-
-.contact__content {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.contact__location,
-.contact__socials,
-.site_map {
-  flex: 1;
-}
-
-.wheretofind,
-.mapsite,
-.socialcontact {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-
-.site_map__list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.site_map__list li {
-  margin-bottom: 10px;
-}
-
-.map_site {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.map_site:hover {
-  text-decoration: underline;
-}
-
-.social__icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-/* round social buttons */
-.fa,
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  text-decoration: none;
-  margin: 0 10px 10px;
-  transition: opacity 0.3s ease;
-  position: relative;
-  color: #ffffff;
-}
-
-.fa:hover,
-.social-icon:hover {
-  opacity: 0.7;
-}
-
-.fa-envelope {
-  background: #d44638;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-}
-
-.fa-instagram {
-  background: #e4405f;
-}
-
-/* youtube if needed elsewhere */
-.fa-youtube {
-  background: #bb0000;
-}
-
-/* TikTok icon as an image in round container */
-.social-icon.tiktok {
-  background: #000000;
+.highlight-card__video-wrap {
+  margin-top: 1.75rem;
+  border-radius: 0.75rem;
   overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
 }
 
-.tiktok-icon {
+.highlight-card__video-wrap iframe {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
 }
 
-.gtpl-heading {
-  color: white;
-  font-size: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.highlight-card--project .highlight-card__button--below-video {
+  margin-top: 1.5rem;
+  align-self: flex-start;
 }
 
-.copyright {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  text-align: center;
-  color: #e5e7eb;
-}
-
-/* mobile contact */
-@media screen and (max-width: 768px) {
-  .contact__content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact__location,
-  .contact__socials,
-  .site_map {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-}
-
-/*=============== BOTTOM / FOOTER CTA ===============*/
 .footer-cta {
-  background-color: #ffffff; /* big white bottom strip */
+  background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;
   color: #111827;
 }
@@ -820,7 +631,6 @@ img {
   gap: 0.8rem;
 }
 
-/* buttons: same GT gold/black scheme as your other button */
 .footer-btn {
   position: relative;
   display: inline-flex;
@@ -832,17 +642,12 @@ img {
   font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
-
-  /* white fill, GT gold + black animated border */
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(120deg, #ffd600, #000000, #ffd600) border-box;
   border: 2px solid transparent;
   background-size: 220% 220%;
   color: #111827;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-size 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-size 0.15s ease;
 }
 
 .footer-btn:hover {
@@ -856,7 +661,6 @@ img {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-/* socials row */
 .footer-cta__socials {
   margin-top: 2.75rem;
   display: flex;
@@ -874,8 +678,7 @@ img {
   justify-content: center;
   color: #111827;
   font-size: 1.2rem;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    transform 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .footer-social:hover {
@@ -884,7 +687,6 @@ img {
   transform: translateY(-1px);
 }
 
-/* brand + copyright */
 .footer-cta__bottom {
   margin-top: 2rem;
   text-align: center;
@@ -901,14 +703,12 @@ img {
   margin-bottom: 0.25rem;
 }
 
-/* thin gradient strip at the very bottom */
 .footer-gradient-strip {
   width: 100%;
   height: 6px;
   background: linear-gradient(90deg, #ffd600, #000000, #ffd600);
 }
 
-/* responsive footer layout */
 @media screen and (max-width: 768px) {
   .footer-cta__container {
     flex-direction: column;
@@ -923,27 +723,3 @@ img {
     margin-bottom: 0.75rem;
   }
 }
-
-/* video inside the Recent Success card */
-.highlight-card__video-wrap {
-  margin-top: 1.75rem;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
-}
-
-/* keep a nice 16:9 ratio */
-.highlight-card__video-wrap iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  display: block;
-}
-
-/* space the button under the video */
-.highlight-card--project .highlight-card__button--below-video {
-  margin-top: 1.5rem;
-  align-self: flex-start; /* keeps it aligned with text, not centered */
-}
-
-
