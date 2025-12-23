@@ -174,3 +174,73 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+/* ===================== SCROLL REVEAL QUOTE ===================== */
+(function initScrollRevealQuote() {
+  const section = document.getElementById("scroll-quote");
+  const textEl = document.getElementById("scroll-quote-text");
+  if (!section || !textEl) return;
+
+  // Respect reduced-motion
+  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Split text into word spans (preserve spaces)
+  const raw = textEl.textContent.trim();
+  const parts = raw.split(/(\s+)/); // keep spaces as tokens
+  textEl.textContent = "";
+
+  const wordSpans = [];
+  parts.forEach((token) => {
+    if (token.trim() === "") {
+      textEl.appendChild(document.createTextNode(token));
+      return;
+    }
+    const span = document.createElement("span");
+    span.className = "scroll-quote__word";
+    span.textContent = token;
+    textEl.appendChild(span);
+    wordSpans.push(span);
+  });
+
+  if (reduceMotion) {
+    wordSpans.forEach((w) => w.classList.add("is-on"));
+    return;
+  }
+
+  let ticking = false;
+
+  function clamp01(x) {
+    return Math.max(0, Math.min(1, x));
+  }
+
+  function update() {
+    ticking = false;
+
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight || 1;
+
+    // Progress through the section's scrollable range:
+    // when top hits top -> 0, when bottom hits bottom -> 1
+    const total = rect.height - vh;
+    const scrolled = -rect.top;
+    const p = clamp01(total <= 0 ? 1 : scrolled / total);
+
+    const count = Math.floor(p * (wordSpans.length + 2)); // +2 gives a nicer finish
+    for (let i = 0; i < wordSpans.length; i++) {
+      wordSpans[i].classList.toggle("is-on", i < count);
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+})();
+
+
+
