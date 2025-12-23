@@ -142,3 +142,35 @@
 .press-card--empty {
   opacity: 0.85;
 }
+
+/* ===== Fix readability on light backgrounds (press pages) ===== */
+.press,
+.press-post,
+.press-card,
+.press-post__card {
+  color: #111827; /* dark text */
+}
+
+.press__lead,
+.press-card__text,
+.press-post__subhead,
+.press-post__body,
+.press-post__meta {
+  color: #374151; /* readable body text */
+}
+
+.press-post__meta b,
+.press-post__title,
+.press-post__body h2,
+.press-card__title,
+.press__h2 {
+  color: #111827;
+}
+
+/* links inside press content */
+.press-post__body a,
+.press-post__meta a {
+  color: #1e3a5f;
+  font-weight: 700;
+}
+
