@@ -914,3 +914,69 @@ img {
   text-transform: none;
   opacity: 0.22;
 }
+
+/* ===================== SCROLL QUOTE (CLEAN + SMOOTH TRANSITION) ===================== */
+
+.scroll-quote {
+  position: relative;
+  background: #000;
+  color: #fff;
+
+  /* IMPORTANT: avoid your global .section padding */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Make the black section thinner */
+.scroll-quote__stage {
+  height: 92vh;          /* <- thinner than 135vh */
+  min-height: 520px;     /* keeps it usable on small screens */
+  display: grid;
+  place-items: center;
+  padding: 0 1.5rem;
+}
+
+/* OPTIONAL: tiny fade-out that overlaps the next section (clean, not glowy) */
+.scroll-quote::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  /* Pull the fade *into* the next section so it blends */
+  bottom: -140px;
+  height: 140px;
+
+  pointer-events: none;
+  z-index: 5;
+
+  /* This is the correct direction: black -> transparent */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+
+/* Smooth transition FROM black quote INTO Our Mission */
+.ourmission {
+  position: relative;
+  overflow: hidden;
+}
+
+.ourmission::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 170px; /* adjust 120–220px */
+  pointer-events: none;
+  z-index: 2;
+
+  /* black -> transparent downward */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+/* Ensure your mission text stays above the fade */
+.ourmission__inner {
+  position: relative;
+  z-index: 3;
+}
