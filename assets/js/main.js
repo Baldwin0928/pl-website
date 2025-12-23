@@ -128,48 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const getAboutTop = () =>
         aboutSection.getBoundingClientRect().top + window.pageYOffset;
-
-      // Wheel snap (desktop)
-      window.addEventListener(
-        "wheel",
-        function (e) {
-          if (hasSnapped) return;
-
-          const y = window.scrollY || window.pageYOffset;
-          const heroHeight = heroSection.offsetHeight;
-
-          if (e.deltaY > 10 && y < heroHeight - 50) {
-            hasSnapped = true;
-            const headerOffset = header ? header.offsetHeight : 0;
-            window.scrollTo({
-              top: getAboutTop() - headerOffset,
-              behavior: "smooth",
-            });
-          }
-        },
-        { passive: true }
-      );
-
-      // Touch/trackpad fallback (scroll-based)
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (hasSnapped) return;
-
-          const y = window.scrollY || window.pageYOffset;
-          const aboutTop = getAboutTop();
-
-          if (y > 40 && y < aboutTop - 200) {
-            hasSnapped = true;
-            const headerOffset = header ? header.offsetHeight : 0;
-            window.scrollTo({
-              top: aboutTop - headerOffset,
-              behavior: "smooth",
-            });
-          }
-        },
-        { passive: true }
-      );
     }
   }
 });
@@ -279,3 +237,4 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
+
