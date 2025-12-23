@@ -242,5 +242,82 @@ document.addEventListener("DOMContentLoaded", function () {
   update();
 })();
 
+// ===== Scroll-reveal quote: word-by-word bump + fade (clean) =====
+(function () {
+  const stage = document.querySelector(".scroll-quote__stage");
+  const textEl = document.getElementById("scroll-quote-text");
+  const authorEl = document.querySelector(".scroll-quote__author");
+  if (!stage || !textEl) return;
+
+  // Wrap each word in a span so we can animate individually
+  const raw = textEl.textContent.trim();
+  const words = raw.split(/\s+/);
+
+  textEl.innerHTML = words
+    .map((w) => `<span class="scroll-quote__word">${w}</span>`)
+    .join(" ");
+
+  const wordEls = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
+  const N = wordEls.length;
+
+  // Tuning knobs (match the “bump” feel)
+  const baseOpacity = 0.18; // unrevealed grey
+  const bumpPx = 14;        // how much it rises
+  const revealWindow = 0.12; // how wide each word's reveal range is (smaller = snappier)
+
+  function clamp01(x) {
+    return Math.max(0, Math.min(1, x));
+  }
+
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function update() {
+    // Scroll progress through the stage (0..1)
+    const r = stage.getBoundingClientRect();
+    const stageTop = r.top;
+    const stageH = r.height;
+
+    // Start revealing shortly after the section hits the viewport
+    // and finish before it leaves. This is what prevents "dead black space".
+    const progress = clamp01((0 - stageTop) / (stageH - window.innerHeight));
+
+    for (let i = 0; i < N; i++) {
+      const start = i / N;
+      const t = clamp01((progress - start) / revealWindow);
+
+      const op = lerp(baseOpacity, 1, t);
+      const y = lerp(bumpPx, 0, t);
+
+      wordEls[i].style.opacity = op.toFixed(3);
+      wordEls[i].style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+    }
+
+    if (authorEl) {
+      // Author appears near the end
+      const tA = clamp01((progress - 0.82) / 0.18);
+      authorEl.style.opacity = lerp(0.18, 1, tA).toFixed(3);
+      authorEl.style.transform = `translate3d(0, ${lerp(10, 0, tA).toFixed(2)}px, 0)`;
+    }
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+})();
+
+
 
 
