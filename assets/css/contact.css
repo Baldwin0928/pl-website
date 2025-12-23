@@ -267,6 +267,9 @@ img {
 }
 
 /*=============== HERO ===============*/
+/* CHANGE YOUR HERO BACKGROUND IMAGE HERE:
+   Replace URL with your new image path, e.g. ../img/contact-hero.jpg
+*/
 .home {
   position: relative;
   height: 45vh;
@@ -280,8 +283,7 @@ img {
 
   background:
     linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
-    radial-gradient(circle at 20% 20%, rgba(255, 145, 77, 0.18), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(30, 58, 95, 0.38), transparent 55%),
+    url("../img/contact-hero.jpg") center/cover no-repeat,
     #0b1220;
 }
 
@@ -335,12 +337,24 @@ img {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
 }
 
+/* Main card icons (pin / envelope / follow) */
 .info-card i {
   font-size: 1.5rem;
-  color: #111827;
   display: inline-block;
   margin-bottom: 0.75rem;
+  color: var(--second-color); /* default GTPL orange */
 }
+
+/* Optional: make each card icon slightly different */
+.info-cards .info-card:nth-child(1) i {
+  color: var(--second-color);
+} /* Address */
+.info-cards .info-card:nth-child(2) i {
+  color: var(--first-color);
+} /* Email */
+.info-cards .info-card:nth-child(3) i {
+  color: var(--second-color-alt);
+} /* Follow */
 
 .info-card h3 {
   color: #111827;
@@ -354,6 +368,8 @@ img {
   color: #4b5563;
 }
 
+/* Keep underline styling for normal text links (like email),
+   but we'll REMOVE it for social icons specifically below. */
 .info-card a {
   color: #111827;
   font-weight: 700;
@@ -364,6 +380,7 @@ img {
   border-bottom-color: rgba(17, 24, 39, 0.65);
 }
 
+/*=============== SOCIAL LINKS (CLEAN, NO UNDERLINE, POP-UP ANIMATION) ===============*/
 .social-links {
   display: flex;
   align-items: center;
@@ -371,11 +388,66 @@ img {
   margin-top: 0.35rem;
 }
 
+/* remove that ugly "line below icon" coming from .info-card a */
+.info-card .social-links a {
+  border-bottom: none !important;
+  text-decoration: none !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.info-card .social-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
+  opacity: 0.95;
+}
+
+/* If you're using Font Awesome icons (fa), keep this */
 .social-links .fa {
   font-size: 1.35rem;
+  line-height: 1;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  color: #111827; /* fallback */
+}
+
+/* Brand colors for FA */
+.social-links .fa-linkedin {
+  color: #0A66C2;
+}
+.social-links .fa-instagram {
+  color: #E1306C;
+}
+
+/* If you swap to Remix Icons, these rules apply too */
+.social-links i {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Brand colors for Remix Icons */
+.social-links .ri-linkedin-fill {
+  color: #0A66C2;
+}
+.social-links .ri-instagram-line {
+  color: #E1306C;
+}
+.social-links .ri-tiktok-fill {
   color: #111827;
 }
 
+/* If you still use TikTok as an image, keep it crisp */
 .tiktok-icon {
   width: 28px;
   height: 28px;
@@ -383,6 +455,7 @@ img {
   display: block;
 }
 
+/*=============== MAP ===============*/
 .map-container {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -569,40 +642,3 @@ img {
     height: 360px;
   }
 }
-
-/* ================= ICON COLORS (CONTACT PAGE) ================= */
-
-/* Main card icons (pin / envelope / follow) */
-.info-card i {
-  color: var(--second-color); /* GTPL orange */
-}
-
-/* Optional: make each card icon slightly different */
-.info-cards .info-card:nth-child(1) i { color: var(--second-color); }   /* Address */
-.info-cards .info-card:nth-child(2) i { color: var(--first-color); }    /* Email */
-.info-cards .info-card:nth-child(3) i { color: var(--second-color-alt); } /* Follow */
-
-/* Follow icons (brand colors) */
-.social-links .fa {
-  color: #111827; /* fallback */
-  transition: transform 0.15s ease, opacity 0.15s ease;
-}
-
-.social-links .fa-linkedin { color: #0A66C2; }
-.social-links .fa-instagram { color: #E1306C; }
-
-/* If you later switch TikTok to a font icon, you can use this */
-.social-links .fa-tiktok { color: #000000; }
-
-.social-links a:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-/* TikTok image — keep it crisp + consistent */
-.social-links .tiktok-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-}
-
