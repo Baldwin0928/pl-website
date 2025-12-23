@@ -260,10 +260,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const wordEls = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
   const N = wordEls.length;
 
-  // Tuning knobs (match the “bump” feel)
+  // Tuning knobs: "slow" reveal but not endless black
   const baseOpacity = 0.18; // unrevealed grey
   const bumpPx = 14;        // how much it rises
-  const revealWindow = 0.12; // how wide each word's reveal range is (smaller = snappier)
+  const revealWindow = 0.18; // slower + uses more of the stage so less dead black
 
   function clamp01(x) {
     return Math.max(0, Math.min(1, x));
@@ -274,13 +274,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function update() {
-    // Scroll progress through the stage (0..1)
     const r = stage.getBoundingClientRect();
     const stageTop = r.top;
     const stageH = r.height;
 
-    // Start revealing shortly after the section hits the viewport
-    // and finish before it leaves. This is what prevents "dead black space".
+    // 0..1 progress through the stage while sticky holds the text
     const progress = clamp01((0 - stageTop) / (stageH - window.innerHeight));
 
     for (let i = 0; i < N; i++) {
@@ -317,6 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", onScroll);
   update();
 })();
+
 
 
 
