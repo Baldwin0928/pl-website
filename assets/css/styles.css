@@ -734,44 +734,24 @@ img {
   }
 }
 
-/* ===================== SCROLL REVEAL QUOTE ===================== */
-
+/* ===== Scroll-reveal quote (clean, no glow) ===== */
 .scroll-quote {
-  position: relative;
-  background: #050505;
-  color: #ffffff;
-  overflow: hidden;
-}
-
-/* Subtle star/noise vibe (optional but matches the look) */
-.scroll-quote::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.28;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06) 0 1px, transparent 2px) 0 0 / 120px 120px,
-    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0 1px, transparent 2px) 0 0 / 160px 160px,
-    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.04) 0 1px, transparent 2px) 0 0 / 220px 220px;
+  background: #000;
+  color: #fff;
 }
 
 .scroll-quote__stage {
-  /* Make this taller to slow down / lengthen the reveal */
-  height: 220vh;
-  position: relative;
+  /* SHORTER: controls how long the reveal lasts */
+  height: 130vh; /* try 120vh if you want even tighter */
 }
 
 .scroll-quote__sticky {
   position: sticky;
   top: 0;
   height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: calc(var(--header-height) + 2rem) 1.5rem 2rem;
+  display: grid;
+  place-items: center;
+  padding: 0 1.5rem;
 }
 
 .scroll-quote__inner {
@@ -780,58 +760,31 @@ img {
 }
 
 .scroll-quote__text {
-  margin: 0;
-  white-space: pre-wrap;
-
-  /* Font details from your screenshot (with fallbacks) */
-  font-family: HelveticaNowDisplay, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
   font-weight: 400;
+  line-height: 1.1;
   letter-spacing: -0.07em;
-  line-height: 110%;
-  font-size: clamp(2rem, 4.2vw, 3.5rem);
-
-  /* Soft glow like the reference */
-  text-shadow:
-    0 0 20px rgba(255, 255, 255, 0.18),
-    0 0 30px rgba(255, 255, 255, 0.10);
+  white-space: pre-wrap;
+  margin: 0 auto;
+  color: #fff; /* revealed words become pure white */
 }
 
-/* Each word becomes its own span via JS */
+/* Each word is animated by JS (no glow / no shadow) */
 .scroll-quote__word {
   display: inline-block;
-  opacity: 0.18;                 /* dim default */
-  transform: translate3d(0, 10px, 0);
-  filter: blur(2px);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease,
-    filter 0.35s ease;
-  will-change: opacity, transform, filter;
+  opacity: 0.18;                 /* unrevealed grey */
+  transform: translate3d(0, 14px, 0); /* starts slightly lower */
+  will-change: transform, opacity;
 }
 
-.scroll-quote__word.is-on {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  filter: blur(0);
-}
-
+/* Author line */
 .scroll-quote__author {
-  margin-top: 1.75rem;
-  font-family: HelveticaNowDisplay, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  opacity: 0.35;
+  margin-top: 1.25rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  opacity: 0.18;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
-
-/* Reduced motion: show all words immediately */
-@media (prefers-reduced-motion: reduce) {
-  .scroll-quote__word {
-    transition: none;
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
-}
-
