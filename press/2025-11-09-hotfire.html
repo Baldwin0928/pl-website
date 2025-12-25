@@ -21,7 +21,7 @@
 
     <title>Georgia Tech’s First Hybrid Rocket Engine Hotfire — Press Release</title>
 
-    <!-- Tiny page-only styling so you don't need a new CSS file -->
+    <!-- Page-only styling -->
     <style>
       .press-post {
         background: #f7f7f7;
@@ -100,6 +100,21 @@
         color: #111827;
       }
 
+      .press-post__video {
+        margin: 1.25rem 0 1.5rem;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+        background: #000;
+      }
+
+      .press-post__video iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        display: block;
+      }
+
       .press-post__body {
         color: #374151;
         line-height: 1.8;
@@ -114,6 +129,11 @@
       .press-post__body ul {
         padding-left: 1.2rem;
         margin: 0.5rem 0 0;
+      }
+
+      .press-post__body a {
+        color: #1e3a5f;
+        font-weight: 700;
       }
 
       .press-post__actions {
@@ -183,7 +203,7 @@
             <h1 class="press-post__title">Georgia Tech’s First Hybrid Rocket Engine Hotfire</h1>
 
             <p class="press-post__subhead">
-              Propulsive Landers @ Georgia Tech completed a hybrid rocket engine hotfire, marking the start of an
+              Propulsive Landers @ Georgia Tech completed a hybrid rocket engine hotfire which officially marks the start of our
               engine validation campaign toward tethered hovers.
             </p>
 
@@ -191,22 +211,33 @@
               <div><b>Organization:</b> Propulsive Landers @ Georgia Tech (GTPL)</div>
               <div><b>Location:</b> Atlanta, GA</div>
               <div><b>Contact:</b> outreach@gtpropulsivelanders.org</div>
-              <div><b>Media:</b> Photos & video available</div>
+              <div><b>Media:</b> Photos &amp; video available</div>
+            </div>
+
+            <!-- VIDEO (below meta box, above Summary) -->
+            <div class="press-post__video">
+              <iframe
+                src="https://www.youtube.com/embed/_i86fCTQ1sw?si=6YqjahkZ71tuPvP8"
+                title="GTPL Hybrid Engine Hotfire"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
             </div>
 
             <div class="press-post__body">
               <h2>Summary</h2>
               <p>
-                On November 9, 2025, Propulsive Landers @ Georgia Tech (GTPL) successfully conducted a hybrid rocket
-                engine hotfire. This milestone supports GTPL’s broader goal of developing autonomous systems that
+                On November 9, 2025, Propulsive Landers @ Georgia Tech (GTPL) successfully hotfired Georgia Tech's first hybrid rocket engine in history. This milestone supports GTPL’s broader goal of developing autonomous systems that
                 enable a self-landing rocket and advances the team toward upcoming tethered hover demonstrations.
               </p>
 
               <h2>Details</h2>
               <p>
                 The hotfire represents a major validation step for GTPL’s propulsion development, including test-stand
-                operations, instrumentation, and procedures required for safe repeatable testing. The team will use
-                data from this campaign to refine performance, improve reliability, and prepare for the next phase of
+                operations, instrumentation, and procedures required for safe repeatable testing. Though there were sensor anomalies in this hotfire which led to thrust data being lost,
+                plan for fixes are in place for when we return for Spring Semester.
+                The team will use then use data from this campaign to refine performance, improve reliability, and prepare for the next phase of
                 demonstrations.
               </p>
 
@@ -221,11 +252,11 @@
               <ul>
                 <li>
                   Media page:
-                  <a href="../project.html">propulsivelandersgt.com/project.html</a>
+                  <a href="../project.html">gtpropulsivelanders.org/project.html</a>
                 </li>
                 <li>
                   Sponsors:
-                  <a href="../sponsors.html">propulsivelandersgt.com/sponsors.html</a>
+                  <a href="../sponsors.html">gtpropulsivelanders.org/sponsors.html</a>
                 </li>
               </ul>
 
@@ -286,7 +317,7 @@
           >
             <i class="ri-linkedin-fill"></i>
           </a>
-          <a href="https://propulsivelandersgt.com" target="_blank" rel="noopener" class="footer-social">
+          <a href="https://gtpropulsivelanders.org" target="_blank" rel="noopener" class="footer-social">
             <i class="ri-global-line"></i>
           </a>
         </div>
