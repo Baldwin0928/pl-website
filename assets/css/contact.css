@@ -1,11 +1,6 @@
-/* contact.css — includes SAME header + footer formatting as sponsors.css */
-
-/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/*=============== VARIABLES ===============*/
 :root {
-  /* MATCH INDEX/SPONSORS */
   --header-height: 5.25rem;
 
   --nav-bg: rgba(10, 10, 10, 0.55);
@@ -45,7 +40,6 @@
   }
 }
 
-/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -80,8 +74,7 @@ img {
 }
 
 .container {
-  max-width: 1200px; /* MATCH INDEX/SPONSORS */
-  margin-inline: auto;
+  max-width: 1200px; margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
@@ -90,7 +83,6 @@ img {
   background-color: #ffffff;
 }
 
-/* ===================== HEADER / NAV (MATCH INDEX/SPONSORS) ===================== */
 .header {
   position: fixed;
   top: 0;
@@ -218,7 +210,6 @@ img {
   border-radius: 999px;
 }
 
-/* Hide CTA if it exists on any page */
 .nav__cta {
   display: none !important;
 }
@@ -266,10 +257,6 @@ img {
   }
 }
 
-/*=============== HERO ===============*/
-/* CHANGE YOUR HERO BACKGROUND IMAGE HERE:
-   Replace URL with your new image path, e.g. ../img/contact-hero.jpg
-*/
 .home {
   position: relative;
   height: 45vh;
@@ -278,7 +265,6 @@ img {
   align-items: center;
   justify-content: center;
 
-  /* header is fixed */
   padding-top: var(--header-height);
 
   background:
@@ -305,7 +291,6 @@ img {
   letter-spacing: 0.04em;
 }
 
-/*=============== CONTACT SECTION ===============*/
 .contact-info-section {
   padding: 4.25rem 0 4.5rem;
   background-color: #ffffff;
@@ -337,26 +322,19 @@ img {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
 }
 
-/* Main card icons (pin / envelope / follow) */
 .info-card i {
   font-size: 1.5rem;
   display: inline-block;
   margin-bottom: 0.75rem;
-  color: var(--second-color); /* default GTPL orange */
-}
+  color: var(--second-color); }
 
-/* Optional: make each card icon slightly different */
 .info-cards .info-card:nth-child(1) i {
   color: var(--second-color);
-} /* Address */
-.info-cards .info-card:nth-child(2) i {
+} .info-cards .info-card:nth-child(2) i {
   color: var(--first-color);
-} /* Email */
-.info-cards .info-card:nth-child(3) i {
+} .info-cards .info-card:nth-child(3) i {
   color: var(--second-color-alt);
-} /* Follow */
-
-.info-card h3 {
+} .info-card h3 {
   color: #111827;
   font-size: 1.1rem;
   font-weight: 800;
@@ -368,8 +346,6 @@ img {
   color: #4b5563;
 }
 
-/* Keep underline styling for normal text links (like email),
-   but we'll REMOVE it for social icons specifically below. */
 .info-card a {
   color: #111827;
   font-weight: 700;
@@ -380,7 +356,6 @@ img {
   border-bottom-color: rgba(17, 24, 39, 0.65);
 }
 
-/*=============== SOCIAL LINKS (CLEAN, NO UNDERLINE, POP-UP ANIMATION) ===============*/
 .social-links {
   display: flex;
   align-items: center;
@@ -388,7 +363,6 @@ img {
   margin-top: 0.35rem;
 }
 
-/* remove that ugly "line below icon" coming from .info-card a */
 .info-card .social-links a {
   border-bottom: none !important;
   text-decoration: none !important;
@@ -414,15 +388,12 @@ img {
   opacity: 0.95;
 }
 
-/* If you're using Font Awesome icons (fa), keep this */
 .social-links .fa {
   font-size: 1.35rem;
   line-height: 1;
   transition: transform 0.15s ease, opacity 0.15s ease;
-  color: #111827; /* fallback */
-}
+  color: #111827; }
 
-/* Brand colors for FA */
 .social-links .fa-linkedin {
   color: #0A66C2;
 }
@@ -430,13 +401,11 @@ img {
   color: #E1306C;
 }
 
-/* If you swap to Remix Icons, these rules apply too */
 .social-links i {
   font-size: 1.25rem;
   line-height: 1;
 }
 
-/* Brand colors for Remix Icons */
 .social-links .ri-linkedin-fill {
   color: #0A66C2;
 }
@@ -447,7 +416,6 @@ img {
   color: #111827;
 }
 
-/* If you still use TikTok as an image, keep it crisp */
 .tiktok-icon {
   width: 28px;
   height: 28px;
@@ -455,7 +423,6 @@ img {
   display: block;
 }
 
-/*=============== MAP ===============*/
 .map-container {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -496,7 +463,6 @@ img {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
 }
 
-/*=============== FOOTER (MATCH SPONSORS) ===============*/
 .footer-cta {
   background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;

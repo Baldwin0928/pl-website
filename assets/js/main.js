@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /* ==================== NAV MENU (ALL PAGES) ==================== */
+
   const navMenu = document.getElementById("nav-menu");
   const navToggle = document.getElementById("nav-toggle");
   const navClose = document.getElementById("nav-close");
@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("show-menu");
     });
   }
-
-  // Remove menu when clicking any nav link (mobile)
   const navLinks = document.querySelectorAll(".nav__link");
   if (navMenu && navLinks.length) {
     navLinks.forEach((link) =>
@@ -24,16 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  /* ==================== HEADER SCROLL TOGGLE (ALL PAGES) ==================== */
   const header = document.getElementById("header");
   const hero = document.querySelector(".home");
-  const isHomePage = !!document.querySelector(".home__video"); // only index has this
+  const isHomePage = !!document.querySelector(".home__video");
 
   function updateHeaderOnScroll() {
     if (!header) return;
-
-    // Home page: wait until you pass the hero
-    // Other pages: turn on after a small scroll so text stays readable
     const threshold = isHomePage && hero ? hero.offsetHeight : 40;
 
     if (window.scrollY > threshold) {
@@ -47,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
   window.addEventListener("resize", updateHeaderOnScroll);
 
-  /* ==================== SPONSOR SLIDER CLONE (ONLY IF PRESENT) ==================== */
   const sliderWrapper = document.querySelector(".sponsor-slider__wrapper");
   if (sliderWrapper) {
     const slides = sliderWrapper.querySelectorAll(".sponsor-slider__slide");
@@ -57,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ==================== SCROLL REVEAL (ONLY IF PRESENT) ==================== */
   function revealOnScroll() {
     const reveals = document.querySelectorAll(".scroll-reveal");
     if (!reveals.length) return;
@@ -80,9 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealOnScroll, { passive: true });
   }
 
-  /* ==================== GSAP ANIMATIONS (ONLY IF GSAP IS LOADED) ==================== */
   if (window.gsap) {
-    // These will just do nothing if the selector doesn't exist (safe)
     gsap.from(".home__points", 1.5, { opacity: 0, y: -300, delay: 0.2 });
     gsap.from(".home__rocket", 1.5, { opacity: 0, y: 300, delay: 0.3 });
     gsap.from(".home__planet-1", 1.5, { opacity: 0, x: -200, delay: 0.8 });
@@ -93,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".home__title img", 1.5, { opacity: 0, x: 100, delay: 1.6 });
   }
 
-  /* ==================== TABS (ONLY IF PRESENT) ==================== */
   const tabsContainer = document.querySelector(".tabs-container");
   if (tabsContainer) {
     const tabButtons = tabsContainer.querySelectorAll(".tab-button");
@@ -113,13 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (panel) panel.classList.add("active");
         });
       });
-
-      // Activate first tab by default
       tabButtons[0].click();
     }
   }
 
-  /* ==================== HOME PAGE AUTO-SNAP (ONLY ON INDEX) ==================== */
   if (isHomePage) {
     const aboutSection = document.querySelector("#about");
     const heroSection = document.querySelector(".home");
@@ -132,17 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* ===================== SCROLL QUOTE (end tied to #about so no dead zone) ===================== */
 (() => {
   const section = document.querySelector(".scroll-quote");
   if (!section) return;
 
-  const mission = document.querySelector("#about"); // Our Mission section
+  const mission = document.querySelector("#about");
   const textEl = section.querySelector(".scroll-quote__text");
   const authorEl = section.querySelector(".scroll-quote__author");
   if (!textEl) return;
 
-  // Split into spans if needed
   if (!textEl.querySelector(".scroll-quote__word")) {
     const raw = (textEl.textContent || "").trim().replace(/\s+/g, " ");
     textEl.textContent = "";
@@ -151,9 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
       span.className = "scroll-quote__word";
       span.textContent = w + (idx === arr.length - 1 ? "" : " ");
       span.style.display = "inline-block";
-      span.style.willChange = "transform, opacity";
-      span.style.opacity = "0.14";
-      span.style.transform = "translate3d(0, 12px, 0)";
+      span.style.willChange = "transform, opacity, filter";
+      span.style.opacity = "0.12";
+      span.style.transform = "translate3d(0, 18px, 0)";
+      span.style.filter = "blur(1.2px)";
       textEl.appendChild(span);
     });
   }
@@ -161,19 +146,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = Array.from(textEl.querySelectorAll(".scroll-quote__word"));
   words.forEach((w) => {
     w.style.display = "inline-block";
-    w.style.willChange = "transform, opacity";
+    w.style.willChange = "transform, opacity, filter";
   });
 
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  const smoothstep = (t) => t * t * (3 - 2 * t);
 
-  // TUNING
-  const START_BEFORE_SECTION_VH = 0.70; // start when you're a bit before the quote section
-  const END_BEFORE_MISSION_VH = 0.65;   // finish right before Our Mission shows (smaller => later)
-  const BUMP_PX = 12;
-  const BASE_OPACITY = 0.14;
+  const START_BEFORE_SECTION_VH = 0.62;
+  const END_BEFORE_MISSION_VH = 0.58;
+  const REVEAL_RANGE = 0.72;
+  const REVEAL_WINDOW = 0.26;
+  const BUMP_PX = 18;
+  const BASE_OPACITY = 0.12;
+  const PROGRESS_EASE = 0.14;
 
-  let ticking = false;
+  let targetProgress = 0;
+  let currentProgress = 0;
+  let isAnimating = false;
 
   function getProgress() {
     const vh = window.innerHeight || document.documentElement.clientHeight;
@@ -182,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const sectionTop = section.offsetTop;
     const missionTop = mission ? mission.offsetTop : (sectionTop + section.offsetHeight);
 
-    // Start earlier (before section top), end near mission entering viewport
     const start = sectionTop - vh * START_BEFORE_SECTION_VH;
     const end = missionTop - vh * END_BEFORE_MISSION_VH;
 
@@ -190,55 +178,69 @@ document.addEventListener("DOMContentLoaded", function () {
     return clamp((y - start) / denom, 0, 1);
   }
 
-  function render() {
-    const p = getProgress();
+  function renderProgress(p) {
     const n = words.length || 1;
+    const lastIndex = Math.max(1, n - 1);
 
     for (let i = 0; i < words.length; i++) {
-      const a = i / n;
-      const b = (i + 1) / n;
-
-      let t = clamp((p - a) / (b - a), 0, 1);
-      t = easeOutCubic(t);
+      const start = (i / lastIndex) * REVEAL_RANGE;
+      const t = smoothstep(clamp((p - start) / REVEAL_WINDOW, 0, 1));
 
       const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
       const y = BUMP_PX * (1 - t);
+      const blur = 1.2 * (1 - t);
 
       words[i].style.opacity = opacity.toFixed(3);
       words[i].style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+      words[i].style.filter = `blur(${blur.toFixed(2)}px)`;
     }
 
-    // Author: same font as quote (you said you want exactly that)
     if (authorEl) {
       authorEl.style.font = "inherit";
 
       let t = clamp((p - 0.82) / 0.18, 0, 1);
-      t = easeOutCubic(t);
+      t = smoothstep(t);
 
       const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
       const y = BUMP_PX * (1 - t);
+      const blur = 1.2 * (1 - t);
 
       authorEl.style.opacity = opacity.toFixed(3);
       authorEl.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
-      authorEl.style.willChange = "transform, opacity";
-    }
-
-    ticking = false;
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(render);
+      authorEl.style.filter = `blur(${blur.toFixed(2)}px)`;
+      authorEl.style.willChange = "transform, opacity, filter";
     }
   }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  onScroll();
+  function animate() {
+    const delta = targetProgress - currentProgress;
+
+    if (Math.abs(delta) < 0.001) {
+      currentProgress = targetProgress;
+      renderProgress(currentProgress);
+      isAnimating = false;
+      return;
+    }
+
+    currentProgress += delta * PROGRESS_EASE;
+    renderProgress(currentProgress);
+    requestAnimationFrame(animate);
+  }
+
+  function updateTarget() {
+    targetProgress = getProgress();
+    if (!isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(animate);
+    }
+  }
+
+  targetProgress = getProgress();
+  currentProgress = targetProgress;
+  renderProgress(currentProgress);
+
+  window.addEventListener("scroll", updateTarget, { passive: true });
+  window.addEventListener("resize", updateTarget);
+  updateTarget();
 })();
-
-
-
-
 

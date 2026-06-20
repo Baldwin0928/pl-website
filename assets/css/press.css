@@ -1,5 +1,3 @@
-/* press.css — small page-specific styles; header/footer come from styles.css */
-
 .press-hero {
   position: relative;
   min-height: 45vh;
@@ -143,21 +141,18 @@
   opacity: 0.85;
 }
 
-/* ===== Fix readability on light backgrounds (press pages) ===== */
 .press,
 .press-post,
 .press-card,
 .press-post__card {
-  color: #111827; /* dark text */
-}
+  color: #111827; }
 
 .press__lead,
 .press-card__text,
 .press-post__subhead,
 .press-post__body,
 .press-post__meta {
-  color: #374151; /* readable body text */
-}
+  color: #374151; }
 
 .press-post__meta b,
 .press-post__title,
@@ -167,7 +162,6 @@
   color: #111827;
 }
 
-/* links inside press content */
 .press-post__body a,
 .press-post__meta a {
   color: #1e3a5f;

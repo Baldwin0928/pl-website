@@ -1,12 +1,8 @@
-/* sponsors.css — Header/Nav now matches styles.css exactly */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/*=============== VARIABLES ===============*/
 :root {
-  /* MATCH INDEX */
   --header-height: 5.25rem;
 
-  /* dark semi-transparent "glass" nav */
   --nav-bg: rgba(10, 10, 10, 0.55);
   --nav-bg-scrolled: rgba(10, 10, 10, 0.78);
   --nav-border: rgba(255, 255, 255, 0.12);
@@ -19,29 +15,24 @@
 
   --gt-gold: #ffd600;
 
-  /* Page colors (keep Sponsors page light) */
   --title-color: #111827;
   --text-color: #4b5563;
   --body-color: #ffffff;
 
-  /* Font */
   --body-font: "Montserrat", sans-serif;
   --biggest-font-size: 2rem;
   --h3-font-size: 1.125rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
 
-  /* Weight */
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /* z index */
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/*========== Responsive typography ==========*/
 @media screen and (min-width: 1152px) {
   :root {
     --biggest-font-size: 4rem;
@@ -50,7 +41,6 @@
   }
 }
 
-/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -84,8 +74,7 @@ img {
 }
 
 .container {
-  max-width: 1200px; /* MATCH INDEX */
-  margin-inline: auto;
+  max-width: 1200px; margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
@@ -94,7 +83,6 @@ img {
   background-color: #ffffff;
 }
 
-/* ===================== HEADER / NAV (MATCH styles.css) ===================== */
 .header {
   position: fixed;
   top: 0;
@@ -221,7 +209,6 @@ img {
   border-radius: 999px;
 }
 
-/* Hide "Join Us" button globally (just in case) */
 .nav__cta {
   display: none !important;
 }
@@ -269,7 +256,6 @@ img {
   }
 }
 
-/*=============== HERO / HOME ===============*/
 .home {
   position: relative;
   height: 50vh;
@@ -279,7 +265,6 @@ img {
   align-items: center;
   justify-content: center;
 
-  /* since header is fixed */
   padding-top: var(--header-height);
 }
 
@@ -305,7 +290,6 @@ img {
   color: #ffffff;
 }
 
-/*=============== TITLES ===============*/
 .tier-title {
   font-family: inherit;
   color: #111827;
@@ -323,7 +307,6 @@ img {
   }
 }
 
-/*=============== PLATINUM BAND ===============*/
 .platinum-band {
   background-color: #eeeeea;
   padding: 3.5rem 0 4rem;
@@ -409,7 +392,6 @@ img {
   }
 }
 
-/*=============== SPONSOR TIERS ===============*/
 .sponsors-tiers {
   background-color: #ffffff;
   padding: 4.25rem 1.5rem 4.5rem;
@@ -432,7 +414,6 @@ img {
   column-gap: 3.2rem;
 }
 
-/* reduce spacing for GOLD tier a little */
 .sponsor-grid--gold {
   grid-template-columns: repeat(4, minmax(160px, 1fr));
   column-gap: 0.5rem;
@@ -447,7 +428,6 @@ img {
   grid-template-columns: repeat(6, minmax(120px, 1fr));
 }
 
-/* Makerspaces & Labs (smaller than Bronze) */
 .sponsor-grid--labs {
   grid-template-columns: repeat(8, minmax(90px, 1fr));
   column-gap: 2rem;
@@ -563,7 +543,6 @@ img {
   }
 }
 
-/*=============== INTRO SECTION ===============*/
 .sponsors-intro {
   padding: 4rem 1.5rem 3.5rem;
   background-color: #eeeeea;
@@ -619,7 +598,6 @@ img {
   }
 }
 
-/*=============== FOOTER CTA ===============*/
 .footer-cta {
   background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;

@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/* ===================== ROOT VARIABLES (match styles.css) ===================== */
 :root {
   --header-height: 5.25rem;
 
-  /* dark semi-transparent "glass" nav */
   --nav-bg: rgba(10, 10, 10, 0.55);
   --nav-bg-scrolled: rgba(10, 10, 10, 0.78);
   --nav-border: rgba(255, 255, 255, 0.12);
@@ -39,7 +37,6 @@
   }
 }
 
-/* ===================== BASE (match styles.css) ===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -85,7 +82,6 @@ img {
   overflow: hidden;
 }
 
-/* ===================== HEADER / NAV (EXACT from styles.css) ===================== */
 .header {
   position: fixed;
   top: 0;
@@ -212,7 +208,6 @@ img {
   border-radius: 999px;
 }
 
-/* Hide "Join Us" button globally */
 .nav__cta {
   display: none !important;
 }
@@ -260,7 +255,6 @@ img {
   }
 }
 
-/* ===================== MEDIA HERO (page-specific) ===================== */
 .home.media-hero {
   position: relative;
   min-height: 75vh;
@@ -316,7 +310,6 @@ img {
   text-underline-offset: 2px;
 }
 
-/* icon pill */
 .media-hero__icons {
   margin-top: 1.4rem;
   padding: 0.5rem 1.4rem;
@@ -367,7 +360,6 @@ img {
   }
 }
 
-/* ===================== MEDIA GRID (cards) ===================== */
 .media-grid {
   background-color: #f3f4f6;
   padding: 4rem 0 5rem;
@@ -451,7 +443,6 @@ img {
   }
 }
 
-/* ===================== FOOTER CTA (copied from your working design) ===================== */
 .footer-cta {
   background-color: #ffffff;
   padding: 3.5rem 1.5rem 2.75rem;

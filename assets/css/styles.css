@@ -3,7 +3,6 @@
 :root {
   --header-height: 5.25rem;
 
-  /* dark semi-transparent "glass" nav */
   --nav-bg: rgba(10, 10, 10, 0.55);
   --nav-bg-scrolled: rgba(10, 10, 10, 0.78);
   --nav-border: rgba(255, 255, 255, 0.12);
@@ -82,8 +81,6 @@ img {
 .main {
   overflow: hidden;
 }
-
-/* ===================== HEADER / NAV ===================== */
 
 .header {
   position: fixed;
@@ -211,7 +208,6 @@ img {
   border-radius: 999px;
 }
 
-/* Hide "Join Us" button globally */
 .nav__cta {
   display: none !important;
 }
@@ -258,8 +254,6 @@ img {
     letter-spacing: 0.22em;
   }
 }
-
-/* ===================== HERO ===================== */
 
 .home {
   position: relative;
@@ -363,10 +357,9 @@ img {
   }
 }
 
-/* ===================== OUR MISSION ===================== */
-
 .ourmission {
   position: relative;
+  overflow: hidden;
   background: linear-gradient(to bottom, rgba(35, 35, 35, 0.7), rgba(45, 44, 44, 0.7)),
     url("../img/ourmission.JPG") no-repeat center center/cover;
   background-attachment: fixed;
@@ -397,8 +390,6 @@ img {
   line-height: 1.8;
 }
 
-/* ===================== HIGHLIGHT GRID ===================== */
-
 .highlight-grid {
   background-color: #f7f7f7;
   padding: 4.5rem 1.5rem;
@@ -414,12 +405,15 @@ img {
 
 .highlight-card {
   background-color: #ffffff;
-  border-radius: 1rem;
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  border-top: 2px solid rgba(255, 214, 0, 0.86);
+  border-radius: 8px;
   padding: 2.25rem 2.5rem;
-  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.07);
   display: flex;
   flex-direction: column;
   min-height: 420px;
+  overflow: hidden;
 }
 
 .highlight-card__eyebrow {
@@ -503,23 +497,27 @@ img {
 }
 
 .pl-sponsor-logos {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-left: -2.5rem;
   margin-right: -2.5rem;
-  padding: 1.25rem 2.5rem;
+  margin-bottom: -2.25rem;
+  padding: 1.45rem 2.5rem 1.65rem;
   overflow: hidden;
   position: relative;
   background: #ffffff;
-  border-radius: 0 0 1rem 1rem;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 0 0 8px 8px;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.15rem;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
 }
 
 .pl-sponsor-logos__row {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
   width: max-content;
   animation: pl-logos-scroll 30s linear infinite;
 }
@@ -537,11 +535,12 @@ img {
 }
 
 .pl-sponsor-logos__row img {
-  max-height: 42px;
+  max-height: 38px;
   width: auto;
   height: auto;
   flex-shrink: 0;
   object-fit: contain;
+  opacity: 1;
 }
 
 .pl-sponsor-logos:hover .pl-sponsor-logos__row {
@@ -578,9 +577,10 @@ img {
 
 .highlight-card__video-wrap {
   margin-top: 1.75rem;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
 }
 
 .highlight-card__video-wrap iframe {
@@ -594,8 +594,6 @@ img {
   margin-top: 1.5rem;
   align-self: flex-start;
 }
-
-/* ===================== FOOTER CTA ===================== */
 
 .footer-cta {
   background-color: #ffffff;
@@ -734,74 +732,21 @@ img {
   }
 }
 
-/* ===== Scroll-reveal quote (clean, no glow) ===== */
 .scroll-quote {
+  position: relative;
   background: #000;
   color: #fff;
-}
-
-.scroll-quote__stage {
-  /* SHORTER: controls how long the reveal lasts */
-  height: 110vh; /* try 120vh if you want even tighter */
-}
-
-.scroll-quote__sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 0 1.5rem;
-}
-
-.scroll-quote__inner {
-  width: min(980px, 92vw);
-  text-align: center;
-}
-
-.scroll-quote__text {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.07em;
-  white-space: pre-wrap;
-  margin: 0 auto;
-  color: #fff; /* revealed words become pure white */
-}
-
-/* Each word is animated by JS (no glow / no shadow) */
-.scroll-quote__word {
-  display: inline-block;
-  opacity: 0.18;                 /* unrevealed grey */
-  transform: translate3d(0, 14px, 0); /* starts slightly lower */
-  will-change: transform, opacity;
-}
-
-/* Author line */
-.scroll-quote__author {
-  margin-top: 1.25rem;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  opacity: 0.18;
-  transform: translate3d(0, 10px, 0);
-  transition: opacity 0.2s linear, transform 0.2s linear;
-}
-
-/* ===== Scroll-reveal quote (clean, no glow) ===== */
-.scroll-quote {
-  background: #000;
-  color: #fff;
-
-  /* IMPORTANT: do NOT use your global .section padding here */
   padding: 0 !important;
   margin: 0 !important;
+  isolation: isolate;
 }
 
 .scroll-quote__stage {
-  /* "thin" but still slow: enough scroll distance without a huge black block */
-  height: 145vh; /* try 140vh–150vh */
+  height: 128vh;
+  min-height: 640px;
+  display: grid;
+  place-items: center;
+  padding: 0 1.5rem;
 }
 
 .scroll-quote__sticky {
@@ -816,6 +761,7 @@ img {
 .scroll-quote__inner {
   width: min(980px, 92vw);
   text-align: center;
+  transform: translateZ(0);
 }
 
 .scroll-quote__text {
@@ -831,134 +777,37 @@ img {
 
 .scroll-quote__word {
   display: inline-block;
-  opacity: 0.18;                 /* unrevealed grey */
-  transform: translate3d(0, 14px, 0); /* starts slightly lower */
-  will-change: transform, opacity;
+  opacity: 0.18;
+  transform: translate3d(0, 18px, 0);
+  will-change: transform, opacity, filter;
 }
 
 .scroll-quote__author {
   margin-top: 1.25rem;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  opacity: 0.18;
-  transform: translate3d(0, 10px, 0);
-  will-change: transform, opacity;
-}
-
-/* ===================== SCROLL QUOTE (CLEAN + SMOOTH TRANSITION) ===================== */
-
-.scroll-quote {
-  position: relative;
-  background: #000;
-  color: #fff;
-
-  /* IMPORTANT: avoid your global .section padding */
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Make the black section "thin" (less endless black) */
-.scroll-quote__stage {
-  height: 135vh; /* was 145vh; try 130–150vh if you want */
-}
-
-/* Soft fade at the bottom so it blends into the next section */
-.scroll-quote::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 160px; /* 80–220px */
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-
-/* ===================== OUR MISSION (SMOOTH FADE-IN FROM BLACK) ===================== */
-
-.ourmission {
-  position: relative; /* required for ::before */
-}
-
-/* Top fade so Our Mission starts from black smoothly */
-.ourmission::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 180px; /* 100–240px */
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  z-index: 1;
-}
-
-/* Keep mission text above the fade overlay */
-.ourmission__inner {
-  position: relative;
-  z-index: 2;
-}
-
-/* EXACT: author uses the SAME font as the quote */
-.scroll-quote__author{
   font-family: HelveticaNeueDisplay, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 110%;
-  text-align: center;
-
-  /* keep your author sizing separate (their site is smaller) */
   font-size: 1.25rem;
+  line-height: 110%;
   letter-spacing: 0;
+  text-align: center;
   text-transform: none;
   opacity: 0.22;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  will-change: transform, opacity;
 }
 
-/* ===================== SCROLL QUOTE (CLEAN + SMOOTH TRANSITION) ===================== */
-
-.scroll-quote {
-  position: relative;
-  background: #000;
-  color: #fff;
-
-  /* IMPORTANT: avoid your global .section padding */
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Make the black section thinner */
-.scroll-quote__stage {
-  height: 92vh;          /* <- thinner than 135vh */
-  min-height: 520px;     /* keeps it usable on small screens */
-  display: grid;
-  place-items: center;
-  padding: 0 1.5rem;
-}
-
-/* OPTIONAL: tiny fade-out that overlaps the next section (clean, not glowy) */
 .scroll-quote::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-
-  /* Pull the fade *into* the next section so it blends */
-  bottom: -140px;
-  height: 140px;
-
+  bottom: -190px;
+  height: 190px;
   pointer-events: none;
   z-index: 5;
-
-  /* This is the correct direction: black -> transparent */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-}
-
-
-/* Smooth transition FROM black quote INTO Our Mission */
-.ourmission {
-  position: relative;
-  overflow: hidden;
 }
 
 .ourmission::before {
@@ -967,101 +816,48 @@ img {
   left: 0;
   right: 0;
   top: 0;
-  height: 170px; /* adjust 120–220px */
+  height: 220px;
   pointer-events: none;
   z-index: 2;
-
-  /* black -> transparent downward */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-/* Ensure your mission text stays above the fade */
 .ourmission__inner {
   position: relative;
   z-index: 3;
 }
 
-.home__subtitle{
-  margin-top: .75rem;
-  font-weight: 600;
-  letter-spacing: .02em;
-  color: rgba(255,255,255,.85);
-}
-
-.home__subtitle .type{
+.home__tagline .type {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid rgba(255,255,255,.85);
-  padding-right: .3rem;
-
-  /* typing */
-  width: 0ch;
-  animation:
-    typing 2.2s steps(28, end) forwards,
-    caret .75s steps(1, end) infinite;
-}
-
-/* adjust 28 to your character count if you want it perfect */
-@keyframes typing { to { width: 28ch; } }
-@keyframes caret { 50% { border-color: transparent; } }
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .home__subtitle .type{ animation: none; width: auto; border-right: none; }
-}
-
-/* ================= TYPEWRITER (OPTION A) ================= */
-
-/* Apply to your actual markup: <p class="home__tagline"><span class="type">...</span></p> */
-.home__tagline .type{
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-
-  /* caret */
-  border-right: 2px solid rgba(255,255,255,.85);
-  padding-right: .35rem;
-
-  /* typing reveal */
+  border-right: 2px solid rgba(255, 255, 255, 0.85);
+  padding-right: 0.35rem;
   width: 0ch;
   animation:
     gtplTyping 2.2s steps(28, end) forwards,
-    gtplCaret .75s steps(1, end) infinite;
+    gtplCaret 0.75s steps(1, end) 3 forwards;
 }
 
-/* 28ch should roughly match your character count.
-   If your line gets cut off early, increase it (ex: 32ch). */
-@keyframes gtplTyping { to { width: 28ch; } }
-@keyframes gtplCaret { 50% { border-color: transparent; } }
+@keyframes gtplTyping {
+  to {
+    width: 28ch;
+  }
+}
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .home__tagline .type{
+@keyframes gtplCaret {
+  0%, 49% {
+    border-right-color: rgba(255, 255, 255, 0.85);
+  }
+  50%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home__tagline .type {
     animation: none;
     width: auto;
     border-right: none;
   }
 }
-
-.home__tagline .type{
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-
-  border-right: 2px solid rgba(255,255,255,.85);
-  padding-right: .35rem;
-
-  width: 0ch;
-  animation:
-    gtplTyping 2.2s steps(28, end) forwards,
-    gtplCaret .75s steps(1, end) 3 forwards; /* caret blinks 3 times then stops */
-}
-
-@keyframes gtplTyping { to { width: 28ch; } }
-
-@keyframes gtplCaret {
-  0%, 49% { border-right-color: rgba(255,255,255,.85); }
-  50%, 100% { border-right-color: transparent; }
-}
-
