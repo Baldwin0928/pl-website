@@ -36,12 +36,6 @@
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://gtpropulsivelanders.org/join.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- Press posts -->
   <url>
     <loc>https://gtpropulsivelanders.org/press/2025-11-09-hotfire.html</loc>
