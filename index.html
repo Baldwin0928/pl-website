@@ -18,7 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260621-team-stats" />
 
     <title>Propulsive Landers @ Georgia Tech</title>
   </head>
@@ -39,15 +39,10 @@
               <a href="about.html" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-              <a href="project.html" class="nav__link">Media</a>
-            </li>
-            <li class="nav__item">
               <a href="sponsors.html" class="nav__link">Sponsors</a>
             </li>
             <li class="nav__item">
-              <a href="press.html" class="nav__link">Press</a></li>
-            <li class="nav__item">
-              <a href="contact.html" class="nav__link">Contact</a>
+              <a href="https://www.flickr.com/photos/201770291@N08/" class="nav__link" target="_blank" rel="noopener">Media</a>
             </li>
           </ul>
 
@@ -64,7 +59,8 @@
 
     <main class="main">
       <section class="home">
-        <video class="home__video" autoplay muted loop playsinline>
+        <video class="home__video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/media/MVI_2139.mov" />
           <source src="assets/media/video.mp4" type="video/mp4" />
         </video>
 
@@ -85,8 +81,6 @@
               <a
                 href="mailto:outreach@gtpropulsivelanders.org"
                 class="contact__icons"
-                target="_blank"
-                rel="noopener"
                 aria-label="Email"
               >
                 <i class="ri-mail-fill"></i>
@@ -108,15 +102,6 @@
                 aria-label="Instagram"
               >
                 <i class="ri-instagram-fill"></i>
-              </a>
-              <a
-                href="https://www.tiktok.com/@propulsive.landers.gt"
-                target="_blank"
-                rel="noopener"
-                class="contact__icons"
-                aria-label="TikTok"
-              >
-                <i class="ri-tiktok-fill"></i>
               </a>
               <a
                 href="https://www.youtube.com/@propulsivelandersgt"
@@ -161,10 +146,10 @@
 </section>
 
       <section id="about" class="ourmission section">
-        <div class="ourmission__inner">
-          <h2 class="ourmission__title">Our Mission</h2>
-
-          <div class="ourmission__container container">
+        <div class="ourmission__inner container">
+          <div class="ourmission__copy">
+            <span class="ourmission__eyebrow">About GTPL</span>
+            <h2 class="ourmission__title">Our Mission</h2>
             <p class="ourmission__description">
               Propulsive Landers @ Georgia Tech (GTPL) is a student-led team at the Georgia Institute of
               Technology working to develop autonomous systems that power a self-landing rocket. Our
@@ -172,131 +157,522 @@
               and landing of a hybrid rocket.
             </p>
           </div>
+
+          <aside class="mission-special" aria-labelledby="mission-special-title">
+            <h3 id="mission-special-title" class="mission-special__heading">What makes us special</h3>
+
+            <div class="mission-special__grid">
+              <article class="mission-special__card">
+                <span class="mission-special__number">01</span>
+                <h4 class="mission-special__title">Pioneering the future of hybrid reusable flight</h4>
+                <p class="mission-special__text">
+                Propulsive landing is proven with liquid rocket engines and are already mature in student initiatives and industry, but hybrid rocket landers remain largely unexplored. GTPL is working to become the first organization in the world to demonstrate a free hop with a hybrid rocket lander.
+                </p>
+              </article>
+
+              <article class="mission-special__card">
+                <span class="mission-special__number">02</span>
+                <h4 class="mission-special__title">Built on test data</h4>
+                <p class="mission-special__text">
+                 Every design decision is grounded in characterization. Because vertical landing leaves little margin for error, GTPL validates all propulsion systems and structures on the ground heavily before flight.
+                </p>
+              </article>
+
+              <article class="mission-special__card">
+                <span class="mission-special__number">03</span>
+                <h4 class="mission-special__title">Autonomy from the ground up</h4>
+                <p class="mission-special__text">
+                  A reusable lander needs more than thrust. Our team develops the GNC, telemetry, and test infrastructure needed to keep the lander in the air, applying control concepts used in reusable launch vehicles and lunar landers from SpaceX, NASA, and Astrobotic.
+                </p>
+              </article>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="highlight-grid section">
-        <div class="highlight-grid__container container">
-          <article class="highlight-card highlight-card--sponsors">
-            <span class="highlight-card__eyebrow">Sponsors</span>
-            <h3 class="highlight-card__title">Thank you to our Sponsors!</h3>
-            <p class="highlight-card__text">
-              The work that we do today would be impossible without our sponsors. Here, we recognize
-              the partners who stand behind us and believe in our mission to make student-built
-              propulsive landings a reality.
-            </p>
+      <section class="team-stats section" aria-label="Current team statistics">
+        <div class="team-stats__container container">
+          <div class="team-stats__grid">
+            <article class="team-stat">
+              <span class="team-stat__value">120+</span>
+              <span class="team-stat__label">Current Members</span>
+            </article>
 
-            <a href="sponsors.html" class="highlight-card__button pl-btn-learn-more">
-              <span>Learn More</span>
-              <i class="ri-arrow-right-line"></i>
-            </a>
+            <article class="team-stat">
+              <span class="team-stat__value">10</span>
+              <span class="team-stat__label">Published Papers</span>
+            </article>
 
-            <div class="highlight-card__logos pl-sponsor-logos" aria-label="Sponsor logo carousel">
-  <div class="pl-sponsor-logos__row">
-    <img src="assets/img/ansys.svg" alt="ANSYS" />
-    <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
-    <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
-    <img src="assets/img/guggenheim.svg" alt="Daniel Guggenheim School of Aerospace Engineering" />
-    <img src="assets/img/ams.svg" alt="AMS" />
-    <img src="assets/img/pcbway.svg" alt="PCBWay" />
-    <img src="assets/img/ansys.svg" alt="ANSYS" />
-    <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
-    <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
-    <img src="assets/img/guggenheim.svg" alt="Daniel Guggenheim School of Aerospace Engineering" />
-    <img src="assets/img/ams.svg" alt="AMS" />
-    <img src="assets/img/pcbway.svg" alt="PCBWay" />
-  </div>
-  <div class="pl-sponsor-logos__row">
-    <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
-    <img src="assets/img/ntop.svg" alt="ntop" />
-    <img src="assets/img/valworx.svg" alt="Valworx" />
-    <img src="assets/img/mill.svg" alt="The MILL" />
-    <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
-    <img src="assets/img/easycomposites.svg" alt="Easy Composites" />
-    <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
-    <img src="assets/img/ntop.svg" alt="ntop" />
-    <img src="assets/img/valworx.svg" alt="Valworx" />
-    <img src="assets/img/mill.svg" alt="The MILL" />
-    <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
-    <img src="assets/img/easycomposites.svg" alt="Easy Composites" />
-  </div>
-  <div class="pl-sponsor-logos__row">
-    <img src="assets/img/sga.png" alt="Georgia Tech SGA" />
-    <img src="assets/img/xometry.svg" alt="Xometry" />
-    <img src="assets/img/internationalconnector.svg" alt="International Connector" />
-    <img src="assets/img/adc.svg" alt="AutomationDirect" />
-    <img src="assets/img/hive.svg" alt="The Hive" />
-    <img src="assets/img/graphitestore.svg" alt="Graphitestore" />
-    <img src="assets/img/sga.png" alt="Georgia Tech SGA" />
-    <img src="assets/img/xometry.svg" alt="Xometry" />
-    <img src="assets/img/internationalconnector.svg" alt="International Connector" />
-    <img src="assets/img/adc.svg" alt="AutomationDirect" />
-    <img src="assets/img/hive.svg" alt="The Hive" />
-    <img src="assets/img/graphitestore.svg" alt="Graphitestore" />
-  </div>
-  <div class="pl-sponsor-logos__row">
-    <img src="assets/img/altiumblk.svg" alt="Altium" />
-    <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
-    <img src="assets/img/meanwell.svg" alt="Mean Well" />
-    <img src="assets/img/inventionstudio.svg" alt="The Invention Studio" />
-    <img src="assets/img/areal.svg" alt="Areal" />
-    <img src="assets/img/altiumblk.svg" alt="Altium" />
-    <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
-    <img src="assets/img/meanwell.svg" alt="Mean Well" />
-    <img src="assets/img/inventionstudio.svg" alt="The Invention Studio" />
-    <img src="assets/img/areal.svg" alt="Areal" />
-  </div>
-</div>
-          </article>
+            <article class="team-stat">
+              <span class="team-stat__value">21</span>
+              <span class="team-stat__label">Sponsors &amp; Partners</span>
+            </article>
 
-          <article class="highlight-card highlight-card--project">
-            <span class="highlight-card__eyebrow">Recent Success</span>
-            <h3 class="highlight-card__title">Hotfire of Georgia Tech's First Hybrid Rocket Engine</h3>
-            <p class="highlight-card__text">
-              As of November 9, 2025, Propulsive Landers became the first team in Georgia Tech's
-              history to hotfire a hybrid rocket engine. This marks the beginning of our engine
-              validation campaign as we prepare for tether hovers in Spring and Fall of 2026.
-            </p>
+            <article class="team-stat">
+              <span class="team-stat__value">6</span>
+              <span class="team-stat__label">Technical Subteams</span>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <div class="highlight-card__video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/_i86fCTQ1sw?si=6YqjahkZ71tuPvP8"
-                title="GTPL Hybrid Engine Hotfire"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
+      <section class="updates-section section">
+        <div class="updates-section__container container">
+          <div class="update-grid">
+            <article class="highlight-card highlight-card--project">
+              <span class="highlight-card__eyebrow">Recent Success</span>
+              <h3 class="highlight-card__title">Hotfire of Georgia Tech's First Hybrid Rocket Engine</h3>
+              <p class="highlight-card__text">
+                As of November 9, 2025, Propulsive Landers became the first team in Georgia Tech's
+                history to hotfire a hybrid rocket engine. This marks the beginning of our engine
+                validation campaign as we prepare for tether hovers in Spring and Fall of 2026.
+              </p>
+
+              <div class="highlight-card__video-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/_i86fCTQ1sw?si=6YqjahkZ71tuPvP8"
+                  title="GTPL Hybrid Engine Hotfire"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <a
+                href="#project-showcase"
+                class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
+              >
+                Explore the Project
+              </a>
+            </article>
+
+            <article class="highlight-card update-card">
+              <span class="highlight-card__eyebrow">LinkedIn</span>
+              <h3 class="highlight-card__title">Recent AIAA Success!</h3>
+              <p class="highlight-card__text">
+                This year, our presentations alone accounted for 22% of all papers in the team category at the 2026 AIAA Region II Student Conference. We have also secured third place in the category with our 1000N engine! 
+              </p>
+              <figure class="highlight-card__image-wrap">
+                <img src="assets/img/AIAA.png" alt="GTPL team at the AIAA Region II Student Conference" />
+              </figure>
+
+              <a
+                href="https://www.linkedin.com/feed/update/urn:li:activity:7444780290285219840"
+                class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
+                target="_blank"
+                rel="noopener"
+              >
+                Open LinkedIn
+              </a>
+            </article>
+
+            <article class="highlight-card update-card">
+              <span class="highlight-card__eyebrow">Team Updates</span>
+              <h3 class="highlight-card__title">Behind the Scenes</h3>
+              <p class="highlight-card__text">
+                We may be a student team, but we work hard and have fun doing it. We encourage you to explore our Instagram to learn more about our team culture, work environment, and the people behind the lander. 
+                We post regularly about work, tests, and team events, so it's a great way to stay up to date with our progress and get a glimpse of what it's like to be part of GTPL.
+              </p>
+
+              <a
+                href="https://www.instagram.com/propulsivelandersgt/"
+                class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
+                target="_blank"
+                rel="noopener"
+              >
+                See Updates
+              </a>
+            </article>
+
+            <article class="highlight-card update-card">
+              <span class="highlight-card__eyebrow">Sponsors</span>
+              <h3 class="highlight-card__title">Partner With GTPL</h3>
+              <p class="highlight-card__text">
+                The team stands proudly behind 21 sponsors who make all we do possible. From funding our projects to providing mentorship and resources, 
+                our sponsors are an integral part of our journey. We are always looking to expand our network of support and welcome new partners who share our vision for advancing reusable rocket technology at the world's level.
+              </p>
+
+              <a
+                href="sponsors.html"
+                class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
+              >
+                Sponsor Us
+              </a>
+            </article>
+
+            <article class="highlight-card update-card">
+              <span class="highlight-card__eyebrow">Media</span>
+              <h3 class="highlight-card__title">See the Team in Action</h3>
+              <p class="highlight-card__text">
+                Get a glimpse into what it's like to be part of GTPL and see our team in action by checking out our Flickr page. You can find images of the team in their elements, 
+                and in various settings including on campus and at conferences like AIAA Region II. 
+              </p>
+
+              <a
+                href="https://www.flickr.com/photos/201770291@N08/"
+                class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
+                target="_blank"
+                rel="noopener"
+              >
+                View Flickr
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-showcase-section section" id="project-showcase">
+        <div class="project-showcase__layout">
+          <div class="project-showcase__container">
+            <div class="project-showcase__intro">
+              <span class="project-showcase__eyebrow">Current Project Highlight</span>
+              <h3 class="project-showcase__title">Monarch, 1000N Lander</h3>
+              <p class="project-showcase__text">
+                The core systems behind GTPL's reusable hybrid lander. Tethered hover incoming this fall.
+              </p>
             </div>
 
-            <a
-              href="project.html"
-              class="highlight-card__button pl-btn-learn-more highlight-card__button--below-video"
-            >
-              Explore the Project
-            </a>
+            <div class="project-showcase__grid">
+              <a href="#project-showcase" class="project-tile project-tile--featured">
+                <span class="project-tile__number">01</span>
+                <span class="project-tile__meta">Propulsion / Hotfire</span>
+                <h4 class="project-tile__title">1000N N2O/Paraffin Engine</h4>
+                <p class="project-tile__text">
+                  Monarch's primary propulsion system, designed to deliver the thrust, safety margin, and repeatability needed for hover and hop profiles.
+                </p>
+              </a>
+
+              <a href="#project-showcase" class="project-tile">
+                <span class="project-tile__number">02</span>
+                <span class="project-tile__meta">Throttling / Control</span>
+                <h4 class="project-tile__title">Main Throttle Valve (MTV)</h4>
+                <p class="project-tile__text">
+                  A servo-actuated nitrous valve built to regulate oxidizer flow and throttle the engine accurately as per demanded by the flight profile.
+                </p>
+              </a>
+
+              <a href="#project-showcase" class="project-tile">
+                <span class="project-tile__number">03</span>
+                <span class="project-tile__meta">Avionics / Data</span>
+                <h4 class="project-tile__title">Fully In-House PCBs</h4>
+                <p class="project-tile__text">
+                  Custom flight electronics for sensor acquisition, telemetry, and the data backbone needed to communicate and validate every test.
+                </p>
+              </a>
+
+              <a href="#project-showcase" class="project-tile">
+                <span class="project-tile__number">04</span>
+                <span class="project-tile__meta">GNC / Flight Algorithm</span>
+                <h4 class="project-tile__title">Lossless Convexification</h4>
+                <p class="project-tile__text">
+                  Powered-descent optimization that turns a hard nonlinear landing problem into a form the vehicle can solve fast enough for flight.
+                </p>
+              </a>
+
+              <a href="#project-showcase" class="project-tile">
+                <span class="project-tile__number">05</span>
+                <span class="project-tile__meta">GNC / Flight Controller</span>
+                <h4 class="project-tile__title">Model Predictive Control</h4>
+                <p class="project-tile__text">
+                  A receding-horizon controller that reacts to state error, thrust limits, and vehicle constraints while tracking a safe landing path.
+                </p>
+              </a>
+
+              <a href="#project-showcase" class="project-tile">
+                <span class="project-tile__number">06</span>
+                <span class="project-tile__meta">Attitude / Control</span>
+                <h4 class="project-tile__title">Reaction Control System</h4>
+                <p class="project-tile__text">
+                  Cold gas thrusters for roll control, helping stabilize the vehicle while thrust vector provides the yaw and pitch control.
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <figure class="project-showcase__lander-wrap" aria-label="Monarch lander render">
+            <img
+              class="project-showcase__lander"
+              src="assets/img/lander.png"
+              alt="Monarch 1000N lander CAD render"
+            />
+          </figure>
+        </div>
+      </section>
+
+
+      <section class="other-projects-section section" aria-labelledby="other-projects-title">
+        <div class="other-projects__container">
+          <div class="other-projects__header">
+            <span class="other-projects__eyebrow">We have more than just the lander!</span>
+            <h3 id="other-projects-title" class="other-projects__title">Other projects include:</h3>
+          </div>
+
+          <div class="other-projects__grid">
+            <article class="other-project-card">
+              <span class="other-project-card__number">01</span>
+              <span class="other-project-card__meta">Avionics / Testbeds</span>
+              <h4 class="other-project-card__title">Monoprop UAV for GNC</h4>
+              <p class="other-project-card__text">
+                Rapid test bed for GNC algorithms testing before lander implementation. Fully in-house and powered by a set of counterrotating propeller.
+              </p>
+            </article>
+
+            <article class="other-project-card">
+              <span class="other-project-card__number">02</span>
+              <span class="other-project-card__meta">Thermal / Cooling</span>
+              <h4 class="other-project-card__title">Regen and Film Cooling Design</h4>
+              <p class="other-project-card__text">
+                Regenerative and film cooled nozzle to minimize erosion and maximize reusability of the 1000N engine.
+              </p>
+            </article>
+
+            <article class="other-project-card">
+              <span class="other-project-card__number">03</span>
+              <span class="other-project-card__meta">Propulsion / Feed</span>
+              <h4 class="other-project-card__title">Nitrous Slosh and Baffles</h4>
+              <p class="other-project-card__text">
+                Multiphase tank slosh modeling and baffle design work to reduce vehicle disturbances during flight. High-fidelity CFD simulations coming soon.
+              </p>
+            </article>
+
+            <article class="other-project-card">
+              <span class="other-project-card__number">04</span>
+              <span class="other-project-card__meta">Propulsion / Testbeds</span>
+              <h4 class="other-project-card__title">Lab Scale Engine</h4>
+              <p class="other-project-card__text">
+                Small-scale, long-duration testbed for research and testing of new ideas before they are implemented onto the main lander engine. 
+              </p>
+            </article>
+
+            <article class="other-project-card">
+              <span class="other-project-card__number">05</span>
+              <span class="other-project-card__meta">Aero / Control</span>
+              <h4 class="other-project-card__title">Grid Fin Aerodynamics</h4>
+              <p class="other-project-card__text">
+                Parametric airfoil cross-section studies exploring how grid fin geometry changes separation, drag, and control response for future landers.
+              </p>
+            </article>
+
+            <article class="other-project-card">
+              <span class="other-project-card__number">06</span>
+              <span class="other-project-card__meta">Structures / Mechanisms</span>
+              <h4 class="other-project-card__title">Coaxial and Differential TVC</h4>
+              <p class="other-project-card__text">
+                Alternative thrust vector control architectures comparing torque, response time, manufacturability, and system complexity.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="publications-section section" aria-labelledby="publications-title">
+        <div class="publications-section__container">
+          <div class="publications-section__header">
+            <div>
+              <span class="publications-section__eyebrow">Publications</span>
+              <h3 id="publications-title" class="publications-section__title">Published work from GTPL.</h3>
+            </div>
+            <p class="publications-section__text">
+              A growing archive of GTPL conference papers and technical publications spanning propulsion, controls, aerodynamics, and vehicle modeling.
+            </p>
+          </div>
+
+          <div class="publications-table-wrap" role="region" aria-label="Publications table" tabindex="0">
+            <table class="publications-table">
+              <thead>
+                <tr>
+                  <th scope="col">Paper title</th>
+                  <th scope="col">Conference</th>
+                  <th scope="col">Abstract</th>
+                  <th scope="col">DOI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="publication-title">System Architecture of a Reusable N2O/Paraffin-ABS Hybrid Rocket Lander</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Szu Heng Chen, Jack Rumpf, Michael Swoyer, Anyi Lin, Suhaila Rashid, Udita Mahajan, Alexis Alfonseca and Herris Fentress</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">Reusable rocket technology, since its adoption, has drastically altered the trajectory of the aerospace industry. Rockets that can be recovered then reflown not only lower the cost of launching payloads into space but also enable a significantly higher launch cadence that is incompatible with traditional expendable launch vehicles. Despite this remarkable progress at the industrial scale, collegiate rocketry efforts have largely evolved along a separate trajectory. More often than not, success is evaluated using apogee-centric criteria, which have shaped student launch vehicle architectures toward expendable designs optimized for a single flight with little to no consideration for reusability. With this in mind, Propulsive Landers at the Georgia Institute of Technology (GTPL) was established as the first student organization at Georgia Tech to pursue vertical takeoff and vertical landing (VTVL) rocket flight. The program's short-term focus is the development of a 1000N-class VTVL lander with a flight envelope consisting of a 10s tethered hover, an untethered 10m powered descent, and an untethered 50m vertical hop. The purpose of these objectives is to reframe student rocketry around the constraints of reusability and to offer early exposure to the engineering challenges present in modern reusable launch vehicle development. This paper presents the system architecture adopted by GTPL in the development of this lander. Mission definition, system and subsystem requirements, and the baseline vehicle configuration are described along with primary design drivers and tradeoffs.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112578" target="_blank" rel="noopener">10.2514/6.2026-112578</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Evaluating Numerical Solving Methods for Optimal Powered Descent</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Anyi Lin, Favour Adekola, Joseph Farkas, Parker Melling and Niara Marwah</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">In autonomous navigation for vertical take-off and landing (VTOL) rockets, the generation of reliable and efficient paths for the vehicle to adhere to remains a difficult task. Powered descent trajectory optimization to achieve minimal fuel consumption is a nonconvex problem with nonlinear constraints such as minimum throttle and thrust pointing constraints. The lossless convexification of the soft landing problem relaxes these nonconvex constraints while ensuring that the optimal solution to the relaxed problem remains the same as the optimal solution to the original nonconvex problem. This allows for efficient numerical solving methods to be employed. In this paper, we analyze two numerical optimization methods: time-based discretization and pseudospectral methods using Chebyshev polynomial parameterization. Time-based discretization splits the problem into many time steps, enforcing constraints at each one. This method is more sensitive to the number of time steps, resulting in a large number of variables per problem and more iterations necessary for convergence. Parameterization by Chebyshev polynomials enforces constraints and dynamics at a fewer number of nodes with global differentiation matrices. This results in fewer iterations necessary for the same level of accuracy, but longer calculations per iteration. We assess the effectiveness of these methods by the number of variables and the runtime of each algorithm to determine the best approach for realtime onboard computation.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112394" target="_blank" rel="noopener">10.2514/6.2026-112394</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Parametric Airfoil Cross-Section Effects on Grid Fin Aerodynamic Performance</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Yoyi Xie, Edward Huang, Kaylin Wu, Jack Rumpf and Szu Heng Chen</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">Grid fins are unconventional aerodynamic control surfaces composed of an intersecting lattice of struts enclosed within a rigid frame. Compared to traditional planar fins, grid fins provide increased effective control surface area per unit projected area, enabling strong aerodynamic authority at the cost of increased parasitic drag and reduced efficiency. These characteristics have led to their widespread use in modern launch vehicles and guided systems, particularly for atmospheric reentry and precision guidance. Grid fin performance is strongly influenced by geometric parameters such as lattice spacing, strut thickness, and cross-sectional shape, which has historically been limited by manufacturing constraints. This study investigates the aerodynamic impact of redesigning grid fin strut geometry by replacing conventional rectangular struts with airfoil cross-sectional strut designs enabled by additive manufacturing. Two-dimensional Reynolds-averaged Navier-Stokes simulations (RANS) were performed using the SST k-omega turbulence model on stacked airfoil configurations. Individual airfoil profiles were modified with 4 parametric variations in leading-edge radius and thickness distribution, with NACA 0012 and rectangular geometries as a control. This study was performed with up to 45 degrees angles of attack (AoA) and freestream velocities from 0.1 to 0.3 Mach. Increasing AoA introduced nonlinear aerodynamic behavior across the stacked configurations, with interelement interference notably influencing separation behavior. Velocity sweeps revealed pronounced Reynolds number dependent behavior, with several geometries showing changes in separation characteristics and force response as velocity increased. These trends demonstrate tradeoffs between aerodynamic response and operational envelope, highlighting the sensitivity of grid fin aerodynamic behavior to cross-sectional geometry.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112454" target="_blank" rel="noopener">10.2514/6.2026-112454</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Analytical Modeling of Oxidizer Motion and Fuel Regression in Hybrid Rockets for In-Flight Mass Evolution</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Ben Virtucio, Jack Rumpf, Yoyi Xie, Yujiao Zeng, Tanvi Cherukuri, Harsh Patel, Ashlyn Ortiona, Samuel Lippincott, Michael Swoyer and Anyi Lin</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">Hybrid rockets experience continuous internal mass redistribution due to solid-fuel regression and propellant motion during flight. Tracking the combined influence of these effects requires modeling approaches that represent in-flight internal mass behavior. This paper focuses on the development of in-flight analytical approximations for modeling the internal mass evolution of hybrid rockets, including oxidizer drain, solid-fuel regression, and oxidizer sloshing. Oxidizer drain is modeled using a nonhomogeneous, nonequilibrium mass flow rate model (Dyer) across the feed system to capture two-phase outflow as the tank empties. Solid-fuel regression is modeled using a mass-flux approach that directly relates the fuel burn rate to oxidizer flow and grain geometry. Oxidizer slosh is represented with a Duffing model coupled to vehicle accelerations. This approach enables a reduced-order, computationally efficient prediction of evolving mass properties suitable for system-level simulation throughout the burn. The aforementioned models are then combined to create a dynamics model that outputs the rocket's state in real time without resolving full fluid flow or combustion physics. In this study, thrust and wind-induced disturbances are applied to the vehicle's immediate state to stimulate response. Results demonstrate continuous updates of in-flight mass properties, with evaluation focused on mass and inertia evolution, computational performance, sensitivity to oxidizer flow, and acceleration inputs, with the validity of the model to be later examined against future tethered flight profiles.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112460" target="_blank" rel="noopener">10.2514/6.2026-112460</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Design of a 1000 N N2O/Paraffin-ABS Hybrid Rocket Engine for a Reusable VTVL Lander</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Sukhmani Sethi, Matthew Xu, Veer Gudhka, Chengle Qian, Felix Gusic, Valeriy Donchev, Amaan Patel, Grace Dilgard, Michael Swoyer and Szu Heng Chen</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">The development of reusable rocket technology at the collegiate scale requires a propulsion architecture that prioritizes both safety and technical feasibility. Hybrid rocket engines offer a compelling framework for vertical takeoff, vertical landing (VTVL) applications due to their ease of development, inherent safety, and throttleability. To explore these capabilities at the student scale, a VTVL lander is under development by Propulsive Landers at Georgia Tech with a mission profile consisting of a 10 s tethered hover test, a 10 m vertical descent and landing maneuver, and a 50 m vertical hop with controlled landing. This paper details the design of a 1000 N N2O/Paraffin-ABS hybrid rocket engine intended as the primary propulsion system for the lander. Engine design was driven by thrust and safety requirements while supporting a reusable architecture for rapid development. Component dimensions for the fuel grain, injector, and pre/post combustion chamber were optimized using first-order approximations and parameters from existing literature. The work documents the full development process of the engine up to an initial hotfire and outlines lessons learned and a path forward for continued improvement.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112918" target="_blank" rel="noopener">10.2514/6.2026-112918</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Development and Characterization of a Closed-Loop Nitrous Throttling System for a Hybrid Rocket Lander</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Evin Jerry, Chengle Qian, Abigail Lee, Veer Gudhka, Felix Gusic, Suhaila Rashid, Udita Mahajan, Anyi Lin and Szu Heng Chen</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2026</td>
+                  <td><span class="publication-abstract">Hybrid engines have been increasing in viability for lander-type rockets due to their operational safety and cost-effectiveness for commercial applications. Their ability to throttle thrust via oxidizer mass flow rate makes them well-suited to the continuous thrust adjustment landers require. Precise thrust control is typically accomplished through a closed-loop throttling system that continually regulates thrust relative to a real-time thrust profile, yet implementation challenges remain for certain propellant combinations. Propulsive Landers at Georgia Tech (hereafter GTPL) is developing a hybrid engine and corresponding oxidizer throttling system for a proof-of-concept lander intended for surface hop maneuvers. Nitrous oxide was selected as the oxidizer due to its nontoxic, storable, and self-pressurizing properties, but it also presents thermodynamic challenges. Operating near the vapor pressure of nitrous, the system is susceptible to rapid pressure drops, which induce two-phase flow instability and limit flow through the piping. This results in reduced usable liquid oxidizer and degraded throttling control authority. In order to minimize flashing and address resulting challenges, GTPL developed a servo-actuated, subcooled nitrous throttling valve operated by a closed-loop controller utilizing chamber pressure readings as feedback. The system was characterized and validated through a series of open and closed-loop coldflows and hotfires across a range of valve positions. System response was assessed through both steady-state and transient throttling to quantify effective throttling regimes and thrust limits. This paper details the development of the throttling mechanism, experimental results, and future improvements and design considerations for nitrous-based throttling systems.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2026-112438" target="_blank" rel="noopener">10.2514/6.2026-112438</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Novel Coaxial and Differential Thrust Vector Control Systems for Small-Scale Rockets</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Jack Rumpf, Aneesh Kumar, Alexis Alfonseca, Sanchir Erdenebat and Szu Heng Chen</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2025</td>
+                  <td><span class="publication-abstract">Thrust vector control (TVC) systems enable directional control of thrust, which makes them crucial in the aerospace industry, particularly in propulsion systems. Typical TVC systems, which involve two linear actuators and a gimbal, provide effective thrust vectoring but pose challenges related to weight, torque, and response time. This study analyzes alternate TVC approaches that are inspired by robotic drivetrain systems: differential and coaxial swerve drive. This study compares these systems with a typical TVC to evaluate performance in the following categories: weight, cost, torque, manufacturability, response time, and control. The differential TVC has superior torque, overcoming greater moments produced by the thrust and also has a faster response time. However, it is more complex for manufacturing, when compared to that of a standard TVC. In terms of weight, the differential TVC is comparable to a standard one, although slightly lighter. As for the coaxial design, it had similar benefits to the differential, providing faster response time and more torque. The coaxial design requires high load bearings which are expensive while also being slightly heavier. In contrast, the standard system is simpler, although countered by less torque and slower response times. Altogether, the results show that while a typical TVC retains its benefits in terms of complexity, the differential TVC shows promise in small-scale rocketry and, with further optimizations, has potential in medium- and large-scale rocketry.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2025-99480" target="_blank" rel="noopener">10.2514/6.2025-99480</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Optimization of Disc Baffle Perforation in Sloshing Nitrous Oxide Tanks</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Yoyi Xie, Jack Rumpf, Alexis Alfonseca, Aneesh Kumar, Nathan Rupprecht, Emory Hill, Szu Heng Chen and Matthew Lai</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2025</td>
+                  <td><span class="publication-abstract">Liquid fuel sloshing during flight introduces destabilizing forces that can compromise a rocket's stability. To mitigate these effects, baffles are employed within fuel tanks to dampen unwanted motion. This study aims to determine the impact of perforation count in disc baffle designs on sloshing behavior of hybrid nitrous oxide fuel, a relatively unexplored variable in multiphase sloshing. The total perforated area in each baffle design is held constant at 0.02636 m² to isolate the effects of perforation count. The tank geometry features a height of 1.3716 meters and a diameter of 0.2032 meters, with three baffles spaced evenly at 0.3429-meter intervals. The fuel composition consists of liquid and gaseous nitrous oxide in a 3:1 volume ratio. Sloshing is induced by applying an initial excitation velocity, and metrics such as directional forces, and the damping factor are analyzed. Given these conditions, an optimal perforation count that maximizes the damping factor is calculated, demonstrating peak performance at an intermediate level of baffle perforation, with diminishing returns observed at both higher and lower perforation counts. The approach used here can serve as a starting point to gain a better understanding of the hydrodynamic sloshing behavior of multiphase fluid with respect to the perforation count in disc baffles.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2025-99478" target="_blank" rel="noopener">10.2514/6.2025-99478</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Comparative Study of Nonlinear Attitude Estimation in GNC Testbeds for Collegiate Self-Landing Rockets</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Favour Adekola and Anyi Lin</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2025</td>
+                  <td><span class="publication-abstract">When constructing a device that requires detail on its orientation in a 3D space, an inertial measurement unit (IMU) is a widely used solution. This commonly found sensor in the navigation space contains a gyroscope, accelerometer, and magnetometer, but two issues arise in IMUs when considering orientation calculation. The first is the natural noise generated from hardware electrical systems, and the second is the accumulated error when independently integrating a component into navigation equations. For instance, the double integration of noisy acceleration from the accelerometer produces an inaccurate estimate of our device's position, leading to a significant increase in error over time. The solution is to utilize filters and algorithms that incorporate every part of the nine-axis IMU to help reduce noise from their components and avoid the problem of the previously mentioned drifting. Here we present the Complementary, Fourarti, Extended Kalman Filter (EKF), Madgwick, and Mahony nonlinear estimation algorithms and compare their accuracy, when tuned, in predicting a predefined rocket path. We conclude that the Madgwick filter performed the best for our dataset, holding the smallest magnitude error. Using these results, we will proceed with the Madgwick filter in the development of our Monoprop UAV before implementing the algorithm into our rocket.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2025-99481" target="_blank" rel="noopener">10.2514/6.2025-99481</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="publication-title">Spline-Based Flight Path Planning and Following for Aerial Navigation</div>
+                    <div class="publication-authors"><strong>Authors:</strong> Nathan Kim, Sanchir Erdenebat and Kyle Law</div>
+                  </td>
+                  <td>AIAA Region II Student Conference 2025</td>
+                  <td><span class="publication-abstract">Optimizing flight paths for fuel-efficiency in the context of airborne systems while maintaining strict control over endpoint velocity is uniquely challenging. Linear paths fail because of the strict angle constraints they present. Instead, we leverage the endpoint behavior control of Hermite splines and the intuitive design of Bézier curves to create a smooth flight path for our single-engine test vehicle that gives us precise control over our endpoint state and fuel consumption. To follow the path, we use an intuitive iterative check algorithm to validate which points were the most efficient to target while still staying on the path to reach our desired endpoint. The computational and physical efficiency of our algorithms as well as its adaptability and robustness were validated in MATLAB and Python using numpy, but have yet to be empirically tested. We discuss the algorithms' development, the motivation behind our decisions, and our preliminary findings while opening up the conversation for further refinement in autonomous path planning and navigation.</span></td>
+                  <td><a href="https://arc.aiaa.org/doi/10.2514/6.2025-99477" target="_blank" rel="noopener">10.2514/6.2025-99477</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="sponsor-section section">
+        <div class="sponsor-section__container">
+          <article class="sponsor-showcase">
+            <div class="sponsor-showcase__header">
+              <div class="sponsor-showcase__copy">
+                <span class="highlight-card__eyebrow">Sponsor Network</span>
+                <h3 class="highlight-card__title">Backed by partners who help us build, test, and fly.</h3>
+                <p class="highlight-card__text">
+                  Our generous sponsors make all the work that we do possible. From providing materials to funding test stands, our sponsors are the backbone of GTPL's success.
+                </p>
+              </div>
+
+              <div class="sponsor-showcase__actions">
+                <a href="sponsors.html" class="highlight-card__button pl-btn-learn-more">
+                  <span>View Sponsors</span>
+                  <i class="ri-arrow-right-line"></i>
+                </a>
+                <a
+                  href="https://gofund.me/0b95802f7"
+                  class="sponsor-showcase__text-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Support GTPL
+                </a>
+              </div>
+            </div>
+
+            <div class="highlight-card__logos pl-sponsor-logos" aria-label="Sponsor logo carousel">
+              <div class="pl-sponsor-logos__row">
+                <img src="assets/img/ansys.svg" alt="ANSYS" />
+                <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
+                <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
+                <img src="assets/img/guggenheim.svg" alt="Daniel Guggenheim School of Aerospace Engineering" />
+                <img src="assets/img/ams.svg" alt="AMS" />
+                <img src="assets/img/pcbway.svg" alt="PCBWay" />
+                <img src="assets/img/ansys.svg" alt="ANSYS" />
+                <img src="assets/img/gtsf.svg" alt="Georgia Tech Student Foundation" />
+                <img src="assets/img/rockwest.svg" alt="Rock West Composites" />
+                <img src="assets/img/guggenheim.svg" alt="Daniel Guggenheim School of Aerospace Engineering" />
+                <img src="assets/img/ams.svg" alt="AMS" />
+                <img src="assets/img/pcbway.svg" alt="PCBWay" />
+              </div>
+              <div class="pl-sponsor-logos__row">
+                <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
+                <img src="assets/img/ntop.svg" alt="ntop" />
+                <img src="assets/img/valworx.svg" alt="Valworx" />
+                <img src="assets/img/mill.svg" alt="The MILL" />
+                <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
+                <img src="assets/img/easycomposites.svg" alt="Easy Composites" />
+                <img src="assets/img/solidworks.svg" alt="SOLIDWORKS" />
+                <img src="assets/img/ntop.svg" alt="ntop" />
+                <img src="assets/img/valworx.svg" alt="Valworx" />
+                <img src="assets/img/mill.svg" alt="The MILL" />
+                <img src="assets/img/boltdepot.svg" alt="Bolt Depot" />
+                <img src="assets/img/easycomposites.svg" alt="Easy Composites" />
+              </div>
+              <div class="pl-sponsor-logos__row">
+                <img src="assets/img/sga.png" alt="Georgia Tech SGA" />
+                <img src="assets/img/xometry.svg" alt="Xometry" />
+                <img src="assets/img/internationalconnector.svg" alt="International Connector" />
+                <img src="assets/img/adc.svg" alt="AutomationDirect" />
+                <img src="assets/img/hive.svg" alt="The Hive" />
+                <img src="assets/img/graphitestore.svg" alt="Graphitestore" />
+                <img src="assets/img/sga.png" alt="Georgia Tech SGA" />
+                <img src="assets/img/xometry.svg" alt="Xometry" />
+                <img src="assets/img/internationalconnector.svg" alt="International Connector" />
+                <img src="assets/img/adc.svg" alt="AutomationDirect" />
+                <img src="assets/img/hive.svg" alt="The Hive" />
+                <img src="assets/img/graphitestore.svg" alt="Graphitestore" />
+              </div>
+              <div class="pl-sponsor-logos__row">
+                <img src="assets/img/altiumblk.svg" alt="Altium" />
+                <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
+                <img src="assets/img/meanwell.svg" alt="Mean Well" />
+                <img src="assets/img/inventionstudio.svg" alt="The Invention Studio" />
+                <img src="assets/img/areal.svg" alt="Areal" />
+                <img src="assets/img/altiumblk.svg" alt="Altium" />
+                <img src="assets/img/woodruff.svg" alt="Woodruff School of Mechanical Engineering" />
+                <img src="assets/img/meanwell.svg" alt="Mean Well" />
+                <img src="assets/img/inventionstudio.svg" alt="The Invention Studio" />
+                <img src="assets/img/areal.svg" alt="Areal" />
+              </div>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="footer-cta">
-        <div class="footer-cta__container container">
-          <div class="footer-cta__left">
-            <h3 class="footer-cta__heading">Help GTPL launch to new heights!</h3>
-          </div>
-
-          <div class="footer-cta__right">
-            <p class="footer-cta__text">
-              Landing a rocket is hard. That’s why we’re always looking for donors, corporate sponsors,
-              and talented engineering students from Georgia Tech. Join us, and help us make history.
-            </p>
-
-            <div class="footer-cta__buttons">
-              <a href="https://gofund.me/0b95802f7" class="footer-btn" target="_blank" rel="noopener">Donate</a>
-              <a href="sponsors.html" class="footer-btn">Become a Sponsor</a>
-            </div>
-          </div>
-        </div>
-
         <div class="footer-cta__socials">
           <a href="https://www.youtube.com/@propulsivelandersgt" target="_blank" rel="noopener" class="footer-social">
             <i class="ri-youtube-fill"></i>
@@ -330,4 +706,3 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
-

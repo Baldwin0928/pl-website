@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.from(".home__planet-2", 1.5, { opacity: 0, x: 200, delay: 1 });
     gsap.from(".home__cloud-1", 1.5, { opacity: 0, y: 200, delay: 1.2 });
     gsap.from(".home__cloud-2", 1.5, { opacity: 0, x: 200, delay: 1.3 });
-    gsap.from(".home__content", 1.5, { opacity: 0, y: -100, delay: 1.4 });
-    gsap.from(".home__title img", 1.5, { opacity: 0, x: 100, delay: 1.6 });
+    gsap.from(".home__content", 0.75, { opacity: 0, y: -36, delay: 0.18, ease: "power2.out" });
+    gsap.from(".home__title img", 0.75, { opacity: 0, x: 40, delay: 0.26, ease: "power2.out" });
   }
 
   const tabsContainer = document.querySelector(".tabs-container");
@@ -152,10 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   const smoothstep = (t) => t * t * (3 - 2 * t);
 
-  const START_BEFORE_SECTION_VH = 0.62;
-  const END_BEFORE_MISSION_VH = 0.58;
-  const REVEAL_RANGE = 0.72;
-  const REVEAL_WINDOW = 0.26;
+  const START_BEFORE_SECTION_VH = 0.88;
+  const END_BEFORE_MISSION_VH = 0.38;
+  const REVEAL_RANGE = 0.50;
+  const REVEAL_WINDOW = 0.20;
   const BUMP_PX = 18;
   const BASE_OPACITY = 0.12;
   const PROGRESS_EASE = 0.14;
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (authorEl) {
       authorEl.style.font = "inherit";
 
-      let t = clamp((p - 0.82) / 0.18, 0, 1);
+      let t = clamp((p - 0.66) / 0.16, 0, 1);
       t = smoothstep(t);
 
       const opacity = BASE_OPACITY + (1 - BASE_OPACITY) * t;
