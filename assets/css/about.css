@@ -402,3 +402,113 @@ body {
     letter-spacing: 0.1em;
   }
 }
+
+/* 20260621 mobile optimization layer */
+@media screen and (max-width: 767px) {
+  .home {
+    min-height: 86svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .home__title {
+    max-width: 11ch;
+    font-size: clamp(3rem, 15vw, 4.2rem);
+  }
+
+  .about-hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .about-hero__stat {
+    min-height: 4.4rem;
+    padding: 0.85rem;
+  }
+
+  .team__section {
+    padding-block: 3rem;
+  }
+
+  .team__container {
+    padding-inline: 1rem;
+  }
+
+  .section__title {
+    margin-bottom: 1.35rem;
+    font-size: clamp(2rem, 10vw, 2.65rem);
+  }
+
+  .team__grid,
+  .team__section--leadership .team__grid,
+  .team__section--vice .team__grid,
+  .team__section--past .team__grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .team__member,
+  .team__section--leadership .team__member,
+  .team__section--vice .team__member,
+  .team__section--past .team__member {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 0.9rem;
+    padding: 0.9rem;
+    align-items: start;
+  }
+
+  .member__photo,
+  .team__section--leadership .member__photo,
+  .team__section--vice .member__photo,
+  .team__section--past .member__photo {
+    width: 92px;
+    height: 92px;
+    aspect-ratio: 1 / 1;
+    flex: none;
+  }
+
+  .member__name,
+  .team__section--leadership .member__name,
+  .team__section--vice .member__name,
+  .team__section--past .member__name {
+    font-size: 1.12rem;
+    line-height: 1.12;
+  }
+
+  .member__role,
+  .team__section--vice .member__role,
+  .team__section--past .member__role {
+    margin-bottom: 0.45rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .member__bio,
+  .team__section--leadership .member__bio,
+  .team__section--vice .member__bio,
+  .team__section--past .member__bio {
+    font-size: 0.88rem;
+    line-height: 1.52;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .team__member,
+  .team__section--leadership .team__member,
+  .team__section--vice .team__member,
+  .team__section--past .team__member {
+    grid-template-columns: 78px minmax(0, 1fr);
+  }
+
+  .member__photo,
+  .team__section--leadership .member__photo,
+  .team__section--vice .member__photo,
+  .team__section--past .member__photo {
+    width: 78px;
+    height: 78px;
+  }
+}

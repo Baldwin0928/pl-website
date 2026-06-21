@@ -259,3 +259,84 @@
   aspect-ratio: 16 / 9;
   display: block;
 }
+
+/* 20260621 mobile optimization layer */
+@media (max-width: 767px) {
+  .press-hero {
+    min-height: 34svh;
+    padding-top: var(--header-height);
+  }
+
+  .press-hero__container {
+    padding-inline: 1rem;
+  }
+
+  .press-hero__title {
+    font-size: clamp(2.25rem, 12vw, 3.5rem);
+    letter-spacing: 0.05em;
+    line-height: 0.98;
+  }
+
+  .press-hero__subtitle {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .press {
+    padding: 3rem 1rem;
+  }
+
+  .press__header {
+    gap: 0.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .press__h2 {
+    font-size: clamp(2.25rem, 11vw, 3.1rem);
+  }
+
+  .press-card {
+    min-height: 0;
+    border-radius: 8px;
+  }
+
+  .press-card__media img {
+    min-height: 190px;
+    max-height: 220px;
+  }
+
+  .press-card__content {
+    padding: 1.1rem;
+  }
+
+  .press-card__title {
+    font-size: 1.3rem;
+  }
+
+  .press-card__text {
+    margin-bottom: 1rem;
+  }
+
+  .press-card__actions {
+    width: 100%;
+  }
+
+  .press-card__btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+
+  .press-post__card {
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .press-post__title {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .press-post__actions {
+    display: grid;
+    gap: 0.7rem;
+  }
+}

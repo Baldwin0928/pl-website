@@ -1612,6 +1612,589 @@ img {
     text-align: left;
   }
 }
+
+/* 20260621 true EOF mobile pass */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home,
+  .home__container {
+    min-height: 100svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.25rem);
+    padding-bottom: 3.5rem;
+    align-items: end;
+  }
+
+  .home__title {
+    max-width: 11ch;
+    font-size: clamp(3.15rem, 15vw, 4.65rem);
+    line-height: 0.9;
+  }
+
+  .home__tagline,
+  .home__tagline .type {
+    white-space: normal;
+  }
+
+  .home__tagline .type {
+    width: auto;
+    padding-right: 0;
+    border-right: 0;
+    animation: none;
+  }
+
+  .home__scroll {
+    display: none;
+  }
+
+  .team-stats,
+  .sponsor-section,
+  .updates-section,
+  .project-showcase-section,
+  .other-projects-section,
+  .publications-section,
+  .ourmission {
+    padding-inline: 1rem;
+    padding-block: 3.2rem;
+  }
+
+  .team-stats__grid,
+  .update-grid,
+  .project-showcase__grid,
+  .other-projects__grid,
+  .ourmission__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-showcase__lander {
+    width: min(235px, 68vw);
+    max-height: 300px;
+    margin-inline: auto;
+  }
+
+  .project-tile,
+  .project-tile--wide,
+  .other-project-card {
+    min-height: 210px;
+  }
+
+  .scroll-quote__stage,
+  .scroll-quote__sticky {
+    position: relative;
+    height: auto;
+    min-height: 70svh;
+    padding: 3rem 1rem;
+  }
+
+  .scroll-quote__text {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .mission-special__card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .publications-table-wrap {
+    margin-inline: -1rem;
+    border-radius: 0;
+    border-inline: 0;
+  }
+
+  .publications-table {
+    min-width: 760px;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+
+  .home__title {
+    font-size: clamp(2.8rem, 17vw, 3.65rem);
+  }
+}
+
+/* 20260621 final mobile pass */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home {
+    min-height: 100svh;
+  }
+
+  .home__container {
+    min-height: 100svh;
+    padding-top: calc(var(--header-height) + 2.25rem);
+    padding-bottom: 3.5rem;
+    align-items: end;
+  }
+
+  .home__title {
+    max-width: 11ch;
+    font-size: clamp(3.15rem, 15vw, 4.65rem);
+    line-height: 0.9;
+  }
+
+  .home__tagline,
+  .home__tagline .type {
+    white-space: normal;
+  }
+
+  .home__tagline .type {
+    width: auto;
+    padding-right: 0;
+    border-right: 0;
+    animation: none;
+  }
+
+  .home__scroll {
+    display: none;
+  }
+
+  .team-stats,
+  .sponsor-section,
+  .updates-section,
+  .project-showcase-section,
+  .other-projects-section,
+  .publications-section,
+  .ourmission {
+    padding-inline: 1rem;
+    padding-block: 3.2rem;
+  }
+
+  .team-stats__grid,
+  .update-grid,
+  .project-showcase__grid,
+  .other-projects__grid,
+  .ourmission__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-showcase__lander {
+    width: min(235px, 68vw);
+    max-height: 300px;
+    margin-inline: auto;
+  }
+
+  .project-tile,
+  .project-tile--wide,
+  .other-project-card {
+    min-height: 210px;
+  }
+
+  .scroll-quote__stage,
+  .scroll-quote__sticky {
+    position: relative;
+    height: auto;
+    min-height: 70svh;
+    padding: 3rem 1rem;
+  }
+
+  .scroll-quote__text {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .mission-special__card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .publications-table-wrap {
+    margin-inline: -1rem;
+    border-radius: 0;
+    border-inline: 0;
+  }
+
+  .publications-table {
+    min-width: 760px;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+
+  .home__title {
+    font-size: clamp(2.8rem, 17vw, 3.65rem);
+  }
+}
+
+/* 20260621 mobile optimization layer */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .nav__link.active::after {
+    left: 0;
+    right: auto;
+    bottom: 0.5rem;
+    width: 2.25rem;
+  }
+
+  .home {
+    min-height: 100svh;
+  }
+
+  .home__container {
+    min-height: 100svh;
+    padding-top: calc(var(--header-height) + 2.25rem);
+    padding-bottom: 3.5rem;
+    align-items: end;
+  }
+
+  .home__content {
+    max-width: 100%;
+  }
+
+  .home__title {
+    max-width: 11ch;
+    font-size: clamp(3.15rem, 15vw, 4.65rem);
+    line-height: 0.9;
+  }
+
+  .home__tagline {
+    max-width: 23rem;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    line-height: 1.32;
+  }
+
+  .home__tagline .type {
+    white-space: normal;
+    width: auto;
+    padding-right: 0;
+    border-right: 0;
+    animation: none;
+  }
+
+  .home__scroll {
+    display: none;
+  }
+
+  .team-stats,
+  .sponsor-section,
+  .updates-section,
+  .project-showcase-section,
+  .other-projects-section,
+  .publications-section {
+    padding-inline: 1rem;
+    padding-block: 3.2rem;
+  }
+
+  .team-stats__grid,
+  .update-grid,
+  .project-showcase__grid,
+  .other-projects__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .team-stat {
+    min-height: 0;
+    padding: 1.1rem;
+  }
+
+  .sponsor-showcase__header,
+  .update-grid .highlight-card,
+  .project-showcase__intro,
+  .project-showcase__grid,
+  .other-projects__header,
+  .other-projects__grid {
+    padding: 1.15rem;
+  }
+
+  .project-showcase__lander {
+    width: min(235px, 68vw);
+    max-height: 300px;
+    margin-inline: auto;
+  }
+
+  .project-tile,
+  .project-tile--wide,
+  .other-project-card {
+    min-height: 210px;
+  }
+
+  .scroll-quote__stage {
+    height: auto;
+    min-height: 78svh;
+    padding: 4rem 1rem;
+  }
+
+  .scroll-quote__sticky {
+    position: relative;
+    height: auto;
+    min-height: 70svh;
+    padding: 3rem 1rem;
+  }
+
+  .scroll-quote__text {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .ourmission {
+    padding: 4rem 1rem;
+    background-attachment: scroll;
+  }
+
+  .ourmission__inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-special__grid {
+    gap: 0.75rem;
+  }
+
+  .mission-special__card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .footer-cta--site {
+    padding: 2.25rem 1rem 1.15rem;
+  }
+
+  .footer-cta--site .footer-cta__container {
+    gap: 1rem;
+  }
+
+  .footer-cta--site .footer-cta__heading {
+    max-width: 18ch;
+    font-size: clamp(1.55rem, 8vw, 2.05rem);
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+
+  .footer-cta--site .footer-cta__socials,
+  .footer-cta__socials {
+    width: 100%;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+
+  .home__title {
+    font-size: clamp(2.8rem, 17vw, 3.65rem);
+  }
+
+  .footer-cta__bottom,
+  .footer-cta--site .footer-cta__bottom {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
 .highlight-card__video-wrap {
   margin-top: auto;
   border-radius: 8px;
@@ -1936,5 +2519,179 @@ img {
   .footer-cta--site .footer-cta__socials {
     justify-content: flex-start;
     text-align: left;
+  }
+}
+
+/* 20260621 true EOF mobile pass */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home,
+  .home__container {
+    min-height: 100svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.25rem);
+    padding-bottom: 3.5rem;
+    align-items: end;
+  }
+
+  .home__title {
+    max-width: 11ch;
+    font-size: clamp(3.15rem, 15vw, 4.65rem);
+    line-height: 0.9;
+  }
+
+  .home__tagline,
+  .home__tagline .type {
+    white-space: normal;
+  }
+
+  .home__tagline .type {
+    width: auto;
+    padding-right: 0;
+    border-right: 0;
+    animation: none;
+  }
+
+  .home__scroll {
+    display: none;
+  }
+
+  .team-stats,
+  .sponsor-section,
+  .updates-section,
+  .project-showcase-section,
+  .other-projects-section,
+  .publications-section,
+  .ourmission {
+    padding-inline: 1rem;
+    padding-block: 3.2rem;
+  }
+
+  .team-stats__grid,
+  .update-grid,
+  .project-showcase__grid,
+  .other-projects__grid,
+  .ourmission__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-showcase__lander {
+    width: min(235px, 68vw);
+    max-height: 300px;
+    margin-inline: auto;
+  }
+
+  .project-tile,
+  .project-tile--wide,
+  .other-project-card {
+    min-height: 210px;
+  }
+
+  .scroll-quote__stage,
+  .scroll-quote__sticky {
+    position: relative;
+    height: auto;
+    min-height: 70svh;
+    padding: 3rem 1rem;
+  }
+
+  .scroll-quote__text {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .mission-special__card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .publications-table-wrap {
+    margin-inline: -1rem;
+    border-radius: 0;
+    border-inline: 0;
+  }
+
+  .publications-table {
+    min-width: 760px;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+
+  .home__title {
+    font-size: clamp(2.8rem, 17vw, 3.65rem);
   }
 }

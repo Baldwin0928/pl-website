@@ -733,6 +733,235 @@ img {
   }
 }
 
+/* 20260621 final mobile pass */
+@media screen and (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home.contact-hero {
+    min-height: 76svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .home__title {
+    max-width: 10ch;
+    font-size: clamp(3rem, 15vw, 4.15rem);
+  }
+
+  .contact-info-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-card,
+  .contact-card {
+    padding: 1.15rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+}
+
+/* 20260621 mobile optimization layer */
+@media screen and (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .nav__link.active::after {
+    left: 0;
+    right: auto;
+    bottom: 0.5rem;
+    width: 2.25rem;
+  }
+
+  .home.contact-hero {
+    min-height: 76svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .home__title {
+    max-width: 10ch;
+    font-size: clamp(3rem, 15vw, 4.15rem);
+  }
+
+  .contact-info-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-card,
+  .contact-card {
+    padding: 1.15rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .footer-cta--site {
+    padding: 2.25rem 1rem 1.15rem;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
+  }
+}
+
 /* 20260621 organized site footer */
 .footer-cta--site {
   padding: clamp(2.5rem, 5vw, 3.6rem) clamp(1.25rem, 4vw, 4rem) 1.35rem;
@@ -803,5 +1032,114 @@ img {
   .footer-cta--site .footer-cta__socials {
     justify-content: flex-start;
     text-align: left;
+  }
+}
+
+/* 20260621 true EOF mobile pass */
+@media screen and (max-width: 767px) {
+  :root {
+    --header-height: 3.9rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .nav {
+    height: var(--header-height);
+    justify-content: space-between;
+    padding-inline: 0.9rem;
+  }
+
+  .nav__logo {
+    width: 3.3rem;
+    height: 2.8rem;
+  }
+
+  .nav__logo img {
+    width: 44px;
+    height: 40px;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    width: 2.55rem;
+    height: 2.55rem;
+    font-size: 1.35rem;
+  }
+
+  .nav__menu {
+    width: min(100%, 340px);
+    padding: 5.4rem 1.25rem 2rem;
+    row-gap: 1.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav__list {
+    row-gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    font-size: 0.84rem;
+    letter-spacing: 0.16em;
+  }
+
+  .home.contact-hero {
+    min-height: 76svh;
+  }
+
+  .home__container {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .home__title {
+    max-width: 10ch;
+    font-size: clamp(3rem, 15vw, 4.15rem);
+  }
+
+  .contact-info-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-card,
+  .contact-card {
+    padding: 1.15rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .footer-cta--site .footer-cta__buttons,
+  .footer-cta__buttons {
+    width: 100%;
+  }
+
+  .footer-cta--site .footer-btn,
+  .footer-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .nav__menu {
+    width: 100%;
   }
 }
