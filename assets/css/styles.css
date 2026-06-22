@@ -742,9 +742,15 @@ img {
 }
 
 .member-destinations__logo--tasa img,
-.member-destinations__logo--lockheed img {
+.member-destinations__logo--lockheed img,
+.member-destinations__logo--afrl img {
   max-width: 260px;
   max-height: 100px;
+}
+
+.member-destinations__logo--afrl img {
+  max-width: 230px;
+  max-height: 88px;
 }
 
 .member-destinations__logo--text {
@@ -2910,8 +2916,13 @@ img {
   }
 
   .member-destinations__logo--tasa img,
-  .member-destinations__logo--lockheed img {
+  .member-destinations__logo--lockheed img,
+  .member-destinations__logo--afrl img {
     max-height: 68px;
+  }
+
+  .member-destinations__logo--afrl img {
+    max-height: 60px;
   }
 
   .member-destinations__more {
