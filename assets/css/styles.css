@@ -442,7 +442,8 @@ img {
 
 .sponsor-section,
 .team-stats,
-.updates-section {
+.updates-section,
+.member-destinations {
   background-color: #f7f7f7;
 }
 
@@ -600,7 +601,7 @@ img {
 .update-grid .highlight-card {
   min-height: 0;
   height: auto;
-  padding: 1.55rem;
+  padding: 1.2rem;
 }
 
 .update-grid .highlight-card__title {
@@ -609,7 +610,7 @@ img {
 }
 
 .update-grid .highlight-card__text {
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   line-height: 1.62;
 }
 
@@ -639,6 +640,141 @@ img {
   align-self: flex-start;
 }
 
+.member-destinations {
+  padding: 3.15rem clamp(1rem, 3vw, 3rem) 3.35rem;
+  background: #f7f7f7;
+  color: #111827;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.member-destinations__container {
+  width: 100%;
+  max-width: 1560px;
+  margin-inline: auto;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-top: 2px solid rgba(255, 214, 0, 0.88);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.member-destinations__header {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(1.4rem, 3vw, 3.4rem);
+  align-items: end;
+  padding: clamp(1.55rem, 2.7vw, 2.4rem);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.10);
+}
+
+.member-destinations__copy {
+  max-width: 40rem;
+}
+
+.member-destinations__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: #6b7280;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.member-destinations__title {
+  margin: 0;
+  color: #07111f;
+  font-size: clamp(1.65rem, 2.45vw, 2.45rem);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.member-destinations__text {
+  max-width: 48rem;
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+
+.member-destinations__logo-wall {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+}
+
+.member-destinations__logo {
+  min-height: 118px;
+  padding: 1.2rem;
+  border-right: 1px solid rgba(17, 24, 39, 0.08);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.72);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.member-destinations__logo:hover {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.10);
+}
+
+.member-destinations__logo img {
+  width: 100%;
+  max-width: 180px;
+  max-height: 72px;
+  object-fit: contain;
+  filter: contrast(1.02) saturate(1.08);
+  opacity: 0.98;
+  transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+.member-destinations__logo:hover img {
+  filter: contrast(1.04) saturate(1.14);
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.member-destinations__logo--tasa img,
+.member-destinations__logo--lockheed img {
+  max-width: 260px;
+  max-height: 100px;
+}
+
+.member-destinations__logo--text {
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.member-destinations__more {
+  min-height: 118px;
+  grid-column: span 4;
+  padding: 1.2rem;
+  border-right: 1px solid rgba(17, 24, 39, 0.08);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.member-destinations__more span {
+  color: #6b7280;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
 .project-showcase-section {
   padding: 3.35rem clamp(1rem, 3vw, 3rem);
   background: #f7f7f7;
@@ -655,6 +791,28 @@ img {
   grid-template-columns: minmax(880px, 1fr) minmax(360px, 0.42fr);
   align-items: stretch;
   gap: clamp(1.15rem, 2.2vw, 2.6rem);
+}
+
+.project-showcase__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.project-showcase__header {
+  min-height: 4.3rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-showcase__heading {
+  margin: 0;
+  color: #07111f;
+  font-size: clamp(2.25rem, 3.8vw, 4rem);
+  line-height: 0.96;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 .project-showcase__container {
@@ -681,6 +839,7 @@ img {
 .project-showcase__lander-wrap {
   margin: 0;
   min-height: 100%;
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -689,13 +848,13 @@ img {
 }
 
 .project-showcase__lander {
-  width: min(540px, 118%);
+  width: min(620px, 126%);
   height: 100%;
   min-height: 100%;
   max-height: none;
   object-fit: contain;
   object-position: center;
-  transform: scale(1.1);
+  transform: scale(1.14);
   transform-origin: center;
   filter: drop-shadow(0 30px 42px rgba(15, 23, 42, 0.24));
 }
@@ -715,7 +874,7 @@ img {
 
 .project-showcase__title {
   max-width: 13.5rem;
-  margin-top: 0.75rem;
+  margin-top: 0;
   font-size: clamp(2.15rem, 2.55vw, 2.75rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
@@ -727,7 +886,7 @@ img {
   margin-top: 1.2rem;
   color: #4b5563;
   line-height: 1.52;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 
 .project-showcase__link {
@@ -1329,6 +1488,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .project-showcase__header {
+    min-height: 0;
+  }
+
   .project-showcase__intro {
     border-right: 0;
     border-bottom: 1px solid rgba(17, 24, 39, 0.12);
@@ -1708,6 +1871,7 @@ img {
   .team-stats,
   .sponsor-section,
   .updates-section,
+  .member-destinations,
   .project-showcase-section,
   .other-projects-section,
   .publications-section,
@@ -1718,6 +1882,8 @@ img {
 
   .team-stats__grid,
   .update-grid,
+  .member-destinations__stats,
+  .member-destinations__logo-wall,
   .project-showcase__grid,
   .other-projects__grid,
   .ourmission__inner {
@@ -1752,7 +1918,7 @@ img {
 
   .mission-special__card {
     min-height: 0;
-    padding: 1rem;
+    padding: 1.1rem;
   }
 
   .publications-table-wrap {
@@ -1882,6 +2048,7 @@ img {
   .team-stats,
   .sponsor-section,
   .updates-section,
+  .member-destinations,
   .project-showcase-section,
   .other-projects-section,
   .publications-section,
@@ -1892,6 +2059,8 @@ img {
 
   .team-stats__grid,
   .update-grid,
+  .member-destinations__stats,
+  .member-destinations__logo-wall,
   .project-showcase__grid,
   .other-projects__grid,
   .ourmission__inner {
@@ -1926,7 +2095,7 @@ img {
 
   .mission-special__card {
     min-height: 0;
-    padding: 1rem;
+    padding: 1.1rem;
   }
 
   .publications-table-wrap {
@@ -2069,6 +2238,7 @@ img {
   .team-stats,
   .sponsor-section,
   .updates-section,
+  .member-destinations,
   .project-showcase-section,
   .other-projects-section,
   .publications-section {
@@ -2078,6 +2248,8 @@ img {
 
   .team-stats__grid,
   .update-grid,
+  .member-destinations__stats,
+  .member-destinations__logo-wall,
   .project-showcase__grid,
   .other-projects__grid {
     grid-template-columns: 1fr;
@@ -2090,6 +2262,8 @@ img {
   }
 
   .sponsor-showcase__header,
+  .member-destinations__header,
+  .member-destinations__logo,
   .update-grid .highlight-card,
   .project-showcase__intro,
   .project-showcase__grid,
@@ -2144,7 +2318,7 @@ img {
 
   .mission-special__card {
     min-height: 0;
-    padding: 1rem;
+    padding: 1.1rem;
   }
 
   .footer-cta--site {
@@ -2617,6 +2791,7 @@ img {
   .team-stats,
   .sponsor-section,
   .updates-section,
+  .member-destinations,
   .project-showcase-section,
   .other-projects-section,
   .publications-section,
@@ -2627,6 +2802,8 @@ img {
 
   .team-stats__grid,
   .update-grid,
+  .member-destinations__stats,
+  .member-destinations__logo-wall,
   .project-showcase__grid,
   .other-projects__grid,
   .ourmission__inner {
@@ -2661,7 +2838,7 @@ img {
 
   .mission-special__card {
     min-height: 0;
-    padding: 1rem;
+    padding: 1.1rem;
   }
 
   .publications-table-wrap {
@@ -2693,5 +2870,55 @@ img {
 
   .home__title {
     font-size: clamp(2.8rem, 17vw, 3.65rem);
+  }
+}
+
+@media (max-width: 1180px) {
+  .member-destinations__logo-wall {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .member-destinations__logo-wall {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .member-destinations__more {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .member-destinations__header {
+    grid-template-columns: 1fr;
+  }
+
+  .member-destinations__logo-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .member-destinations__logo {
+    min-height: 94px;
+    padding: 1rem;
+  }
+
+  .member-destinations__logo img {
+    max-height: 52px;
+  }
+
+  .member-destinations__logo--tasa img,
+  .member-destinations__logo--lockheed img {
+    max-height: 68px;
+  }
+
+  .member-destinations__more {
+    min-height: 94px;
+    grid-column: span 2;
+    padding: 1rem;
+  }
+
+  .member-destinations__more span {
+    font-size: 1rem;
   }
 }
