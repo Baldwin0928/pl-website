@@ -758,7 +758,7 @@ img {
 
 .member-destinations__more {
   min-height: 118px;
-  grid-column: span 3;
+  grid-column: span 1;
   padding: 1.2rem;
   border-right: 1px solid rgba(17, 24, 39, 0.08);
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
@@ -2887,7 +2887,7 @@ img {
   }
 
   .member-destinations__more {
-    grid-column: span 2;
+    grid-column: span 1;
   }
 }
 
@@ -2916,7 +2916,7 @@ img {
 
   .member-destinations__more {
     min-height: 94px;
-    grid-column: span 2;
+    grid-column: span 1;
     padding: 1rem;
   }
 
