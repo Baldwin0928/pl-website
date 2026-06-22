@@ -2887,7 +2887,7 @@ img {
   }
 
   .member-destinations__more {
-    grid-column: span 3;
+    grid-column: span 1;
   }
 }
 
